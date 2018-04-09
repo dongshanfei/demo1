@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="show">1213</div>
+    <button id="btn">点击显示请求内容</button>   
+<script>
+// 表单无法接收数据，只能想后台发送数据
+// ajax既可以发送数据，又可以接收数据
+// document.getElementById('btn').onclick = function(){
+//         if(XMLHttpRequest){
+//             var xhr = new XMLHttpRequest();
+//         }
+//         else{
+//             var xhr = new ActiveXObject('Microsoft.XMLHTTP');
+//         }
+    
+//     xhr.open("GET","demo.txt?key="+Math.random(),false);
+//     xhr.send();
+//     document.getElementById('show').innerHTML = xhr.responseText;
+// }
+document.getElementById('btn').onclick = function(){
+    if(window.XMLHttpRequest){
+        var xhr = new XMLHttpRequest();
+    }
+    else{
+        var xhr = new ActiveXObject('Microsoft.XMLHTTP')
+    }
+    xhr.open('GET','demo.json',true);
+    xhr.send();
+//----------------------------------------------------------------
+     xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){//
+                var aa = JSON.parse(xhr.responseText);
+                alert(aa.name);   
+            }
+            else if(xhr.status == 404){
+                alert("接收失败");
+            }
+    }   
+}
+</script>
+</body>
+</html>

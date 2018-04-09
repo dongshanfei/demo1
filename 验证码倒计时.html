@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    button{
+            width: 150px;
+            height: 50px;
+            background: #ff6600;
+            border: none;
+            color: #fff;
+        }
+        button[disabled]{
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">获取验证码</button>
+    <script>
+     /*1.按钮不可点击
+       2.倒计时，xxx秒后重新获取
+       3.倒计时结束后按钮恢复 */
+    window.onload = function(){
+        var btn =document.getElementById("btn");
+        /*btn.onclick =function{
+            var time = 5; //设置倒计时时间
+            var _this=this; //缓存当前this
+            this.innerHTML=time+"秒后重新获取"//设置按钮的内容
+            this.disable=true;//按钮设置为不可用
+            var t = setInterval(function){ //设置计时器time}
+            每次执行一次都让time-1//
+        }*/
+        btn.onclick =function(){
+            getCode(this);
+        }
+        var num =5;
+        function getCode(obj){
+            obj.innerHTML=num+"秒后重新获取";
+            obj.disabled= true;
+            if(num == 0){
+                clearTimeout(t);
+                num = 5;
+                obj.innerHTML=num+"获取验证码";
+                obj.disabled =false;
+            }
+            else{
+                var t = setTimeout(function(){getCode(obj)},1000);
+            }
+            num--;         
+        }
+}
+</script>
+</body>
+</html>

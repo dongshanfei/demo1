@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IIFE</title>
+</head>
+<body>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+
+    <script>
+        /*
+            (function(){
+                var a = 1;
+                alert(a);
+            }())
+
+            (function(){
+                var a = 10
+                alert(a)
+            }())
+            (function(){
+                alert(a);
+            }())
+
+            function fn(形参1,形参2){}
+            fn(参数1,参数2)
+
+            var fn = function(形参1,形参2){
+        
+            }
+            fn(参数1,参数2) 
+
+
+            (function(形参1,形参2){}(实参1,实参2))
+
+
+            (function(){}());
+            (function(){})();
+            +function(){alert(1)}()
+            -function(){alert(2)}()
+            *function(){alert(3)}()
+            /function(){alert(4)}()
+            !function(){alert(5)}()
+            %function(){alert(6)}()
+
+            为了避免代码压缩后报错的问题
+            在写自执行函数时，在最前边加一个;
+        */
+        // var btn = document.getElementsByTagName('button');
+        // for(var i = 0;i<btn.length;i++){
+        //  btn[i].index = i
+        //  btn[i].onclick = function(){
+        //      // 无法获取到对应的i
+        //      this.index;
+        //  }
+        // }
+
+        for(var i = 0;i<btn.length;i++){
+            (function(i){
+                btn[i].onclick = function(){
+                    alert(i);
+                }
+            }(i))
+        }
+
+        // (function(){alert(1)}());(function(){alert(2)}())
+
+        
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

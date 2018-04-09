@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,p{
+			margin: 0;
+		}
+		div{
+			height: 800px
+		}
+		p{
+			opacity: 0;
+			transition: all 5s;
+			position: relative;
+			top: 60px;
+		}
+		.p{
+			opacity: 1;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<p>这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容这是p标签的内容</p>
+	<div></div>
+	<script>
+		var p = document.getElementsByTagName('p')[0];
+		window.onscroll = function(){
+			var Top = document.body.scrollTop || document.documentElement.scrollTop;
+			if(Top>=400){
+				p.className = 'p';
+			}
+		}
+	</script>
+</body>
+</html>

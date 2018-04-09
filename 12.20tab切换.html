@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab切换</title>
+    <style>
+        .content ul{
+			display: none;
+        }
+        .current{
+        	color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <ul>
+            <li class="current">政治</li>  <!-- li[0] -->
+            <li>八卦</li>                  <!-- li[1] -->
+            <li>时事</li>                  <!-- li[2] -->
+        </ul>
+        <div class="content">
+            <ul style="display:block">
+                <li class="bold-item">
+                    <span class="dot"></span>
+                    <a href="http://www.cankaoxiaoxi.com/roll10/bd/20160923/1315399.shtml" mon="ct=1&amp;a=2&amp;c=top&amp;pn=1" target="_blank">中央批准：免去沈晓明上海市委常委、委员职务</a>
+                </li>
+                <li>
+                    <a href="http://china.huanqiu.com/article/2016-09/9479605.html?from=bdwz" mon="ct=1&amp;a=2&amp;c=top&amp;pn=2" target="_blank">河北省委常委、政法委书记董仚生辞去副省长职务</a>
+                </li>
+                <li>
+                    <a href="http://www.cankaoxiaoxi.com/roll10/bd/20160923/1314362.shtml" mon="ct=1&amp;a=2&amp;c=top&amp;pn=3" target="_blank">公安局纪委书记装GPS跟踪区委书记 获刑3年半</a>
+                </li>
+                <li>
+                    <a href="http://world.huanqiu.com/article/2016-09/9480050.html?from=bdwz" mon="ct=1&amp;a=2&amp;c=top&amp;pn=4" target="_blank">美总统大选丑闻不断：特朗普曝多次挪用其基金会资金</a>
+                </li>
+                <li>
+                    <a href="http://news.cyol.com/content/2016-09/23/content_14088428.htm" mon="ct=1&amp;a=2&amp;c=top&amp;pn=5" target="_blank">六部门：电信网络诈骗犯罪人员10月31日前要主动投案</a>
+                </li>
+                <li>
+                    <a href="http://world.huanqiu.com/article/2016-09/9480301.html?from=bdwz" mon="ct=1&amp;a=2&amp;c=top&amp;pn=6" target="_blank">外媒称杜特尔特10月中旬将访华 中方：期待早日成行</a>
+                </li>
+            </ul>
+            <ul>
+                <li class="bold-item">
+                    <span class="dot"></span>
+                    <a href="http://ent.ifeng.com/a/20160923/42689367_0.shtml?_zbs_baidu_news" mon="ct=1&amp;a=2&amp;c=top&amp;pn=25" target="_blank">陈乔恩长文悼念乔任梁：对不起没多关心你</a>
+                </li>
+                <li>
+                    <a href="http://china.huanqiu.com/article/2016-09/9476618.html?from=bdwz" mon="ct=1&amp;a=2&amp;c=top&amp;pn=26" target="_blank">媒体揭秘燕城监狱：内部究竟是什么样子(图)</a>
+                </li>
+                <li>
+                    <a href="http://d.youth.cn/shrgch/201609/t20160923_8684548.htm" mon="ct=1&amp;a=2&amp;c=top&amp;pn=27" target="_blank">贵州双胞胎患病眼睛似外星人：无眼睑瞳孔上翻</a>
+                </li>
+                <li>
+                    <a href="http://www.cankaoxiaoxi.com/roll10/bd/20160923/1314292.shtml" mon="ct=1&amp;a=2&amp;c=top&amp;pn=28" target="_blank">初中生写作文字迹潦草 老师留评语“呆B”</a>
+                </li>
+                <li>
+                    <a href="http://shehui.china.com.cn/2016-09/23/content_39359541.htm" mon="ct=1&amp;a=2&amp;c=top&amp;pn=29" target="_blank">赌徒为还债拍黑砖抢钱 谎称私人恩怨从容逃脱</a>
+                </li>
+                <li>
+                    <a href="http://xinwen.eastday.com/a/160923071129828.html" mon="ct=1&amp;a=2&amp;c=top&amp;pn=30" target="_blank">陕西大三女生轻信"公检法查洗钱案" 被骗31万元</a>
+                </li>
+            </ul>
+            <ul >
+                <li class="bold-item">
+    
+                    <a href="http://xinwen.eastday.com/a/160923071245450.html">深圳二手房卖主悔约不服判决 纠集60余人冲击法院</a>
+                </li>
+                <li>
+                    <a href="http://xinwen.eastday.com/a/160923142928053.html">中国劳动保障蓝皮书:今明两年全球失业率将上升</a>
+                </li>
+                <li>
+                    <a href="http://news.cyol.com/content/2016-09/23/content_14087297.htm" mon="ct=1&amp;a=2&amp;c=top&amp;pn=9" >纽约截获450万美元象牙及制品 系当地史上最大</a>
+                </li>
+                <li>
+                    <a href="http://news.ifeng.com/a/20160923/50013009_0.shtml?_zbs_baidu_news" mon="ct=1&amp;a=2&amp;c=top&amp;pn=10" >赖德荣被免广西政协副主席职务 此前被降为科员</a>
+                </li>
+                <li>
+                    <a href="http://china.huanqiu.com/article/2016-09/9479905.html?from=bdwz " mon="ct=1&amp;a=2&amp;c=top&amp;pn=11" >面对人大常委会质询，南昌市长向500多万市民道歉</a>
+                </li>
+                <li>
+                    <a href="http://china.huanqiu.com/article/2016-09/9480409.html?from=bdwz" mon="ct=1&amp;a=2&amp;c=top&amp;pn=12" >中央网信办、民政部联合发文 加强网信社会组织建设</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+     <div id="tab2">
+        <ul>
+            <li class="current">政治</li>
+            <li>八卦</li>
+            <li>时事</li>
+        </ul>
+        <div class="content">
+            <ul style="display:block">
+                <li class="bold-item">
+                    <span class="dot"></span>
+                    <a href="http://www.cankaoxiaoxi.com/roll10/bd/20160923/1315399.shtml" mon="ct=1&amp;a=2&amp;c=top&amp;pn=1" target="_blank">中央批准：免去沈晓明上海市委常委、委员职务</a>
+                </li>
+                <li>
+                    <a href="http://china.huanqiu.com/article/2016-09/9479605.html?from=bdwz" mon="ct=1&amp;a=2&amp;c=top&amp;pn=2" target="_blank">河北省委常委、政法委书记董仚生辞去副省长职务</a>
+                </li>
+                <li>
+                    <a href="http://www.cankaoxiaoxi.com/roll10/bd/20160923/1314362.shtml" mon="ct=1&amp;a=2&amp;c=top&amp;pn=3" target="_blank">公安局纪委书记装GPS跟踪区委书记 获刑3年半</a>
+                </li>
+                <li>
+                    <a href="http://world.huanqiu.com/article/2016-09/9480050.html?from=bdwz" mon="ct=1&amp;a=2&amp;c=top&amp;pn=4" target="_blank">美总统大选丑闻不断：特朗普曝多次挪用其基金会资金</a>
+                </li>
+                <li>
+                    <a href="http://news.cyol.com/content/2016-09/23/content_14088428.htm" mon="ct=1&amp;a=2&amp;c=top&amp;pn=5" target="_blank">六部门：电信网络诈骗犯罪人员10月31日前要主动投案</a>
+                </li>
+                <li>
+                    <a href="http://world.huanqiu.com/article/2016-09/9480301.html?from=bdwz" mon="ct=1&amp;a=2&amp;c=top&amp;pn=6" target="_blank">外媒称杜特尔特10月中旬将访华 中方：期待早日成行</a>
+                </li>
+            </ul>
+            <ul>
+                <li class="bold-item">
+                    <span class="dot"></span>
+                    <a href="http://ent.ifeng.com/a/20160923/42689367_0.shtml?_zbs_baidu_news" mon="ct=1&amp;a=2&amp;c=top&amp;pn=25" target="_blank">陈乔恩长文悼念乔任梁：对不起没多关心你</a>
+                </li>
+                <li>
+                    <a href="http://china.huanqiu.com/article/2016-09/9476618.html?from=bdwz" mon="ct=1&amp;a=2&amp;c=top&amp;pn=26" target="_blank">媒体揭秘燕城监狱：内部究竟是什么样子(图)</a>
+                </li>
+                <li>
+                    <a href="http://d.youth.cn/shrgch/201609/t20160923_8684548.htm" mon="ct=1&amp;a=2&amp;c=top&amp;pn=27" target="_blank">贵州双胞胎患病眼睛似外星人：无眼睑瞳孔上翻</a>
+                </li>
+                <li>
+                    <a href="http://www.cankaoxiaoxi.com/roll10/bd/20160923/1314292.shtml" mon="ct=1&amp;a=2&amp;c=top&amp;pn=28" target="_blank">初中生写作文字迹潦草 老师留评语“呆B”</a>
+                </li>
+                <li>
+                    <a href="http://shehui.china.com.cn/2016-09/23/content_39359541.htm" mon="ct=1&amp;a=2&amp;c=top&amp;pn=29" target="_blank">赌徒为还债拍黑砖抢钱 谎称私人恩怨从容逃脱</a>
+                </li>
+                <li>
+                    <a href="http://xinwen.eastday.com/a/160923071129828.html" mon="ct=1&amp;a=2&amp;c=top&amp;pn=30" target="_blank">陕西大三女生轻信"公检法查洗钱案" 被骗31万元</a>
+                </li>
+            </ul>
+            <ul >
+                <li class="bold-item">
+                    <a href="http://xinwen.eastday.com/a/160923071245450.html">深圳二手房卖主悔约不服判决 纠集60余人冲击法院</a>
+                </li>
+                <li>
+                    <a href="http://xinwen.eastday.com/a/160923142928053.html">中国劳动保障蓝皮书:今明两年全球失业率将上升</a>
+                </li>
+                <li>
+                    <a href="http://news.cyol.com/content/2016-09/23/content_14087297.htm" mon="ct=1&amp;a=2&amp;c=top&amp;pn=9" >纽约截获450万美元象牙及制品 系当地史上最大</a>
+                </li>
+                <li>
+                    <a href="http://news.ifeng.com/a/20160923/50013009_0.shtml?_zbs_baidu_news" mon="ct=1&amp;a=2&amp;c=top&amp;pn=10" >赖德荣被免广西政协副主席职务 此前被降为科员</a>
+                </li>
+                <li>
+                    <a href="http://china.huanqiu.com/article/2016-09/9479905.html?from=bdwz " mon="ct=1&amp;a=2&amp;c=top&amp;pn=11" >面对人大常委会质询，南昌市长向500多万市民道歉</a>
+                </li>
+                <li>
+                    <a href="http://china.huanqiu.com/article/2016-09/9480409.html?from=bdwz" mon="ct=1&amp;a=2&amp;c=top&amp;pn=12" >中央网信办、民政部联合发文 加强网信社会组织建设</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+       
+
+
+// Tab.prototype.bb = function(){
+//     var _this=this;//this指向tab
+//     for(var i = 0;i<this.li.length;i++){
+//         this.li[i].index=i;
+//         this.li[i].onclick=function(){// this指向this.li[i]， 
+//             _this.cc(this);
+//             }  
+//     }
+// }
+// Tab.prototype.cc = function(dd){
+//     for(var j = 0;j<this.uls.length;j++){
+//         this.li[j].className="";
+//         this.uls[j].style.display="none";      
+//     }
+//     dd.className="current";
+//     this.uls[dd.index].style.display="block"
+// }
+ function Tab(name){
+    this.tab = document.getElementById(name);
+    this.ul = this.tab.getElementsByTagName('ul')[0];
+    this.li = this.ul.getElementsByTagName('li');
+    this.con = this.tab.getElementsByTagName('div')[0];
+    this.uls = this.con.getElementsByTagName('ul'); 
+}
+Tab.prototype.bb = function(){
+    var _this=this;//this指向tab
+    for(var i = 0;i<this.li.length;i++){
+        this.li[i].index=i;
+        this.li[i].onclick=function(){// this指向this.li[i]， 
+            for(var j = 0;j<_this.uls.length;j++){
+                _this.li[j].className="";
+                _this.uls[j].style.display="none";      
+            }
+            this.className="current";
+            _this.uls[this.index].style.display="block"
+            
+            }  
+    }
+}
+window.onload = function(){
+    var a = new Tab("tab");
+    a.bb();
+    // var b = new Tab("tab2");
+    // b.bb();
+}
+   
+    </script>
+</body>
+</html>

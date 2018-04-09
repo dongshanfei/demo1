@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //原始模式
+    // var obj = new Object();
+    //字面量模式
+    // var obj = {}
+    // var person = new Object();
+    // person.name =  "张三";
+    // person.age = 18;
+    // person.weight = 80;
+    // person.height = "180cm"
+    //吃方法
+    // person.eat = function(food){
+    //     console.log("吃了"+food);
+    //     person.weight=person.weight+1;
+    // }
+    //喝方法
+    //person.drink = function(x){
+    // console.log("吃了"+x)
+    //}
+    // person.eat("西瓜");
+    // console.log(person.weight)
+    // var person1 = new Object();
+// ```````````````````````````````````````````
+// function person(name,age,weight,height){
+//     var obj = new Object();
+//     obj.name = name;
+//     obj.age = age;
+//     obj.weight = weight;
+//     obj.height = height;
+//     obj.eat = function(food){
+//         console.log("吃了"+food);
+//         obj.weight+=1;
+//     }
+//     return obj;
+// }
+// var a = person("张三",18,80,180);
+// console.log(a);
+// a.eat("面包");
+// ·······································
+/*
+如果调用a.eat();
+先去实例对象a下找对应方法，如果不存在，去实例对象a的原型对象找eat方法，
+如果不存在，继续找原型对象的原型对象，知道找到，或者为null
+
+内存消耗问题，对象只想问题
+
+第一步：创建构造函数，将属性写在构造函数里
+第二步：添加方法，将方法通过原型模式添加
+ */
+
+function Person(name,age,weight,height){
+    this.name = name;
+    this.age = age;
+    this.weight = weight;
+    this.height = height; 
+}
+Person.prototype.eat = function(food){
+    console.log("吃了"+food);
+    this.weight+=1;
+    console.log(this.weight);
+}
+var a = new Person("张三",18,80,180);
+var b = new Person("李四",20,70,170);
+
+// console.log(Person.prototype);
+console.log(a);
+console.log(a.eat("西瓜"));
+console.log(b);
+console.log(b.eat("西瓜"));
+// console.log(a.__proto__);
+// console.log(b.__proto__);
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <button id="btn">点击</button>
+    <ul id="list">
+            <li>列表项1</li>
+            <li>列表项1</li>
+            <li>列表项1</li>
+            <li>列表项1</li>
+            <li>列表项1</li>
+            <li>列表项1</li>
+            <li>列表项1</li>
+    </ul> 
+</div> 
+<script>
+    window.onload =function(){
+        var btn =document.getElementById("btn");
+        var list =document.getElementById("list");
+        list.style.display="block";
+        btn.onclick =toogle;
+        function toogle(){
+            var state =list.style.display;
+            if(state == "block"){
+                list.style.display ="none"
+            }
+            else{
+                list.style.display = "block"
+            }
+        }
+    }    
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+        <input type="text" placeholder="请输入p1的名字">
+        </li>
+        <li>
+        <input type="text" placeholder="请输入p2的名字">
+        </li>
+         <li>
+        <button id="btn">开始PK</button>
+        </li>
+    </ul>
+    <div id="info">
+    </div>
+    <script>
+    function Person(name,hp,ad){
+        this.name = name;
+        this.hp = hp;
+        this.ad = ad;
+        this.hurt = 0;
+    }
+    Person.prototype.init = function(){
+        return "人物初始化成功，姓名："+this.name+"血量："+this.hp+"攻击力："+this.ad;
+    }
+    Person.prototype.fight = function(obj){
+        this.hurt = Math.floor(Math.random()*this.ad+1);
+        obj.hp = (obj.hp-this.hurt>=0)?(obj.hp-this.hurt):0;
+        return this.name+"对"+obj.name+"发起了攻击，对其造成了"+this.hurt+"的伤害，"+obj.name+"剩余"+obj.hp+"点血量";
+    }
+    var btn = document.getElementById('btn');
+    var input = document.getElementsByTagName('input');
+    var info = document.getElementById('info')
+    btn.onclick = function(){
+        var p1Name = input[0].value;
+        var p2Name = input[1].value;
+        start(p1Name,p2Name,info);
+    }
+    function start(name1,name2,ele){
+        var p1 = new Person(name1,100,20);
+        var p2 = new Person(name2,100,20);
+        var t = setInterval(function(){
+        ele.innerHTML += "<p>"+p1.fight(p2)+"</p>";
+        ele.innerHTML += "<p>"+p2.fight(p1)+"</p>";
+            if(p1.hp<=0 ||p2.hp<=0){
+                clearInterval(t);
+                ele.innerHTML+="<p>"+"游戏结束"+"</p>"
+            }
+        },1000) 
+    }
+</script>   
+</body>
+</html>

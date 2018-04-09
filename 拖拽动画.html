@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<style>
+		#box{
+			width: 300px;
+			height: 300px;
+			border-top: 2px solid;
+			border-bottom: 2px solid;
+			margin: 0 auto;
+			overflow: hidden;
+			position: relative;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			height: 300px;
+			width: 1800px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		li{
+			width: 300px;
+			height: 300px;
+			float: left;
+			/*background: red;*/
+			line-height: 300px;
+			text-align: center;
+			font-size: 30px;
+		}
+		#dot{
+            position: absolute;
+            bottom: 10px;
+            left:0;
+            right:0;
+            text-align:center;
+        }
+        .dot{
+        	display:inline-block;
+        	*display:inline;
+        	*zoom:1;
+        }
+        #dot em{
+            float: left;
+            width: 10px;
+            height: 10px;
+            border: 1px solid;
+            border-radius:50%;
+        }
+        #dot .active{
+            background: #000;
+        }
+
+	</style>
+</head>
+<body>
+<div id="box">
+	<ul>
+		<li>4</li><!-- 0  0-->
+		<li>1</li><!-- 1  1-->
+		<li>2</li><!-- 2  2-->
+		<li>3</li><!-- 3  3-->
+		<li>4</li><!-- 4  4-->
+		<li>1</li><!-- 5  5-->
+	</ul>
+	<div id="dot">
+		<div class="dot"></div>
+	</div>
+</div>
+<button id="pre">上一页</button>
+<button id="next">下一页</button>
+<script>
+window.onload=function(){
+		var box = document.getElementById('box');
+		var ul = document.getElementsByTagName('ul')[0];
+		var lis =ul.getElementsByTagName('li');
+		var pre = document.getElementById('pre');
+		var next = document.getElementById('next');
+		var liwidth = lis[0].offsetWidth;
+		var count = 1;
+		var fr = document.createElement("div");
+		var dot = document.getElementById("dot");
+		var dots =document.getElementsByTagName("em");
+		ul.style.left=-liwidth*count+"px";
+		fr.className="dot"
+		for(var i = 0;i<lis.length-2;i++){
+			var em = document.createElement("em");
+			em.index = i;
+				if(i == 0){
+					em.className = "active";
+				}
+				em.onclick = function(){
+				count=this.index+1;
+				changeDot(count-1);
+				move(ul,-liwidth*count,5);
+			}
+            	fr.appendChild(em);
+		}
+        	dot.appendChild(fr);
+// ··········································································
+	// 	next.onclick = function(){  //添加下一页事件
+	// 		count++;
+	// 		move(ul,-liwidth*count,5,function(){
+	// 		if(count ==lis.length-1){
+	// 			count=1;
+	// 			ul.style.left = -liwidth*count+"px";
+	// 		}		
+	// 	})
+	// }
+	// 	pre.onclick = function(){
+	// 		count--;
+	// 		move(ul,-liwidth*count,5,function(){
+	// 			if(count ==0){
+	// 				count=lis.length-2;
+	// 				ul.style.left = -liwidth*count+"px";
+	// 			}
+	// 		})
+	// 	};
+// ··········································································
+//封装函数
+var count =0;
+
+function changeImg(){//是点击上一页或者下一页的函数
+	clearTimeout(t);
+	pre.disabled = true;
+	next.disabled = true;
+	move(ul,-liwidth*count,5,function(){
+		if(count ==lis.length-1){
+			count=1;
+			ul.style.left = -liwidth*count+"px";
+		}
+		else if(count ==0){
+			count=lis.length-2;
+			ul.style.left = -liwidth*count+"px";		
+		}
+		pre.disabled = false;
+	    next.disabled = false;
+		t=setTimeout(function(){next.click()},1000);				
+	})
+}
+
+	function changeDot(aa){//点击圆圈的函数
+		for(var i = 0;i<dots.length;i++){
+		   dots[i].className=""
+		}
+		if(aa==lis.length-2) aa=0;
+		if(aa==-1) aa=lis.length-3;
+		dots[aa].className="active";
+	}
+
+	function mouseEvent(){//拉拖图片效果的函数
+			ul.onmousedown = function(event){
+				clearTimeout(t);
+				var e = event || window.event;
+				var clientX = e.clientX;
+				var x = e.clientX-ul.offsetLeft;
+				//先求出点击的点距离ul边缘的距离
+				ul.onmousemove = function(event){
+					var e = event || window.event;
+					ul.style.left = e.clientX - x +"px";
+				//每次移动都将当前的clientX-X，设置给Ul的left的值;
+				}
+				document.onmouseup = function(event){
+					var e = event||window.event;
+					if(Math.abs(clientX-e.clientX)>box.offsetWidth/2){
+						clientX>e.clientX? count++ : count--;
+					}	
+					changeDot(count-1);
+					changeImg();
+					ul.onmousemove="";
+					document.onmouseup = "";
+				}
+				// return false;
+			}	
+		}
+
+	function move(ele,target,speed,callback){//封装动画效果的函数
+			clearInterval(ele.t);
+			var speed = ele.offsetLeft<target?speed:-speed;
+			ele.t = setInterval(function(){
+				var val = ele.offsetLeft-target;
+				ele.style.left = ele.offsetLeft+speed+"px"
+				if(Math.abs(val)<=Math.abs(speed)){
+					clearInterval(ele.t);
+					ele.style.left=target+"px"
+					if(callback){callback();}
+				}
+			},10)
+		}
+	function nextPage (){
+		count++;
+		changeImg();
+		changeDot(count-1);
+	}
+	function prePage (){
+		count--;
+		 changeImg();
+		 changeDot(count-1);
+	}
+	function init(){
+		next.onclick = nextPage;
+		pre.onclick =  prePage;
+		t=setTimeout(function(){next.click()},1000);
+		mouseEvent();
+	}
+	init();
+}
+
+</script>
+</body>
+</html>

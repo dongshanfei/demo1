@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // function ajax(opt){
+    //     opt.method = opt.method.toUpperCase()||"POST";
+    //     opt.url = opt.url||"";
+    //     opt.data = opt.data||{};
+    //     var xhr;
+    //     if(window.XMLHttpRequest){
+    //         xhr = new XMLHttpRequest();
+    //     }
+    //     else{
+    //         xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    //     }
+    //     var params = [];
+    //     for(var i in opt.data){
+    //         params.push(i+"="+opt.data[i]);
+    //     }
+    //     var data = params.join('&');
+    //     if(opt.method =="post"){
+    //         xhr.open('POST',opt.url,true);
+    //         xhr.setRequestHeader('Content-type','applecation|x-www-form-urlencoded')
+    //         xhr.send(data);
+    //     }
+    //     else{
+    //         xhr.open('GET',opt.url+'?key='+Math.random()+"&"+data,true);
+    //         xhr.send();
+    //     }
+    //     xhr.onreadystatechange = function(){
+    //         if(xhr.readyState == 4 &&xhr.status == 200){
+    //             opt.success(xhr.responseText);
+    //         }
+    //     }
+    // }
+    // ajax({
+    //     method:'POST',
+    //     url:'',
+    //     data:{name:'张三',age:18},
+    //     success:function(data){
+    //         console.log("张三数据接收成功")
+    //     }
+
+    // })
+    // ajax({
+    //     method:'GET',
+    //     url:'',
+    //     data:{name:'李四',age:18},
+    //     success:function(data){
+    //         console.log('李四数据接收成功')
+    //     }
+    // })
+    function ajax(opt){
+            opt.method = opt.method.toUpperCase()||"POST";
+            opt.url = opt.url||"";
+            opt.data = opt.data||{};
+            opt.async = opt.async||true;
+            opt.success = opt.success||function(){};
+            opt.error = opt.error||function(){};
+            opt.complete = opt.complete||function(){};
+            opt.beforeSend = opt.beforeSend||function(){};
+
+            var xhr;
+            if(window.XMLHttpRequest){
+                xhr = new XMLHttpRequest();
+            }else{
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            var params = [];
+            for(var i in opt.data){
+                params.push(i+"="+opt.data[i]);
+            }
+            var data = params.join('&');
+            opt.beforeSend();
+            if(opt.method == "POST"){
+                xhr.open('POST',opt.url,opt.async);
+                xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xhr.send(data);
+            }else{
+                xhr.open("GET",opt.url+"?key="+Math.random()+"&"+data,opt.async);
+                xhr.send();
+            }
+
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    setTimeout(opt.complete,2000);
+                    // opt.complete();
+                    if(xhr.status==200){
+                        setTimeout(function(){
+                            opt.success(xhr.responseText);
+                        }, 2000)
+                        // opt.success(xhr.responseText);
+                    }else if(xhr.status == 404){
+                        //xhr.statusText错误信息
+                        opt.error(xhr.statusText);
+                    }
+                }
+            }
+        }
+</script>
+    
+</body>
+</html>

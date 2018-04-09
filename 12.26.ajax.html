@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax总结</title>
+</head>
+<body>
+<script>
+    var xhr;
+    if(window.XMLHttpRequest){
+        xhr = new XMLHttpRequest();
+    }
+    else{
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhr.open("GET","?name=zhangsan",true);
+    xhr.send();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState ==4&&xhr.status ==200){
+            alert("数据接收成功");
+        }
+    }
+    var xhr;
+        if(window.XMLHttpRequest){
+            xhr = new XMLHttpRequest();
+        }else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhr.open('POST',"",true);
+        xhr.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");//只有加上这个才能正常传递数据
+        xhr.send("name=zhangsan");
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                alert('数据接收成功');
+            }
+        }
+   
+
+</script>
+</body>
+</html>

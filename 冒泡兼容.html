@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    div{
+        width:300px;
+        height:200px;
+        background:orange;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <button id="btn">点我</button>
+    </div>
+    <a href="">页面跳转</a>
+<script>
+    var box = document.getElementById("box");
+    var btn = document.getElementById("btn");
+    var a =document.getElementsByTagName("a")[0];
+    function showbox(){
+        alert("点击了box")
+    } 
+     box.onclick = showbox;
+   
+    
+    function showbtn(event){
+        alert("点击了BTN")
+        event.stopPropagation();
+    } 
+    btn.onclick = function(event){
+        showbtn(event);
+    }
+    // 关于阻止冒泡行为的兼容
+    function stopPropagation(event){
+        if(event.stopPropagation){
+            even.stopPropagation()
+        }
+        else{
+            even.cancelBubble = true;
+        }
+    }
+    function showa(){
+        alert("您点击了A标签")
+        event.stopDefault(event);
+    }
+    a.onclick =function(){
+        showa(event);
+    }
+    // 关于阻止浏览器的默认行为的兼容
+    function stopDefault(event){
+                if(event.preventDefault){
+                    event.preventDefault();
+                }else{
+                    event.returnValue = false;
+                }
+            }
+</script>  
+</body>
+</html>
+<!-- even.stopPropagation();
+even.cancelBubble = true;
+event.stopDefault();
+event.returnValue = false; -->

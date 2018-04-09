@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #456c78;
+            position: relative;
+        }
+        #resize{
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: white;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            cursor: se-resize;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <em id="resize"></em>
+    </div>
+<script>
+var box =document.getElementById("box");
+var resize =document.getElementById("resize");
+resize.onmousedown = function(){
+        var e =event||window.event;
+        var width =parseInt(getComputedStyle(box,null).width),
+            height=parseInt(getComputedStyle(box,null).height);
+        var offsetX =e.clientX,
+            offsetY =e.clientY;
+    document.onmousemove = function(event){
+        var e =event||window.event;
+        box.style.width =e.clientX-offsetX+width+"px";
+        box.style.height =e.clientY-offsetY+height+"px";
+    }
+    document.onmouseup =function(){
+        document.onmousemove ="";
+        document.onmouseup ="";
+    }
+} 
+</script> 
+</body>
+</html>

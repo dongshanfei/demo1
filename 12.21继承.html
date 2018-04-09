@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+    this的指向问题
+    在littleaa中应该指向littleaa
+    使用call或者apply方法改变this的指向
+    函数名.call(this,参数1，参数2)；
+    函数名.apply(this,[参数1,,参数2]);
+    1.在要继承的子构造函数中调用父构造函数这样做会产生一个问题，this的指向问题，直接调用，this指向父构造函数
+    使用.call或者.apply将this指向自构造函数  函数名.apply(this,arguments);
+    2.将父的原型对象遍历
+    for(var i in 父.prototype){
+    子.prototype[i] = 父.prototype[i]
+    }
+    3.完成继承
+     */
+   function Tiger(name){
+            this.name = name;
+        }
+        Tiger.prototype.eatMeat = function(){
+            console.log('吃肉');
+        }
+        var tiger = new Tiger("张三");
+        console.log(tiger.name)
+        tiger.eatMeat();
+
+        function LittleTiger(name){
+       
+            Tiger.apply(this,arguments)
+        }
+
+        for(var i in Tiger.prototype){
+            console.log(i);
+            console.log(Tiger.prototype[i]);
+            LittleTiger.prototype[i] = Tiger.prototype[i];
+        }
+
+        var lTiger = new LittleTiger('李四');
+        console.log(lTiger.name);
+        lTiger.eatMeat();
+
+</script>
+</body>
+</html>

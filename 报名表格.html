@@ -1,0 +1,149 @@
+<!doctype html>
+    <html>
+        <head>
+            <meta charset="utf-8"/>
+            <title>表格</title>
+            <style type="text/css">
+            input,button,img,select{border:none;outline: none}
+            .fl{float:left;}
+            .box{width:1200px;margin:0 auto;}
+            .content_table table{width:70%;height:600px;text-align:center;margin:0 auto;}
+            .content_table .con_table_pr{text-align: right;margin-right: 185px;}  
+            .content_table .con_table_pr input{width:50px;border-bottom: 1px solid #888}
+            .content_table .td_x{width:50px;}
+            .table_sele select{border-bottom: 1px solid #888}
+             </style>
+        </head>
+            <body>
+            <div class="content_table box">
+                <h1>报名表格：</h1>
+                <p align="center">全国高等教育自学考试档案登记表</p>
+                <p class="con_table_pr">报名日期：<input type="text">年<input type="text">月<input type="text">日&nbsp;编号：<input type="text"></p>
+                <table border="1" cellspacing="0px"cellpadding="2px">
+                    <tr>
+                        <td class="td_s">姓名</td>
+                        <td><input type="text"></td>
+                        <td class="td_s">性别</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="">男</option>
+                                <option value="">女</option>
+                            </select>
+                        </td>
+                        <td rowspan="5" colspan="2">照片<br><a href="">上传照片</a></td>
+                    </tr>
+                    <tr>
+                        <td>民族</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="">汉族</option>
+                                <option value="">回族</option>
+                            </select>
+                        </td>
+                        <td>户籍</td>
+                        <td>
+                            <select name="" id="" class="fl">
+                                <option value="">河南省</option>
+                                <option value="">浙江省</option>
+                            </select>
+                            <select name="" id="" class="fl"> 
+                                <option value="">郑州市</option>
+                                <option value="">杭州市</option>
+                            </select>
+                        </td>
+                    </tr><!-- colspan="3" -->
+                    <tr>
+                        <td>政治面貌</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="">党员</option>
+                                <option value="">群众</option>
+                            </select>
+                        </td>
+                        <td>户籍类型</td>
+                        <td>
+                            <input type="radio" name="http"><span>城市</span>
+                            <input type="radio" name="http"><span>农村</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>学校与校区</td>
+                        <td><input type="text"></td>
+                        <td>目前学历</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="">本科</option>
+                                <option value="">大专</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>目前专业</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>E-mall</td>
+                        <td><input type="text"></td>
+                        <td>移动电话</td>
+                        <td colspan="3"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>QQ</td>
+                        <td><input type="text"></td>
+                        <td>身份证号</td>
+                        <td colspan="3"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><h3>报名报考</h3></td>
+                    </tr>
+                    <tr>
+                        <td>报考专业</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="">工商</option>
+                                <option value="">人力</option>
+                            </select>
+                        </td>
+                        <td>考试类型</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="">高起专</option>
+                                <option value="">专升本</option>
+                            </select>
+                        </td>
+                        <td>主考院校所在省份</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="">河南省</option>
+                                <option value="">浙江省</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="table_sele">
+                        <td>备注</td>
+                        <td colspan="5">第一次参加考试为
+                            <select name="" id="">
+                                <option value="">河南</option>
+                                <option value="">浙江</option>
+                            </select>
+                          省<select name="" id="">
+                                <option value="">郑州</option>
+                                <option value="">杭州</option>
+                            </select>（市） <select name="" id="">
+                                <option value="">2017</option>
+                                <option value="">2016</option>
+                            </select> 年 <select name="" id="">
+                                <option value="">4</option>
+                                <option value="">7</option>
+                            </select> 月份考试</td>
+                    </tr>
+                    <tr>
+                        <td>通讯地址：</td>
+                        <td colspan="5"><input type="text"></td>
+                    </tr>
+                </table>
+            </div>
+        </body>
+    </html>

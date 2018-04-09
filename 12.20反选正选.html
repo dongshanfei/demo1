@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="check">
+    <input type="checkbox">
+    <button>反选</button>
+    <div>
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+    </div>
+    <div id="check2">
+     <input type="checkbox">
+    <button>反选</button>
+    <div>
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+    </div>
+    </div>
+    <div id="check3">
+     <input type="checkbox">
+    <button>反选</button>
+    <div>
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+        <input type="checkbox" >
+    </div>
+    </div>
+    <script>
+function Check(ele){
+    this.check = document.getElementById(ele);
+    this.checkbox = this.check.getElementsByTagName('input')[0];
+    this.btn = this.check.getElementsByTagName('button')[0];
+    this.div = this.check.getElementsByTagName('div')[0];
+    this.checkboxs = this.div.getElementsByTagName('input');
+}
+Check.prototype.aa = function(){
+    var _this=this;
+    this.checkbox.onclick = function(){
+       _this.all(this);
+    }
+    this.btn.onclick = function(){
+       _this.fan();
+    }
+}
+Check.prototype.all = function(ff){
+     for(var i = 0;i<this.checkboxs.length;i++){
+            this.checkboxs[i].checked=ff.checked;
+        }
+}
+Check.prototype.fan = function(){
+     for(var i=0;i<this.checkboxs.length;i++){        
+        this.checkboxs[i].checked=!this.checkboxs[i].checked;
+        }
+}
+window.onload = function(){
+    var check = new Check("check");
+    check.aa();
+    var check = new Check("check2");
+    check.aa();
+    var check = new Check("check3");
+    check.aa();
+}
+</script>
+</div>
+</body>
+</html>

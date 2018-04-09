@@ -1,0 +1,39 @@
+gulp:
+browsersync 同步 server open 
+uglify      压缩JS  好处：体积小下载速度快
+sass        把scss文件编译成css。变量：（皮肤这块）（公用的样式，尤其是颜色）
+                                 嵌套：代码量少，结构清晰，便于维护，
+                                 @extend,
+                                 %(占位符)
+				 @import引入css文件
+				 @mixin
+				 @function(函数)
+          
+
+开发：sass   模块 
+	↓
+      autoprefixer 自动加前缀
+	↓
+      sprite 自动加雪碧图
+     	↓
+      rename 
+	↓
+      cssmin 
+
+		  
+concat      合并文件
+imagemin    压缩图片（png ,gif, jpg, svg, ico） 不会失真
+
+
+
+
+                        APP自适应：
+                                 1.px+%
+                                 2.rem+js（动态修改font-size）
+                                 3.rem+media query
+base64图片格式 优点：1.减少http请求
+	             2.视觉效果好
+		缺点：
+		     1.兼容性不好。
+                     2.文件太大 字符串太多 太长
+                     3.html css代码难维护

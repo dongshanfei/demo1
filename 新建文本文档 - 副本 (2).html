@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button id="btn">点我</button>
+<script> 
+    function addEvent (type,handle,ele){
+        if(ele.addEventListener){
+            ele.addEventListener(type,handle,false);
+        }else if(ele.attachEvent){
+            ele.attachEvent("on"+type,handle);
+        }
+        else{
+            ele["on"+type] = handle;
+        }
+    }
+
+    var btn =document.getElementById("btn");
+    function show(){
+        alert(1);
+    }
+    function show2(){
+        alert(2);
+    }
+    addEvent("click",show,btn);
+    addEvent("click",show2,btn);
+    btn.removeEventListener("click",show);
+</script>
+</body>
+</html>
