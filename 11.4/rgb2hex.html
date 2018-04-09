@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var a=prompt("请在0-255之间选择输入为R值");
+    var b=prompt("请在0-255之间选择输入为G值");
+    var c=prompt("请在0-255之间选择输入为B值");
+    var x=parseInt(a);
+    var y=parseInt(b);
+    var z=parseInt(c);
+    if(x<16){
+        x="0"+x.toString(16);
+    }else{
+        x=x.toString(16);
+    }
+     if(y<16){
+        y="0"+y.toString(16);
+    }else{
+        y=y.toString(16);
+    }
+    if(z<16){
+        z="0"+z.toString(16);
+    }else{
+        z=z.toString(16);
+    }
+       alert("#"+x+y+z);
+
+
+
+
+</script>
+    
+</body>
+</html>
