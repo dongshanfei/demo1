@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="sel1">
+        <option value="">请选择</option>
+    </select>
+    <select name="" id="sel2">
+        <option value="">请选择</option>
+    </select>
+    <select name="" id="sel3">
+        <option value="">请选择</option>
+    </select>
+    <script src = "1.js"></script>
+    <script>
+var sel1 = document.getElementById('sel1');
+var sel2 = document.getElementById('sel2');
+var sel3 = document.getElementById('sel3');
+var sel1Index,sel2Index;
+    var html = "<option value='请选择'>请选择</option>";
+    for(var i = 0;i<area.length;i++){
+        html+="<option value='"+area[i].name+"'>"+area[i].name+"</option>"
+    }
+    sel1.innerHTML=html;
+    sel1.onchange = function(){
+        sel1Index = this.selectedIndex-1;
+        console.log(sel1Index);
+        var val = this.value;
+        var html ="<option value='请选择'>请选择</option>"
+        for(var i = 0;i<area[sel1Index].city.length;i++){
+            html+="<option value='"+area[sel1Index].city[i].name+"'>"+area[sel1Index].city[i].name+"</option>"
+        }
+        sel2.innerHTML = html;
+    }
+    sel2.onchange = function(){
+        var val = this.value;
+        var html = "<option value=''>请选择</option>"
+        for(var i = 0;i<area.length;i++){
+            for(var j = 0;j<area[i].city.length;j++){
+                if(val == area[i].city[j].name){
+                    for(var m =0;m<area[i].city[j].area.length;m++){
+                        html+="<option value='"+area[i].city[j].area[m]+"'>"+area[i].city[j].area[m]+"</option>"
+                    }
+                    sel3.innerHTML = html;
+                    break;
+                }
+            }
+        }
+    }
+
+    </script>
+</body>
+</html>

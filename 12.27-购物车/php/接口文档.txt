@@ -1,0 +1,31 @@
+"./php/del.php"           //删除接口
+	将id传过去   
+	{"message":"success"}
+	{"message":"error"}
+"./php/getPrice.php"	  //获取价格接口
+	将id和数量传过去
+
+
+1 选择
+	单选
+		计算价格
+		（通过ajax获取价格）
+	全选
+		计算价格
+		（通过ajax获取价格）
+2 删除
+	（通过ajax传递id）
+	删除单个
+		计算价格
+		（通过ajax获取价格）
+	删除选中的
+		计算价格
+		（通过ajax获取价格）
+
+3 数量的加减
+		既要计算单行价格，还要计算总价
+		（通过ajax获取价格）
+
+4 计算价格和数量
+	trTotal();
+	totalPrice();

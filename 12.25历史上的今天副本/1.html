@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点一下</button>
+    <div id="show"></div>
+    <script>
+     var btn = document.getElementById('btn');
+     var show = document.getElementById('show');
+     btn.onclick = function(){
+        ajax({
+            method:'GET',
+            url:'http://apis.baidu.com/avatardata/historytoday/lookup',
+            headers:{
+                apikey:"96f626cadc7ba68c1013c2fc23a2e864"
+            },  
+            data:{
+               yue:12,
+               ri:29,
+               type:1 
+            },
+            success:function(data){
+                var json = JSON.parse(data);
+                var result = json.result;
+                var str ="";
+                for(var i =0;i<result.length;i++){
+                    str+="<p>"+result[i].title+"</p>";
+                }
+                show.innerHTML=str;
+            },
+            error:function(data){
+                alert("OVER")
+            }
+        })
+     }
+//ajax的封装
+    function ajax(opt){
+            opt.method = opt.method.toUpperCase()||"POST";
+            opt.url = opt.url||"";
+            opt.data = opt.data||{};
+            opt.async = opt.async||true;
+            opt.success = opt.success||function(){};
+            opt.error = opt.error||function(){};
+            opt.complete = opt.complete||function(){};
+            opt.beforeSend = opt.beforeSend||function(){};
+            opt.headers = opt.headers||{};
+            var xhr;
+            if(window.XMLHttpRequest){
+                xhr = new XMLHttpRequest();
+            }else{
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            var params = [];
+            for(var i in opt.data){
+                params.push(i+"="+opt.data[i]);
+            }
+            var data = params.join('&');
+            opt.beforeSend();
+            if(opt.method == "POST"){
+                xhr.open('POST',opt.url,opt.async);
+                xhr.setRequestHeader('apikey',opt.headers.apikey);
+                xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xhr.send(data);
+            }else{
+                xhr.open("GET",opt.url+"?svc="+Math.random()+"&"+data,opt.async);
+                xhr.setRequestHeader('apikey',opt.headers.apikey);
+                xhr.send();
+            }
+
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    setTimeout(opt.complete,1000);
+                    // opt.complete();
+                    if(xhr.status==200){
+                        setTimeout(function(){
+                            opt.success(xhr.responseText);
+                        }, 1000)
+                        // opt.success(xhr.responseText);
+                    }else if(xhr.status == 404){
+                        //xhr.statusText错误信息
+                        opt.error(xhr.statusText);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

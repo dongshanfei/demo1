@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ip地址解析</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入域名" id="ip">
+    <button id="btn">解析</button>
+    <div id="show"></div>
+    <script>
+        var show = document.getElementById('show');
+        function getIP(data){
+            var result = data.result;
+            var html = "位置："+result.area+","+result.location;
+            show.innerHTML = html;
+        }
+        var ip = document.getElementById('ip');
+        var btn = document.getElementById('btn');
+        btn.onclick = function(){
+            var script = document.createElement('script');
+            script.src = "http://apis.juhe.cn/ip/ip2addr?ip="+ip.value+"&key=32bf723782b8c4235b5f9bec62e88ab1&dtype=jsonp&callback=getIP";
+            http://apis.juhe.cn/ip/ip2addr?ip=www.juhe.cn&key=appkey
+            document.body.appendChild(script);
+        }
+        /*
+            在我们访问的页面中动态的生成一个script标签
+            标签中有一段js代码
+                功能是调用上面的声明的函数的
+        */
+    </script>
+    <script src=""></script>
+</body>
+</html>
