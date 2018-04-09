@@ -1,0 +1,20 @@
+<!-- 1、判断一个数字是否是奇数或者偶数，如果是返回对应类型，如果不是返回-1 -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var num = prompt("请您输入一个数值，系统自动判断是否为基数或者偶数")
+    function fun(a){
+        if(a%2 ==0)  return("偶数");
+        else if(a%2 ==1) return("奇数");
+        return(-1);      
+    }
+    alert(fun(num));
+</script>
+    
+</body>
+</html>

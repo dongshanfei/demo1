@@ -1,0 +1,80 @@
+<!-- 
+2、
+1）点击添加用户会新增一个用户到列表中
+2）点击删除用户会将所在行用户删除。（这个功能不需要做）
+ -->
+ <!doctype html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    table tr td{
+        border:1px solid black;
+        text-align: center;
+    }
+    table{
+        width:630px;
+        border-collapse:collapse;
+    }
+    </style>
+ </head>
+ <body>
+    <div class="parent">
+        <label for="input">姓名:</label><input type="text" id="input1">  <label >联系方式:</label><input type="text" id="input2">
+        <label >年龄:</label> <input type="text" id="input3">
+        <button id="btn">添加用户</button> 
+     </div>
+    <hr>
+    <table id="table">
+            <tr id="tr">
+                <td id="td">姓名</td>
+                <td id="td1">联系方式</td>
+                <td id="td2">年龄</td>
+                <td id="td3">操作</td>
+            </tr>
+    </table>
+    <script>
+    var input =document.getElementById("input");
+    var td1 =document.getElementById("td");
+    var btn =document.getElementById("btn");
+    var table =document.getElementById("table");
+    btn.onclick =function(){
+        if(input1.value&&input2.value&&input3.value){
+            var tr =document.createElement("tr");  
+            var td1 =document.createElement("td");
+            var td2 =document.createElement("td");
+            var td3 =document.createElement("td");
+            var td4 =document.createElement("td");
+            var del =document.createElement("button");
+            del.innerHTML="删除";
+            del.onclick=function(){
+            table.removeChild(del.parentNode.parentNode)
+        }
+        td1.innerHTML=input1.value;
+        td2.innerHTML=input2.value;
+        td3.innerHTML=input3.value;
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        td4.appendChild(del);
+        tr.appendChild(td4);
+        table.appendChild(tr);
+        }
+        else{alert("数据不全")}
+       
+        
+        
+    }
+
+    
+    // var html ="";
+    // btn.onclick=function(){
+    //     html+="<tr>"+"<td>"+input1.value+"</td>"+"<td>"+input2.value+"</td>"+"<td>"+input3.value+"</td>"+"</tr>"
+    //     table.innerHTML=html;
+    // }
+
+    </script>
+ </body>
+     
+ </html>

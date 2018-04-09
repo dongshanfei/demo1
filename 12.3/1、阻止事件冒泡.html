@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #movieList{
+            list-style: none;
+            margin:0;
+            padding: 30px 0;
+            background: #eee;
+        }
+        #movieList li{
+            padding: 5px 10px;
+            width: 200px;
+            height: 50px;
+            background: #000;
+            color: #fff;
+            line-height: 50px;
+        }
+        #movieList li:hover{
+            background: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <h3>电影列表</h3>
+    <ul id="movieList">
+        <li>《你的名字》</li>
+        <li>《奇异博士》</li>
+        <li>《三少爷的剑》</li>
+        <li>《神奇动物在哪里》</li>
+        <li>《海洋奇缘》</li>
+    </ul>
+    <ul id="show"></ul>
+    <script>
+        /*
+        * 要求：
+        *   当点击整个UL时，将整个列表渲染至show
+        *   当点击LI时，将对应li渲染至show
+        * */
+        var show = document.getElementById("show");
+        var ul =document.getElementById("movieList");
+        // function showul(){
+        //     var html =ul.innerHTML;
+        //     show.innerHTML =html
+        // }
+        // ul.onclick=showul;
+        ul.onclick=function(){
+            show.innerHTML=ul.innerHTML;
+        }
+
+
+
+
+        var li =document.getElementsByTagName("li");
+        
+        for(var i =0;i<li.length;i++){
+            li[i].onclick=function(event){
+                var e =event||window.event;
+                var html =this.outerHTML;
+                show.innerHTML=html;
+                if(e.stopPropagation){
+                    e.stopPropagation();
+                } 
+                else{
+                    e.cancelBubble=true;
+                }
+            }
+
+        }
+        
+
+
+
+
+        
+        
+        
+    </script>
+</body>
+</html>

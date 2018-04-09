@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+			font-family: "微软雅黑";
+		}
+		ul{
+			
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			background: #bbb;
+			height: 80px;
+		}
+		li{
+			float: left;
+			height: 80px;
+			width: 100px;
+			text-align: center;
+			line-height: 80px;
+			color: #333;
+		}
+		li:hover{
+			background: pink;
+
+		}
+		div{
+			padding: 10px;
+		}
+		button{
+			width: 90px;
+			height: 40px;
+			background: black;
+			border: none;
+			color: white;
+		}	
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li>分类</li>
+		<li>分类</li>
+		<li>分类</li>
+		<li>分类1</li>
+	</ul>
+	<div>
+		<button>添加分类</button>
+		<button>删除分类</button>
+	</div>
+<script>
+	/*
+		点击添加分类就在最后面添加一个分类，分类后的数字按当前分类递增
+		点击删除分类就在最后删除一个分类，删除后再点添加按当前分类递增
+
+	*/
+ 
+    var li =document.getElementsByTagName("li");
+    var add =document.getElementsByTagName("button")[0];
+    var del =document.getElementsByTagName("button")[1];
+    var ul =document.getElementsByTagName("ul")[0];
+   //兼容问题
+    function getLastChild (ele){
+        if(ele.lastElementChild){return ele.lastElementChild;} //如果存在，就是主流
+        else{return ele.lastChild;}//如果不存在，就是IE8以下
+    }
+
+    add.onclick=function(){
+        var liNode =document.createElement("li");
+        if(ul.firstElementChild){
+        var lastNode =getLastChild(ul);
+        var aa =lastNode.innerText;
+        var bb =aa.split("分类")[1];
+        if(!bb){
+            liNode.innerHTML="分类1";}  
+        else{
+            liNode.innerHTML="分类"+(parseInt(bb)+1);
+        } 
+         ul.appendChild(liNode);
+        } 
+        else{
+             var liNode1=document.createElement("li")
+             liNode1.innerHTML="分类1";
+             ul.appendChild(liNode1);
+            }
+         } 
+    del.onclick=function(){
+        if(ul.innerHTML){
+            ul.removeChild(getLastChild(ul));
+        }
+        else{
+            alert("完了")
+        }
+        
+
+    }
+    
+
+</script>
+
+</body>
+</html>

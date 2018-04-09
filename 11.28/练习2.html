@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2>通过操作ul将li都变成相同的样式，黑底白字</h2>
+	<ul>
+		<li>我是第一个孩子</li>
+		<li>我是第二个孩子</li>
+		<li>我是第三个孩子</li>
+	</ul>
+	<script>
+	var ul =document.getElementsByTagName("ul");
+	var lis =ul.children;
+	for(var i =0;i<lis.length;i++){
+		lis[i].style.color="#fff";
+		lis[i].style.background="#000";
+	}
+
+	</script>
+</body>
+</html>

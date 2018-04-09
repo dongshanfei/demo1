@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container{
+            width:500px;
+            margin: 0 auto;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="box">
+        <img src="img/1.jpg" alt="" width="500" height="300">
+    </div>
+    <button id="pre">上一页</button>
+    <button id="next">下一页</button>
+    <script>
+        /*
+        * 自己在网上找四张图片
+        * 
+        * 要求：
+        *   点击上一页，切换上一张图片
+        *   点击下一页，切换下一张图片
+        *   当切换到最后一页时点击下一页切换到第一页
+        *   当切换到第一页时，点击上一页切换到最后一页
+        *   
+        * 知识点：
+        *   事件绑定
+        *   改变.src属性
+        * 难点解决：
+        *   需要引入一个变量，初始值为0，当点击下一页时，这个值加一，当点击上一页时这个值减一
+        *   这个值一直与当前的图片在数组中的下标相同
+        * */
+        var imgArr = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg",];//存储图片地址
+
+
+        var pre =document.getElementById("pre");
+        var next =document.getElementById("next");
+        var img =document.getElementsByTagName("img")[0];
+        var num =0;
+
+        next.onclick =function(){
+            num++;
+            if(num == imgArr.length){
+                num=0;
+            }
+            img.src =imgArr[num];
+        }
+
+        pre.onclick = function(){
+            num--;
+            if(num == -1){
+                num = imgArr.length-1;
+            }
+            img.src = imgArr[num];
+        }
+
+    </script>
+</body>
+</html>

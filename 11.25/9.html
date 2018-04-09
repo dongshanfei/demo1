@@ -1,0 +1,20 @@
+<!-- 9、数组去重（面试常见题） -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var arr =[12,23,12,56,45,78,45,78,66,23];
+    for(var i=0;i<arr.length-1;i++){
+       for(var j =i+1;j<arr.length;j++){
+           if(arr[i] ==arr[j]){arr.splice(j,1)};
+       }
+    }
+    document.write(arr);
+ 
+    </script>
+</body>
+</html>

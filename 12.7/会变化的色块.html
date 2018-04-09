@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#box{
+			width: 500px;
+			height: 500px;
+			background:red;
+            margin:0 auto;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		/*
+			编写一个函数，使box的背景颜色每一秒改变一次
+			用两种方法写
+		*/
+    
+        function random(){
+         return Math.floor(Math.random()*256)
+        }
+        var box = document.getElementById("box");
+		function changeBg(){
+                var r=random();
+                var g=random();
+                var b=random();
+                box.style.background="rgb("+r+","+g+","+b+")";
+
+		}
+        setInterval(changeBg,1000);
+	</script>
+</body>
+</html>

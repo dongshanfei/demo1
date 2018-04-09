@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习1</title>
+	<style>
+		*{
+			outline: none;
+		}
+		body{
+			font-family: "微软雅黑";
+		}
+		#box{
+			/*padding: 10px;*/
+			border: solid #28a956 3px;
+			width: 400px;
+			border-bottom: none;
+		}
+		#box p{
+			/*padding: 10px;*/
+			margin: 0;
+			border-bottom: 3px #28a956 solid;
+			padding: 10px;
+			font-size: 14px;
+		}
+		input{
+			border:none;
+			background: #28a956;
+			color: #fff;
+			vertical-align: top;
+			padding: 10px;
+		}
+		button{
+			border: none;
+			background: #28a956;
+			color: #fff;
+			vertical-align: top;
+			padding: 10px;
+		}
+		#add{
+			margin-top: 10px;
+		}
+		#message{
+			border:solid 1px #28a956;
+			background: #fff;
+			color: #333;
+		}
+		#add button{
+			border:solid 1px #28a956;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<p><input type="text" value="留言留言留言"><button>确认修改</button></p>
+		<p><span id="span">留言留言留言留言留言留言留言留言留言</span></p>
+		<p><span>留言留言留言留言留言留言留言留言留言</span></p>
+		<p><span>留言留言留言留言留言留言留言留言留言</span></p>
+		<p><span>留言留言留言留言留言留言留言留言留言</span></p>
+		<p><span>留言留言留言留言留言留言留言留言留言</span></p>
+		<p><span>留言留言留言留言留言留言留言留言留言</span></p>
+		<p><span>留言留言留言留言留言留言留言留言留言</span></p>
+		<p><span>留言留言留言留言留言留言留言留言留言</span></p>
+		<p><span>留言留言留言留言留言留言留言留言留言</span></p>
+		<p><span>留言留言留言留言留言留言留言留言留言</span></p>
+	</div>
+	<div id="add">
+		<input type="text" id="message"><button id="btn">添加留言</button>
+		
+	</div>
+	
+	<script>
+	/*e.target   e.srcElement  就是点击的DOM对象*/
+	var box =document.getElementById("box");
+	var btn =document.getElementById("btn");
+	btn.onclick=function(){
+		if(message.value){
+		var html="<p><span>"+message.value+"</span></p>"
+		box.innerHTML+=html;
+		}
+		else{
+			alert("你没输入东西");
+		}
+	}
+	box.onclick=function(event){
+		var e =event||window.event;
+		var target =e.target||e.srcElement;
+		if(target.nodeName.toUpperCase() == "SPAN"){
+			target.outerHTML ="<input type=\"text\" value=\""+target.innerHTML+"\"><button class=\"xiugai\">确认修改</button><button class=\"del\">删除</button>"
+		}
+		if(target.className.toUpperCase() =="XIUGAI"){
+			target.parentNode.innerHTML="<span>"+target.previousSibling.value+"</span>"
+		}
+	    if(target.className.toUpperCase() =="DEL"){
+	    	target.parentNode.outerHTML="";
+	    }
+
+	}
+	</script>
+</body>
+</html>

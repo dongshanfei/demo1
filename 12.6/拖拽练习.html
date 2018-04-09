@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    .photo{
+    	width:1440px;
+    	height:900px;
+    	background:url(4150204153953.jpg) no-repeat;
+    	margin:0 auto;
+    }
+	#box{
+		width:500px;
+		height:500px;
+		background-color: rgba(0,0,0,0.3);
+    	position:absolute;
+    	top:20%;
+    	left:35%;
+	}
+	#henglan{
+		width:500px;
+		height:30px;
+		border-bottom:1px solid #7c7c7c;
+	}
+	 #btn{
+		width:300px;
+		height:40px;
+		border:none;
+	    margin: 100px 0 0 110px;
+        border-radius: 10px;
+    	float:left;
+    }
+    .denglu{
+    	float:left;
+    	width:207px;
+    	height:50px;
+    	margin: 180px 0 0 130px;
+    }
+	</style>
+</head>
+<body>
+<div class="photo">
+	<div id="box">
+		<div id="henglan"></div>
+		<div class="denglu">
+			<label for="aa">账号: <input text="" id="aa"></label>
+			<br/>
+			<label for="bb">密码: <input text="" id="bb"></label>
+		</div>
+	<button id="btn">点一下</button>
+	</div>
+</div>
+ <script>
+	              //写一个登录页面
+			      //要求：半透明遮罩
+				  // 垂直水平居中
+				  // 鼠标放在上面最上面30px高部分生效
+				  // 可拖拽
+	var henglan = document.getElementById("henglan");
+	var box = document.getElementById('box');
+	henglan.onmousedown = function(event){
+			var e = event || window.event;
+			offsetX = e.clientX - box.offsetLeft;
+			offsetY = e.clientY - box.offsetTop;
+		document.onmousemove = function(event){
+				var e = event||window.event;
+				box.style.left = e.clientX - offsetX +"px";
+				box.style.top  = e.clientY - offsetY +"px";
+			}
+		}
+		document.onmouseup = function(){
+			document.onmousemove = "";
+		}
+ </script>	
+		
+					
+				
+	
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            height:500px;
+            /*background:red;*/
+        }
+        .img1{
+            background:url(1.png) no-repeat center;
+            background-attachment:fixed;
+        }
+         .img2{
+            background:url(2.png) no-repeat center;
+            background-attachment:fixed;
+
+        }
+         .img3{
+            background:url(3.png) no-repeat center;
+            background-attachment:fixed;
+
+        }
+         .img4{
+            background:url(4.png) no-repeat center;
+            background-attachment:fixed;
+
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div class="img1" id="img1"></div>
+<div></div>
+<div class="img2"></div>
+<div></div>
+<div class="img3"></div>
+<div></div>
+<div class="img4"></div>
+    <script>
+        var img1 = document.getElementById("img1");
+        var top = document.body.scrollTop||document.documentElement.scrollTop;
+        var y =0;
+        window.onscroll = function(){
+            if(document.body.scrollTop>top){
+                y-=0.5;
+                 img1.style.backgroundPosition="0 "+y+"px";
+            }
+            else{
+                y+=0.5;
+                 img1.style.backgroundPosition="0 "+y+"px";
+            }
+            top = document.body.scrollTop||document.documentElement.scrollTop
+        }
+    </script>
+</body>
+</html>

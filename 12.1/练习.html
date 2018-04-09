@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表排序</title>
+</head>
+<body>
+	<ul id="ul">
+		<li>4312</li>
+		<li>6543</li>
+		<li>432</li>
+		<li>764</li>
+		<li>765</li>
+		<li>234</li>
+		<li>98</li>
+		<li>327876</li>
+		<li>423</li>
+		<li>65</li>
+	</ul>
+	<button id="btn">排序列表</button>
+	<script>
+		/*点击排序列表，将原列表改变成从小到大的排序方式*/
+ 	var ul = document.getElementById("ul");
+ 	var li = ul.getElementsByTagName("li");
+ 	var btn = document.getElementById("btn");
+
+
+ 	// function aa(a,b){
+ 	// 		if(a>b){return a-b;}
+ 	// 	    else if(a<b){return  1;}
+ 	// 	    else{ return 0}
+ 	// } 
+
+
+ 	var bb =[];
+ 	for(var i =0;i<li.length;i++){
+        bb.push(li[i].innerHTML)
+    } 
+    console.log(bb.sort(function(a,b){
+    	return a-b;
+    }));
+ 
+ 	btn.onclick=function(){
+       var html ="";
+       for(var i=0;i<bb.length;i++){
+       	html+="<li>"+bb[i]+"</li>"
+       }
+       ul.innerHTML=html;
+       
+    }
+    
+       
+
+	</script>
+</body>
+</html>

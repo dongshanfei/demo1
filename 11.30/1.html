@@ -1,0 +1,41 @@
+<!-- 1、var city = [“北京“,”上海”, ”广州”, ”深圳”, ”河南”, ”陕西”, ”山西”, ”河北”,”重庆”]
+
+请将渲染上述数据至select，注意生成的option的value属性与城市名相同
+
+ -->
+ <!doctype html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <title>Document</title>
+ </head>
+ <body>
+        <select name="select" id="select" style="width:100px" >
+        </select>
+ <script>
+    var city   = ["北京","广州" ,"深圳","河南","陕西","山西","河北","重庆"];
+    var select =document.getElementById("select");
+   
+    // for(var i=0;i<city.length;i++){
+    // var option =document.createElement("option")
+    //    option.innerHTML=city[i]
+    //    select.appendChild(option);  
+    // }
+    // select.selectedIndex=city.length-1;
+    
+    var html ="";
+    for(var i =0;i<city.length;i++){
+        html+="<option>"+city[i]+"</option>"
+    }select.innerHTML=html;
+     select.selectedIndex=city.length-1;
+
+
+
+
+
+
+
+ </script>
+     
+ </body>
+ </html>

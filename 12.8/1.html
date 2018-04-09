@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </div>
+</body>
+<script>
+        var input = document.getElementsByTagName("input");
+        for(var i=0;i<input.length;i++){
+            input[i].onclick =function(){
+                for(var j=0;j<input.length;j++){
+                    if(input[j].checked==true){
+                        setCookie("name","j",10);
+                    }
+                }
+            }
+        }
+        //建立cookie
+        function setCookie(key.value,eDay){
+            var date =new Date();
+            date.setTime(date.getTime()+eDay*24*60*60*1000);
+            document.cookie =key+"="+value+";expirse="+date;
+        }
+        //得到cookie
+        function getCookie(key){
+            var key = key+"=";
+            var arr =document.cookie.split(";");
+            for(var i =0;i<arr.length;i++){
+                var c = arr[i].trim();
+                if(c.indexOf(key)==0){
+                    return c.slice(key.length);
+                }
+            }
+            return "";
+        }
+</script>
+</html>

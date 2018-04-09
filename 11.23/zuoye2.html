@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+      <style>
+             ul{
+                list-style:none;
+                margin:0;
+                padding:0;
+             }
+             li{
+                float:left;
+                width:100px;
+                height:100px;
+                background:red;
+             }
+      </style>
+</head>
+<body>
+      <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+      </ul>
+      <script>
+          var lis = document.getElementsByTagName("li");
+          var ul =document.getElementsByTagName("ul")[0];
+          
+
+          // function getElement(ele){
+          //   if(ele.currentStyle){
+          //       return ele.currentStyle;
+          //   }else{
+          //       return getComputedStyle(ele,null);
+          //   }
+          // }
+
+          
+          ul.style.width=lis.length*parseInt(getElement(lis[0])).width+"px"
+      </script>
+</body>
+</html>

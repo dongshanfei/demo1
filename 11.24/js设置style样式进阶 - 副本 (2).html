@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box1{
+			width: 300px;
+			height: 300px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<script> 
+	   
+	    function getElement(ele){
+		   if(ele.currentStyle){
+			   return ele.currentStyle;
+		   }else{
+			   return getComputedStyle(ele,null);
+		   };
+	    };
+
+		var box1 =document.getElementById("box1");
+		var box2 =document.getElementById("box2");
+		box2.style.width =getElement(box1).width;
+		box2.style.height =getElement(box1).height;
+		box2.style.backgroundColor =getElement(box1).backgroundColor;
+		console.log(box2);
+
+
+
+		// var box1 =document.getElementById("box1");
+		// var box2 =document.getElementById("box2");
+		// box2.style.width =getComputedStyle(box1).width;
+		// box2.style.height =getComputedStyle(box1).height;
+		// box2.style.backgroundColor =getComputedStyle(box1).backgroundColor;
+		// console.log(box2);
+		
+
+
+		// var box1 =document.getElementById("box1");
+		// var box2 =document.getElementById("box2");
+		// box2.style =getComputedStyle(box1).style;
+		// console.log(box2);
+		
+	</script>
+</body>
+</html>

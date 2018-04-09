@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习1</title>
+	<style>
+		*{
+			outline: none;
+			box-sizing: border-box;
+		}
+		body{
+			font-family: "微软雅黑";
+		}
+		#box{
+			/*padding: 10px;*/
+			border: solid #28a956 3px;
+			width: 400px;
+			border-bottom: none;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		p{
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		#box li{
+			/*padding: 10px;*/
+			margin: 0;
+			border-bottom: 3px #28a956 solid;
+			padding: 10px;
+			font-size: 14px;
+		}
+		input{
+			border:none;
+			background: #28a956;
+			color: #fff;
+			vertical-align: top;
+			padding: 10px;
+		}
+		button{
+			border: none;
+			background: #28a956;
+			color: #fff;
+			vertical-align: top;
+			padding: 10px;
+		}
+		#add{
+			margin-top: 10px;
+			width: 400px;
+		}
+		#message{
+			
+		}
+		#add button{
+			border:solid 1px #28a956;
+		}
+		#add input[type="text"]{
+			display: block;
+			border:solid 1px #28a956;
+			background: #fff;
+			color: #333;
+			margin-bottom: 10px;
+			width: 100%;
+			font-family: "微软雅黑"
+		}
+	</style>
+</head>
+<body>
+	<ul id="box">
+		<!-- <li>
+			<p>张三</p>
+			<div>
+				<input type="text" value="留言留言留言"><button>确认修改</button>
+			</div>
+		</li>
+		<li>
+			<p>张三</p>
+			<div>
+				<span>留言留言留言留言留言留言留言留言留言</span>			
+			</div>
+		</li>
+		<li>
+			<p>张三</p>
+			<div>
+				<span>留言留言留言留言留言留言留言留言留言</span>			
+			</div>
+		</li>
+		<li>
+			<p>张三</p>
+			<div>
+				<span>留言留言留言留言留言留言留言留言留言</span>			
+			</div>
+		</li> -->
+	</ul>
+
+	<div id="add">
+		<div>
+			<input type="text" id="name" placeholder="请输入您的姓名">
+			<input type="text" id="message" placeholder="请输入您的留言信息">
+		</div>
+		<div></div>
+		<div>
+			<button id="btn">添加留言</button>	
+		</div>
+	</div>
+	
+	<script>
+		/*
+			e.target   e.srcElement  就是点击的DOM对象	
+			
+			数据添加到localStorage
+			数据渲染到页面
+			修改同时添加数据到localStorage
+			渲染到页面
+		*/
+	var box=document.getElementById("box");
+	var lis=box.getElementsByTagName("li");
+	var btn=document.getElementById("btn");
+	var names=document.getElementById("name");
+	var message=document.getElementById("message");
+	bb();
+	btn.onclick=aa;
+
+
+function aa (){
+	if(names.value&&message.value){
+		localStorage.setItem(names.value,message.value);
+	}
+	else{
+		alert("填完整");
+	}
+	name.value="";
+	message.value="";
+	bb ();
+	}
+
+
+function bb(){
+	var data ="";
+	for(var key in localStorage){
+		data+="<li><p>"+key+"</p><div><span>"+localStorage[key]+"</span></div></li>"
+	}
+	box.innerHTML=data;
+	}	
+
+box.onclick = function(event){
+	var e = event||window.event;
+	var target = e.target||e.srcElement;
+	if(target.nodeName.toUpperCase() == "SPAN"){
+		target.outerHTML = "<input type='text' value='"+target.innerHTML+"'><button class='edit'>确认修改</button><button class='del'>删除</button>"
+	}
+	if(target.className == "edit"){
+		var nas = target.parentNode.previousSibling.innerHTML;
+		var meseage = target.previousSibling.value;
+		localStorage.setItem(nas.message);
+		target.parentNode.innerHTML="<span>"+"message"+"</span>"
+	}
+	if(target.className =="del"){
+		var nas=target.parentNode.previousSibling.innerHTML
+		localStorage.removeItem(nas);
+		render();
+	}
+	}
+	</script>
+
+
+
+</body>
+</html>

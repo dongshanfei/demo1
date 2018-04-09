@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2>通过操作ul让第一个孩子高亮显示，不能出现兼容问题（至少要两种方法）</h2>
+	<ul>
+		<li>我是第一个孩子</li>
+		<li>我是第二个孩子</li>
+		<li>我是第三个孩子</li>
+	</ul>
+	
+	<script>
+	   // 第一种方法 
+	// var ul  =document.getElementsByTagName("ul")[0];
+	// var lis =ul.children;
+	// lis[0].style.background ="yellow";
+	   // 第二种方法
+	  var ul =document.getElementsByTagName("ul")[0];
+	  console.log("ul")
+	  function getFirstChild(ele){
+	  	if(ele.firstElementChild){
+	  		return ele.firstElementChild;
+	  	}
+	  	else{return ele.firstChild}
+	  }
+	var li =getFirstChild(ul);
+	console.log(li);
+    li.style.backgroundColor="red"
+
+
+
+
+
+	</script>
+
+
+
+</body>
+</html>

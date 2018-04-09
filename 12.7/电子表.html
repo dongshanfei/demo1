@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用date对象做一个电子表</title>
+    <style>
+        #bb{
+            width:1920px;
+            height:1000px;
+            background:black;
+        }
+        p{
+            margin:0;
+            poddin:0;
+            font-size:211px;
+            color:white;
+            background:black;            
+
+        }
+    </style>
+</head>
+<body>
+        <div id="bb">
+            <p id="p"></p>
+        </div>
+	<script>
+		/*
+			思路：
+				编写函数获取时分秒并写在页面上
+				每1s执行一次该函数
+		*/
+            //getHours()      //返回日期对象中的小时部分
+            //getMinutes()        //返回日期对象中的分钟部分
+            //getSeconds()        //返回日期对象中的秒钟部
+    // var date = new Date();
+    // var h =date.getHours();
+    // var m =date.getMinutes();
+    // var s =date.getSeconds();
+        var p =document.getElementById("p");
+        function aa(){
+            var date = new Date();
+            var y =date.getFullYear();
+             //获取完整的年份(4位,1970-????)();
+            var h =date.getHours();
+            var m =date.getMinutes();
+            var s =date.getSeconds();
+            p.innerHTML=y+"年"+h+"时"+m+"分"+s+"秒";
+            setTimeout(aa,1000);
+        }
+        aa();
+
+	</script>
+</body>
+</html>

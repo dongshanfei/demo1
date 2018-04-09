@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="checkedAll">
+    <button id="btn">反选</button>
+    <div id="list">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    <script>
+        var checkedAll = document.getElementById("checkedAll");
+        var list = document.getElementById("list");
+        var checkes=list.getElementsByTagName("input");
+        var btn =document.getElementById("btn");
+        //checkedAll.onclick=function(){
+        //     if(this.checked){
+        //         for(var i=0;i<checkes.length;i++){
+        //             checkes[i].checked =true;
+        //         }
+
+        //             }
+               
+           
+        //     else{
+        //             for(var i =0;i<checkes.length;i++){
+        //                 checkes[i].checked =false;}
+        //          }
+        // }
+        // btn.onclick = function(){
+        //     for(var i = 0;i<checkes.length;i++){
+
+             
+        //         if(checkes[i].checked == true){
+        //             checkes[i].checked = false;
+        //         }
+        //         else{
+        //             checkes[i].checked = true;
+        //         }
+        //     }
+        // }
+// ················第二种方法···················
+        checkedAll.onclick=function(){
+            for(var i=0;i<checkes.length;i++){
+                checkes[i].checked =this.checked;
+            }
+        }
+        btn.onclick=function(){
+            for(var i =0;i<checkes.length;i++){
+                checkes[i].checked =!checkes[i].checked
+            }
+        }
+        
+
+    </script>
+    </div>
+    
+</body>
+</html>
