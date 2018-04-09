@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		.clearfix:after{
+			display: block;
+			overflow: hidden;
+			content: '';
+			clear: both;
+			height: 0;
+		}
+		.clearfix{
+			*zoom: 1;
+		}
+		.pull-left{
+			float: left;
+		}
+		p{margin:0;}
+		.star_score { background: url(./img/star_gray1.png); width: 100px; height: 18px; position: relative; margin-right: 10px;}
+		.star_score a { height: 18px; display: block; text-indent: -999em; position: absolute; left: 0; }
+		.star_score a:hover { background: url(./img/star_yellow1.png); left: 0; }
+		.star_score a.clibg { background: url(./img/star_yellow1.png); left: 0; }
+		.star_score + p, .star_score + p + div { color: #eb9000; }
+		.star_score + p + div { margin-left: 5px; }
+	</style>
+</head>
+<body>
+	<div id='startone' class='star_group clearfix'>
+		 <div class="star_score pull-left"></div>
+          <p class='pull-left'><span class="fenshu"></span>分</p>
+          <div class="attitude pull-left"></div>
+          <input type="text" style='display: none;' class='get_score_input' />
+	</div>
+	<br />
+	<br />
+	<br />
+	<div id='starttwo' class='star_group clearfix'>
+		 <div class="star_score pull-left"></div>
+          <p class='pull-left'><span class="fenshu"></span>分</p>
+          <div class="attitude pull-left"></div>
+          <input type="text" style='display: none;' class='get_score_input' />
+	</div>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src='./js/startScore.js'></script>
+<script type="text/javascript">
+	 scoreFun($("#startone"),{
+           fen_d:10,//每一个a的宽度
+           ScoreGrade:10//a的个数 10或者
+	 });
+	  scoreFun($("#starttwo"),{
+           fen_d:10,//每一个a的宽度
+           ScoreGrade:10,//a的个数 10或者
+           nowScore:3.5
+	 });
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .panel{
+            width: 600px;
+            height: 300px;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .box{
+            width: 600px;
+            height: 300px;
+            background: red;
+        }
+        .mask{
+            width: 600px;
+            height: 300px;
+            background: rgba(0,0,0,0.3);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="panel">
+        <div class="box"></div>
+        <div class="mask"></div>
+    </div>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script>
+    $(function(){
+        function getNum(a,e){
+            var w = $(a).width(),
+                h = $(a).height();
+            var x =(e.pageX-$(a)[0].offsetLeft-(w/2))*(w>h?(h/w):1);
+            var y =(e.pageY-$(a)[0].offsetTop-(h/2))*(h>w?(w/h):1);
+            var der = Math.round((Math.atan2(y,x)*180/Math.PI + 180)/90)%4;
+            return der;
+        }
+        $('.panel').on('mouseenter',function(e){
+            var der = getNum('.panel',e);
+            console.log(der);
+            switch(der){
+                case 0 :
+                    $('.mask').stop().css({
+                        left:"-100%",
+                        top:0
+                    }).animate({
+                        top:0,
+                        left:0
+                    },2000)
+                    break;
+                    case 1 :
+                    $('.mask').stop().css({
+                        left:"0",
+                        top:' -100%'
+                    }).animate({
+                        top:0,
+                        left:0
+                    },2000)
+                    break;
+                    case 2 :
+                    $('.mask').stop().css({
+                        left:"100%",
+                        top:0
+                    }).animate({
+                        top:0,
+                        left:0
+                    },2000)
+                    break;
+                    case 3 :
+                    $('.mask').stop().css({
+                        left:0,
+                        top:'100%'
+                    }).animate({
+                        top:0,
+                        left:0
+                    },2000)
+                    break;
+            }
+        })
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~第二种方法
+        // var w = $(".panel").width(),
+        //     h = $(".panel").height();
+        // var der = Math.round(Math.atan2(h,w)*180/Math.PI);
+        // // console.log(der);
+        // $('.panel').on('mouseenter',function(e){
+        //     var x = e.pageX-$('.panel')[0].offsetLeft-(w/2);
+        //     var y = e.pageY-$('.panel')[0].offsetTop-(h/2);
+        //     var d = Math.round(Math.atan2(y,x)*180/Math.PI);
+        //     console.log(d)
+        //     if((d>(-180)&&d<(-180+der))||(d<180&&d>180-der)){
+        //         console.log("左");
+        //         $('.mask').stop().css({left:'-100%',top:0}).animate({top:0,left:0},1000)   
+        //     }
+        //     if(d>(-180+der)&&d<(-der)){
+        //          console.log("上");
+        //         $('.mask').stop().css({left:0,top:'-100%'}).animate({top:0,left:0},1000)
+        //     }
+        //     if(d>(-der)&&d<(der)){
+        //          console.log("右");
+        //         $('.mask').stop().css({left:'100%',top:0}).animate({top:0,left:0},1000)
+        //     }
+        //     if(d>(der)&&d<(180-der)){
+        //         console.log("下");
+        //         $('.mask').stop().css({left:0,top:'100%'}).animate({top:0,left:0},1000)
+        //     }
+        // })
+    })
+    </script>
+</body>
+</html>

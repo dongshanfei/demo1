@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>微场景制作</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/aaa.css">
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.animate.min.js"></script>
+    <script src="js/base.js"></script>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <section class="swiper-slide" style="width: 6.4rem;height: 10rem;">
+            <img src="img/1.jpg" id="ele1" class="ani"swiper-animate-effect="bounceInDown" style="z-index:1;">
+        </section>
+
+        <section class="swiper-slide">
+            <img src="img/2.jpg" id="ele1" class="ani"swiper-animate-effect="bounceInDown" >
+        </section>
+
+        <section class="swiper-slide">
+            <img src="img/3.jpg" id="ele1" class="ani"swiper-animate-effect="bounceInDown">
+        </section>
+
+        <section class="swiper-slide">
+            <img src="img/4.jpg" id="ele1" class="ani"swiper-animate-effect="bounceInDown">
+        </section>
+
+         <section class="swiper-slide">
+            <img src="img/5.jpg" id="ele1" class="ani"swiper-animate-effect="bounceInDown">
+        </section>
+
+         <section class="swiper-slide">
+            <img src="img/6.jpg" id="ele1" class="ani"swiper-animate-effect="bounceInDown">
+        </section>
+
+         <section class="swiper-slide">
+            <img src="img/7.jpg" id="ele1" class="ani"swiper-animate-effect="bounceInDown">
+        </section>
+        
+         <section class="swiper-slide">
+            <img src="img/8.jpg" id="ele1" class="ani"swiper-animate-effect="bounceInDown">
+        </section>
+
+         <section class="swiper-slide">
+            <img src="img/9.jpg" id="ele1" class="ani"swiper-animate-effect="bounceInDown">
+        </section>
+        
+        
+        
+    </div>
+</div>
+ 
+
+<script>  
+          
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction : 'vertical',
+        mousewheelControl : true,
+        onInit: function(swiper){
+           swiperAnimateCache(swiper);
+           swiperAnimate(swiper);
+        },
+        onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper);
+        }     
+    })         
+  </script>
+
+    
+</body>
+</html>

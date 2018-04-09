@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试同步性</title>
+    <style type="text/css">
+        html,body{
+            margin: 0;
+            pading: 0
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script type="text/javascript" src="libs/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        $(function () {
+          /*  $("div").eq(0).animate({
+                width : "500px",
+            });
+            $("div").eq(0).animate({
+                height : "500px",
+            });*/
+
+            $("div").eq(0).animate({
+                width : "500px"
+            }).stop().animate({
+                height : "500px"
+            });
+
+           /* $("div").eq(0).animate({
+                width : "500px",
+                height : "500px"
+            });*/
+
+
+
+            //$("div").fadeOut(); $("div").fadeIn();
+
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

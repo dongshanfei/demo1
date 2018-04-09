@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图高级版</title>
+    <style type="text/css">
+        html,body,ul{
+            padding: 0;
+            margin: 0;
+        }
+        .box ul{
+            width: 760px;
+            height: 300px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        .box li{
+            list-style: none;
+            width: 760px;
+            height: 300px;
+            position: absolute;
+            overflow: hidden;
+        }
+        .box li .img1{
+            left: -760px;
+            position: absolute;
+        }
+        .box li .img2{
+            left: -60px;
+            display: none;
+            position: absolute;
+        }
+        .li1{
+            background: url("../day04/images/bg1.jpg");
+        }
+        .li2{
+            background: url("../day04/images/bg2.jpg");
+        }
+        .li3{
+            background: url("../day04/images/bg3.jpg");
+        }
+        .li4{
+            background: url("../day04/images/bg4.jpg");
+        }
+        .li5{
+            background: url("../day04/images/bg5.jpg");
+        }
+        #box{
+            position: relative;
+            width: 760px;
+            margin: 0 auto;
+        }
+        #box>ul{
+            width: 200px;
+            height: 30px;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #box>ul li{
+            list-style: none;
+            text-align: center;
+            line-height: 30px;
+            font-size: 30px;
+            font-weight: bold;
+            height: 30px;
+            width: 30px;
+            margin-right: 6px;
+            float: left;
+            background: #ccc;
+            cursor: pointer;
+        }
+
+    </style>
+    <script type="text/javascript" src="../day04/libs/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var allLi = $(".box li");
+            var index = 0;
+
+            //设置定时器
+            var timer;
+            clearInterval(timer);
+            timer = setInterval(function () {
+                index++;
+                if (index == allLi.length) {
+                    index = 0;
+                }
+                changeIndex ();
+                move();
+
+                setTimeout(function () {
+                    moveBack ()
+                },3 * 1000);
+
+            },5 * 1000);
+            move();
+            changeIndex ();
+            setTimeout(function () {
+                moveBack ()
+            },3 * 1000);
+
+            //封装图片移动的函数
+            function move () {
+                //先让img回到原位
+              /*  allLi.children(".img1").css("left","-760px");
+                allLi.children(".img2").css({
+                    left : "-60px",
+                    display : "none"
+                });*/
+
+                //先让别的li隐藏
+
+
+                //此时li和img的出现是同时的
+                allLi.eq(index).stop().fadeIn().siblings().stop().fadeOut();
+                allLi.eq(index).find(".img1").stop().animate({
+                    left : 0
+                },1000,function () {
+                    $(this).siblings().eq(0).stop().animate({
+                        //display写在animate中不起作用
+                        //display : "block",
+                        left : 0
+                    }).css("display","block");
+                });
+            }
+            //封装图片移动到原来位置的函数
+            function moveBack () {
+                //此时图片1和图片2是同步执行的，因为是直接点出来的。
+                //用回调函数可以解决这个问题
+               /* allLi.eq(index).children(".img1").stop().animate({
+                    left : "-760px"
+                }).siblings().eq(0).stop().animate({
+                    left : "-60px",
+                },function () {
+                    $(this).fadeOut();
+                })*/
+
+                //写两条语句也是同步执行
+               /* allLi.eq(index).children(".img1").stop().animate({
+                    left : "-760px"
+                });
+
+                allLi.eq(index).children(".img2").stop().animate({
+                    left : "-60px"
+                },function () {
+                    $(this).fadeOut();
+                });*/
+
+                allLi.eq(index).children(".img1").stop().animate({
+                    left : "-760px"
+                },function () {
+                    allLi.eq(index).children(".img2").stop().animate({
+                        left : "-60px"
+                    },function () {
+                        $(this).fadeOut();
+                    });
+                });
+
+            }
+
+            //封装下标交换的函数
+            function changeIndex () {
+                $("#box>ul li").css("color","black");
+                $("#box>ul li").eq(index).css("color","red");
+            }
+
+            //封装下标点击的事件
+                $("#box>ul li").click(function () {
+                    allLi.eq(index - 1).stop().fadeIn().siblings().stop().fadeOut();
+                    allLi.children(".img1").stop().css("left","-760px");
+                    allLi.children(".img2").stop().css({
+                        left : "-60px",
+                        display : "none"
+                    });
+                    index = $(this).index();
+                    move();
+                    changeIndex ();
+                });
+
+        })
+    </script>
+</head>
+<body>
+<div id="box">
+    <div class="box">
+        <ul>
+            <li class="li1"><img class="img1" src="../day04/images/text1.png" alt=""><img class="img2" src="../day04/images/con1.png" alt=""></li>
+            <li class="li2"><img class="img1" src="../day04/images/text2.png" alt=""><img class="img2" src="../day04/images/con2.png" alt=""></li>
+            <li class="li3"><img class="img1" src="../day04/images/text3.png" alt=""><img class="img2" src="../day04/images/con3.png" alt=""></li>
+            <li class="li4"><img class="img1" src="../day04/images/text4.png" alt=""><img class="img2" src="../day04/images/con4.png" alt=""></li>
+            <li class="li5"><img class="img1" src="../day04/images/text5.png" alt=""><img class="img2" src="../day04/images/con5.png" alt=""></li>
+        </ul>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+</body>
+</html>

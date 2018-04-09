@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片手风琴</title>
+    <style type="text/css">
+        html,body,ul{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+            width: 210px;
+            float: left;
+            overflow: hidden;
+        }
+    </style>
+    <script type="text/javascript" src="libs/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("li").mouseenter(function () {
+                $(this).stop().animate({
+                    width : "550px"
+                }).siblings().stop().animate({
+                    width : "210px"
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li style='width:550px'><img src="http://pic.shejiben.com/hot_sjb/377_8180.jpg?1462261126" alt=""></li>
+        <li ><img src="http://pic.shejiben.com/hot_sjb/377_8288.jpg?1464830033" alt=""></li>
+        <li ><img src="http://pic.shejiben.com/hot_sjb/377_8155.jpg?1460709517" alt=""></li>
+        <li ><img src="http://pic.shejiben.com/hot_sjb/377_7937.jpg?1456984280" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

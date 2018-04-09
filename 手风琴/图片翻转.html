@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片翻转</title>
+    <style type="text/css">
+        html,body,ul,h1{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            height: 100%;
+            width: 100%;
+        }
+        ul{
+            width: 450px;
+            height: 220px;
+            margin: 0 auto;
+        }
+        li{
+            list-style: none;
+            float: left;
+            width: 140px;
+            height: 220px;
+            border: 1px solid #000;
+            cursor: pointer;
+            position: relative;
+        }
+        li img{
+            width: 140px;
+            height: 220px;
+            display: block;
+            position: absolute;
+        }
+        li h1{
+            width: 140px;
+            height: 0px;
+            background: black;
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            line-height: 220px;
+            position: absolute;
+            display: block;
+            top: 110px;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="libs/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("li").hover(showText,showImg);
+            $("body").mouseover(function (evt) {
+
+                if (this == evt.target) {
+                    $("li").children("h1").stop().animate({
+                        top : "110px",
+                        height : "0"
+                    },function () {
+                        $("li").children("img").stop().animate({
+                            top : 0,
+                            height : "220px"
+                        })
+                    } );
+                }
+            });
+
+            //当鼠标移上时图片消失，字体显现出来
+            function showText () {
+                $(this).children("img").stop().animate({
+                    top : "110px",
+                    height : "0"
+                },function () {
+                    $(this).siblings("h1").stop().css("display","block").animate({
+                        top : 0,
+                        height : "220px"
+                    })
+                });
+            }
+
+            //当鼠标移出时字体消失，图片显现出来
+            function showImg () {
+                $(this).children("h1").stop().animate({
+                    top : "110px",
+                    height : "0",
+                },function () {
+                    $(this).css("display","none");
+                    $(this).siblings("img").stop().animate({
+                        top : 0,
+                        height : "220px"
+                    })
+                });
+            }
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li><img src="imgs/1.jpg" alt="" title="" /><h1>艾弗森</h1></li>
+        <li><img src="imgs/2.jpg" alt="" title="" /><h1>麦迪</h1></li>
+        <li><img src="imgs/3.jpg" alt="" title="" /><h1>科比</h1></li>
+        <li><img src="imgs/4.jpg" alt="" title="" /><h1>库里</h1></li>
+        <li><img src="imgs/5.jpg" alt="" title="" /><h1>安东尼</h1></li>
+        <li><img src="imgs/6.jpg" alt="" title="" /><h1>伯德</h1></li>
+        <li><img src="imgs/7.jpg" alt="" title="" /><h1>姚明</h1></li>
+        <li><img src="imgs/8.jpg" alt="" title="" /><h1>韦德</h1></li>
+        <li><img src="imgs/9.jpg" alt="" title="" /><h1>卢比奥</h1></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        .panel{
+            width:400px;
+            height:200px;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .box{
+            width:400px;
+            height:200px;
+            background-color:blue;
+        }
+        .mask{
+            width:400px;
+            height:200px;
+            background-color: rgba(0,0,0,.3);
+            position: absolute;
+            top:0;
+            display:none;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>判断鼠标移动的位置</title>
+</head>
+<body>
+    <div class="panel">
+        <div class="box"></div>
+        <div class="mask"></div>
+    </div>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var w=$('.panel').width();
+            var h=$('.panel').height();
+            $('.panel').hover(function(event){
+                var x=(event.pageX-this.offsetLeft-(w/2))*(w>h?(h/w):1);
+                var y=(event.pageY-this.offsetTop-(h/2))*(h>w?(w/h):1);
+                var der=Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
+                console.log(y)
+                console.log(Math.atan2(y,x)*180/Math.PI)
+
+                // $('.mask').show();
+                // switch(der){
+                    // case 0:
+                    $('.mask').css({
+                        'left':'-100%',
+                        'top':0
+                    }).show().animate({
+                        'left':0,
+                        'top':0
+                    })
+                    // break;
+                    /*case 1:
+                    $('.mask').css({
+                        'left':0,
+                        'top':'-100%'
+                    }).animate({
+                        'left':0,
+                        'top':0
+                    })
+                    break;
+                    case 2:
+                    $('.mask').css({
+                        'left':'100%',
+                        'top':0
+                    }).animate({
+                        'left':0,
+                        'top':0
+                    })
+                    break;
+                    case 3:
+                    $('.mask').css({
+                        'left':0,
+                        'top':'100%'
+                    }).animate({
+                        'left':0,
+                        'top':0
+                    })
+                    break;*/
+                // }
+            },function(){
+                $('.mask').hide();
+            })
+        })
+    </script>
+</body>
+</html>

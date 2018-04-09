@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>艺龙手风琴</title>
+    <style type="text/css">
+        html,body,ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            width: 200px;
+            height: 260px;
+            float: left;
+            position: relative;
+        }
+        .img1,.img2,.img3,.img4,.img5,.img6{
+            margin: 0;
+            width: 100%;
+            height: 260px;
+            position: absolute;
+        }
+        .text{
+            width: 100%;
+            height: 260px;
+            position: absolute;
+            background: rgba(0,0,0,0.3);
+        }
+        .text h1{
+            width: 30px;
+            font-size: 30px;
+            color: #fff;
+            margin: 20px auto;
+        }
+        .img1{
+            background: url("images/1.jpg") center;
+        }
+        .img2{
+            background: url("images/2.jpg") center;
+        }
+        .img3{
+            background: url("images/3.jpg") center;
+        }
+        .img4{
+            background: url("images/4.jpg") center;
+        }
+        .img5{
+            background: url("images/5.jpg") center;
+        }
+        .img6{
+            background: url("images/6.jpg") center;
+        }
+    </style>
+    <script type="text/javascript" src="libs/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        $(function () {
+           /* $("li").mouseenter(function () {
+                $(this).stop().animate({
+                    width : "400px"
+                }).siblings().stop().animate({
+                    width : "160px"
+                });
+                $(this).siblings().children(".text").css("display","block");
+                $(this).children(".text").css("display","none");
+            });
+
+            $("li").mouseleave(function () {
+              $("li").stop().animate({
+                  width : "200px"
+              }).children(".text").stop().show();
+            });*/
+
+
+            $("li").hover(function () {
+                $(this).stop().animate({
+                    width : "400px"
+                }).siblings().stop().animate({
+                    width : "160px"
+                });
+                $(this).siblings().children(".text").css("display","block");
+                $(this).children(".text").css("display","none");
+            },function () {
+                $("li").stop().animate({
+                    width : "200px"
+                }).children(".text").stop().show();
+            });
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>
+        <div class="img1"></div>
+        <div class="text"><h1>园林酒店</h1></div>
+    </li>
+    <li>
+        <div class="img2"></div>
+        <div class="text"><h1>设计师酒店</h1></div>
+    </li>
+    <li>
+        <div class="img3"></div>
+        <div class="text"><h1>青年旅社</h1></div>
+    </li>
+    <li>
+        <div class="img4"></div>
+        <div class="text"><h1>特色客栈</h1></div>
+    </li>
+    <li>
+        <div class="img5"></div>
+        <div class="text"><h1>青岛酒店</h1></div>
+    </li>
+    <li>
+        <div class="img6"></div>
+        <div class="text"><h1>海外温泉</h1></div>
+    </li>
+</ul>
+</body>
+</html>

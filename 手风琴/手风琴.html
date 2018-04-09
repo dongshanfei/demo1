@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style type="text/css">
+        html,body,ul{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        ul{
+            height: 200px;
+            border: 1px solid #000;
+        }
+        li{
+            list-style: none;
+            height: 198px;
+            float: left;
+            width: 100px;
+            border: 1px solid #000;
+            background: blue;
+            position: relative;
+            overflow: hidden;
+        }
+        div{
+            position: absolute;
+            left: 100px;
+            top: -1px;
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+    <script type="text/javascript" src="libs/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("li").mouseenter(function () {
+                $(this).animate({
+                    width : "300px"
+                },1000).siblings().animate({
+                    width : "100px"
+                },50);
+            });
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>
+            <div></div>
+        </li>
+        <li>
+            <div></div>
+        </li>
+        <li>
+            <div></div>
+        </li>
+        <li>
+            <div></div>
+        </li>
+        <li>
+            <div></div>
+        </li>
+        <li>
+            <div></div>
+        </li>
+    </ul>
+</body>
+</html>
