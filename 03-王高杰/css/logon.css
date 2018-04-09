@@ -1,0 +1,202 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,li,span{
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family:  "微软雅黑";
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+    float: left;
+}
+input,img{
+    border:none;
+}
+.clearfix:after{
+    visibility:hidden;
+    display:block;
+    font-size: 0;
+    content:"";
+    clear:both;
+    height:0;
+}
+.clearfix{
+    zoom:1;
+}
+.box{
+    width:1017px;
+    margin: 0 auto;
+}
+.logo{
+    width:150px;
+    height:60px;
+    background:url(../images/img.png) no-repeat;
+    background-position: -233px 0;
+    margin: 35px 0 0 25px;
+}
+.main{
+    width:1020px;
+    height:471px;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+.main-left{
+    width:618px;
+    height:471px;
+    float: left;
+    background:url(../images/img.png) no-repeat;
+    background-position: -397px 0;
+}
+.main-right{
+    width:398px;
+    height:471px;
+    float: left;
+    text-align: center;
+    border:1px solid #dbdbdb;
+}
+.main-right .right-red,.main-right .right-gray{
+    width:199px;
+    height:47px;
+    float:left;
+}
+.main-right .right-red{
+    border-bottom: 2px solid #d10327;
+    background-color: #e01135;
+}
+.main-right .right-gray{
+    border-bottom: 2px solid #dfdfdf;
+    background-color: #f1f1f1;
+}
+.main-right a{
+    font-size: 20px;
+    line-height: 49px;
+}
+.main-right .right-red a{
+    color: #fff;
+}
+.main-right .right-gray a{
+    color: #898989;
+}
+.main-right .right-man,.main-right .right-lock{
+    width:323px; 
+    height:38px;
+    margin:38px 0 0 36px;
+    border:1px solid #dbdbdb;
+    float:left;
+    line-height:38px;
+}
+.main-right .man-button{
+    width:50px;
+    height:40px;
+    border-right:1px solid #dbdbdb;
+}
+.main-right .man-img,.main-right .lock-img{
+    width:16px;
+    height:18px;
+    background:url(../images/img.png) no-repeat;
+    background-position:0 0;
+    margin: 10px 0 0 20px;
+}
+.main-right input{
+    font-size: 14px;
+    color:#a9a9a9;
+    margin-left: 13px;
+}
+.main-right .right-lock{
+    margin:20px 0 0 36px;
+}
+.main-right .lock-img{
+    background:url(../images/img.png) no-repeat;
+    background-position:-20px 0;
+}
+.main-right .checkbox-input{
+    margin:25px 0 0 50px;
+}
+.checkbox-input label,.checkbox-text a{
+    font-size: 14px;
+    color:#696969;
+    margin-left: 8px;
+}
+.checkbox-text a{
+    margin-left:0px;
+}
+.checkbox-text{
+    margin:12px 0 0 135px;
+}
+input[type="button"]{
+    width:325px;
+    height:50px;
+    margin-top:7px;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 24px;
+    padding-left: 24px;
+    color: #fff;
+    background-color: #e01135;
+    cursor: pointer;
+}
+.right-text{
+    height:20px;
+    margin: 20px 0 0 52px;
+}
+.right-text p{
+    width:90px;
+    height:5px;
+    color:#dcdcdc;
+    line-height: 5px;
+}
+.right-text li{
+    font-size: 12px;
+    color:#848484;
+    height:25px;
+    line-height:25px;
+}
+.text-word{
+    margin-left:18px;
+} 
+.text-dashed{
+    margin-left:14px;
+}
+.right-logo{
+    height:75px;
+    margin-top: 15px;
+}
+.logo-QQ,.logo-sina,.logo-wx{
+    width:55px;
+    height:75px;
+    margin-left: 52px;
+}
+.logo-QQ h2,.logo-sina h2,.logo-wx h2{
+    width:50px;
+    height:51px;
+    background:url(../images/img.png) no-repeat;
+    background-position:-172px 0;
+}
+.logo-QQ h3,.logo-sina h3,.logo-wx h3{
+    font-size: 12px;
+    color:#848484;
+}
+.logo-sina h2{
+    background-position:-45px 0;
+}
+.logo-sina,.logo-wx{
+    margin-left:32px;
+}
+.logo-wx h2{
+    background-position:-104px 0;
+}
+.footer{
+    height:65px;
+    margin-top:118px;
+}
+.footer h2,.footer h3{
+    font-size: 12px;
+    color:#514442;
+    text-align: center;
+}
+.footer h3{
+    padding-top: 5px;
+}

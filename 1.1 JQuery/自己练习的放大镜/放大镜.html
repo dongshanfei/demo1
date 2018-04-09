@@ -1,0 +1,288 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #smallBox{
+            width: 512px;
+            height: 327px;
+            position: relative;
+            border:1px solid;
+        }
+        #bigBox{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            border:1px solid;
+
+        }
+        .floatBox{
+            background: rgba(0,0,0,0.3);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #floatBox1{
+            width: 200px;
+            height: 200px;
+            
+
+        }
+        #floatBox2{
+            width: 480px;
+            height: 360px;
+            
+        }
+
+        #bigBox img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="zoom">
+    <div id="smallBox">
+        <div class="floatBox" id="floatBox1"></div>
+        <img src="img/small.jpg" alt="">
+    </div>
+    <div id="bigBox">
+        <img src="img/big.jpg" alt="">
+    </div>
+</div>
+    <script>
+    (function(){
+        var smallBox = document.getElementById('smallBox');
+        var bigBox = document.getElementById('bigBox');
+        var floatBox1 = document.getElementById('floatBox1');
+        var bigImg = bigBox.getElementsByTagName('img')[0];
+        smallBox.onmouseenter = function(){
+            floatBox1.style.display="block";
+        }
+        smallBox.onmouseleave = function(){
+            floatBox1.style.display="none";
+        }
+        smallBox.onmousemove = function(event){
+            var e = event||window.event;
+            var left = e.clientX-smallBox.offsetLeft-floatBox1.offsetWidth/2;
+             var top = e.clientY-smallBox.offsetTop-floatBox1.offsetHeight/2;
+             if(left<0){
+                left=0;
+             }
+             else if(left>smallBox.offWidth-floatBox1.offsetWidth){
+                left = smallBox.offsetWidth-floatBox1.offWidth
+             }
+            if(top<0){
+                top=0;
+            }
+            else if(top>smallBox.offsetHeight-floatBox1.offsetHeight){
+                top = smallBox.offsetHeight-floatBox1.offsetHeight;
+            }
+            floatBox1.style.left = left+"px";
+            floatBox1.style.top = top+"px";
+            bigImg.style.left = -left/smallBox.offsetWidth*bigImg.offsetWidth +　"px";
+            bigImg.style.top = -top/smallBox.offsetHeight*bigImg.offsetHeight + "px";
+        }
+    }())
+    </script>
+</body>
+</html> -->
+<!-- ``````````````````````````````````````````````````````````````` -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #smallBox{
+            width: 400px;
+            height: 255px;
+            position: relative;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid;
+        }
+
+        #floatBox{
+            width: 160px;
+            height: 120px;
+            background: rgba(0,0,0,.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #bigBox{
+            width: 400px;
+            height: 255px;
+            overflow: hidden;
+            display: none;
+            position: relative;
+        }
+        #bigBox img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="smallBox">
+        <div id="floatBox"></div>
+        <img src="img/small.jpg" alt="">
+    </div>
+    <div id="bigBox">
+        <img src="img/big.jpg" alt="">
+    </div>
+    <script>
+        (function(){
+            var smallBox = document.getElementById('smallBox');
+            var bigBox = document.getElementById('bigBox');
+            var floatBox = document.getElementById('floatBox');
+            var bigImg = bigBox.getElementsByTagName('img')[0];
+
+            smallBox.onmouseenter = function(){
+                bigBox.style.display = "block";
+                floatBox.style.display = "block";
+            }
+            smallBox.onmouseleave = function(){
+                bigBox.style.display = 'none';
+                floatBox.style.display = "none";
+            }
+            smallBox.onmousemove = function(event){
+                var e = event || window.event;
+
+                var left = e.clientX - floatBox.offsetWidth/2 - smallBox.offsetLeft;
+                var top = e.clientY - floatBox.offsetHeight/2 - smallBox.offsetTop;
+                // console.log(left);
+                if(left<0){
+                    left = 0;
+                }else if(left>smallBox.offsetWidth-floatBox.offsetWidth){
+                    left = smallBox.offsetWidth-floatBox.offsetWidth;
+                }
+                if(top<0){
+                    top = 0;
+                }else if(top>smallBox.offsetHeight - floatBox.offsetHeight){
+                    top = smallBox.offsetHeight - floatBox.offsetHeight;
+                }
+                floatBox.style.left = left + "px";
+                floatBox.style.top = top + "px";
+
+                bigImg.style.left = -floatBox.offsetLeft/smallBox.offsetWidth*bigImg.offsetWidth + "px";
+                bigImg.style.top = -floatBox.offsetTop/smallBox.offsetHeight*bigImg.offsetHeight + "px";
+            }
+
+        }())
+
+    </script>
+</body>
+</html> -->
+<!-- ······························································ -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #smallBox{
+            width: 512px;
+            height: 327px;
+            position: relative;
+            border:1px solid;
+            margin: auto;
+        }
+        #bigBox{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            border:1px solid;
+            display: none;
+
+        }
+        .floatBox{
+            background: rgba(0,0,0,0.3);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #floatBox1{
+            width: 200px;
+            height: 200px;
+        }
+        #bigBox img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="zoom">
+        <div id="smallBox">
+            <div class="floatBox" id="floatBox1"></div>
+            <img src="img/small.jpg" alt="">
+        </div>
+        <div id="bigBox">
+            <!-- <div class="floatBox" id="floatBox2"></div> -->
+            <img src="img/big.jpg" alt="">
+        </div>
+    </div>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script>
+    $(function(){
+        $('#smallBox').hover(function(){
+            $('.floatBox').show();
+            $('#bigBox').show();
+        },function(){
+            $('floatBox').hide();
+            $('#bigBox').hide();
+        });
+       
+        $('#smallBox').on('mousemove',function(event){
+         
+            var left = event.pageX - $('.floatBox').outerWidth()/2 - $(this).offset().left;
+                var top = event.pageY - $('.floatBox').outerHeight()/2 - $(this).offset().top;
+                if(left<0){
+                    left = 0;
+                }else if(left>$(this).innerWidth()-$('.floatBox').outerWidth()){
+                    left = $(this).innerWidth()-$('.floatBox').outerWidth();
+                }
+                if(top < 0){
+                    top = 0;
+                }
+                else if(top>$(this).innerHeight()-$('.floatBox').outerHeight()){
+                    top = $(this).innerHeight()-$('.floatBox').outerHeight();
+                }
+             
+
+                $('.floatBox').css({
+                    "left":left,
+                    "top":top
+                })
+                console.log(left)
+                $('#bigBox img').css({
+                    left: -left/$('#smallBox').innerWidth()*$("#bigBox img").width(),
+                    top: -top/$('#smallBox').innerHeight()*$("#bigBox img").height()
+                })
+
+
+        })
+    })
+    </script>
+</body>
+</html>

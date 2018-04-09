@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图有动画2</title>
+    <style type="text/css">
+        body,ul,li{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:800px;
+            height:600px;
+            margin:0 auto;
+            overflow: hidden;
+            position:relative;
+        }
+        #ul{
+            list-style: none;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        #ul li{
+            float:left;
+            width:800px;
+            height:600px;
+
+    /*         background-color: blue;
+    font-family: "黑体";
+    color:#fff;
+    font-size: 80px;
+    text-align: center; */
+
+        }
+        #box img{
+            width:800px;
+            height:600px;
+        }
+        #pre,#next{
+            width:50px;
+            height:80px;
+            font-size: 40px;
+            background-color: #666;
+            position:absolute;
+            top:260px;
+            opacity:0.6;
+            line-height:80px;
+            text-align: center;
+            font-family: '黑体';
+            cursor:pointer;
+        }
+        #pre:hover,#next:hover{
+            background-color: #aaa;
+            opacity:0.4;
+        }
+        #pre{
+            left:10px;
+        }
+        #next{
+            left:730px;
+        }
+        #dot{
+            position:absolute;
+            bottom:10px;
+            left:375px;
+        }
+        #dot li{
+            float:left;
+            margin-left:20px;
+            font-size: 28px;
+            line-height: 5px;
+        }
+        #dot .active{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul id="ul">
+         <li><img src="img/1.jpg" alt=""></li>
+         <li><img src="img/2.jpg" alt=""></li>
+         <li><img src="img/3.jpg" alt=""></li>
+         <li><img src="img/4.jpg" alt=""></li>
+         <li><img src="img/5.jpg" alt=""></li>
+     </ul>
+     <!-- <ul id="ul">
+         <li>1</li>
+         <li>2</li>
+         <li>3</li>
+         <li>4</li>
+         <li>5</li>
+     </ul> -->
+        <div id='pre'><</div>
+        <div id='next'>></div>
+        <div>
+            <ul id="dot"></ul>    
+        </div>
+    </div>
+    
+    
+    <script type="text/javascript">
+    window.onload=function(){
+        var box=document.getElementById('box');
+        var ul=box.getElementsByTagName('ul')[0];//获取到box下的轮播图
+        var lis=ul.getElementsByTagName('li');//获取到ul下的所有li
+        var pre=document.getElementById('pre');//获取上一页按钮
+        var next=document.getElementById('next');//获取下一页按钮
+        var liWidth=lis[0].offsetWidth;//获取li的宽度
+        
+        var count=0;//定义变量count  点击下一页的次数 值等同index 
+        pre.onclick=function(){
+            count--;//每次点击都让count--
+            if(count>=0){
+                move(ul,-liWidth*count,10)
+            }else{
+                ul.style.left=-liWidth*(lis.length-1)+'px';
+                count=lis.length-2;
+                move(ul,-liWidth*count,10);
+            }
+            changeDot(count);
+        }
+
+        next.onclick=page;
+        function page(){
+            next.onclick="";
+            count++;//每次点击都让count++
+            if(count<lis.length-1){//当count小于length-1的时候
+                move(ul,-liWidth*count,10,function(){
+                    next.onclick=page;
+                });
+            }else{
+                move(ul,-liWidth*count,10,function(){
+                    ul.style.left=0;
+                    next.onclick=page;
+                    count=0;
+                });
+            }
+            changeDot(count);
+        }
+
+        ul.onmousedown=function(event){//添加mousemove 拖拽事件
+            var e=event||window.event;
+            var clientX=e.clientX;
+            var X=e.clientX-ul.offsetLeft;//先求出点击的点距离ul边缘的距离
+            ul.onmousemove=function(event){
+                var e=event||window.event;
+                ul.style.left=e.clientX-X+'px';//每次移动都将当前的clientX - x 设置给ul的left值
+            }
+            document.onmouseup=function(event){//当鼠标松开时
+                var e=event||window.event;
+                if(Math.abs(clientX-e.clientX)<box.offsetWidth/2){//判断移动的距离是否大于li宽度的一半
+                        // ul.style.left = -count * 300 + "px";
+                        //如果小于   恢复原状
+                }else{
+                    clientX>e.clientX?count++:count--;//先判断是向左移还是右移
+                   /* if(clientX>e.clientX){
+                        count++;
+                    }else{
+                        count--;
+                    }*/
+                    if(count<0){
+                        ul.style.left=-liWidth*(lis.length-1)+'px';
+                        count=lis.length-2;
+                        move(ul,-liWidth*count,10);
+                    }
+
+                    if(count<lis.length-1){
+                        move(ul,-liWidth*count,10,function(){
+                            next.onclick=page;
+                        });
+                    }else{
+                        move(ul,-liWidth*count,10,function(){
+                            ul.style.left=0;
+                            next.onclick=page;
+                            count=0;
+                        });
+                    }
+                    changeDot(count);
+                }
+                // move(ul,-count*liWidth,5);
+                ul.onmousemove="";
+                document.onmouseup="";
+            }
+            move(ul,-count*liWidth,5);
+            return false;
+        }
+
+        //创建指示器
+        var fr=document.createDocumentFragment('fr');//将内容保存进文档碎片里
+        var dot = document.getElementById('dot');
+        for(var i=0;i<lis.length;i++){
+            var li=document.createElement('li');//添加指示器
+            li.index=i;
+            li.onclick=function(){//点击指示器
+                changeDot(this.index);
+                move(ul,-this.index*liWidth,10);
+                count=this.index;
+            }
+            fr.appendChild(li);
+            // fr.appendChild(ul1);
+        }
+        dot.appendChild(fr);
+        var dots = dot.getElementsByTagName('li');
+            dots[0].className = "active";
+
+        var fLi=lis[0].cloneNode(true);//克隆第一张放到ul最后,x必须写true，否则只克隆li，不克隆里面的内容
+        ul.appendChild(fLi);
+        ul.style.width=liWidth*lis.length+'px';//设置ul的宽度
+
+        function changeDot(index){//封装指示器
+            for(var i=0;i<dots.length;i++){
+                dots[i].className="";
+            }
+            if(count==dots.length){
+                dots[0].className='active';
+            }else{
+                dots[index].className='active';
+            }
+        }
+        changeDot(count);
+
+        setInterval(page,3000);
+
+        function move(box,target,speed,callback){//封装动画函数move
+            clearInterval(box.t);
+            if(box.offsetLeft<target){
+                var speed=speed;
+            }else{//判断speed应该是正值还是负值
+                var speed=-speed;
+            }
+            box.t=setInterval(function(){//添加计时器
+                var val=box.offsetLeft-target;//计算当前值减去目标值的差
+                box.style.left=box.offsetLeft+speed+'px';//将当前的offsetLeft + speed设置给ele的left
+                if(Math.abs(val)<=Math.abs(speed)){
+                    //动画结束  判断val的绝对值和speed的绝对值的关系 如果|val|<=|speed|
+                    clearInterval(box.t);//清除计时器，结束动画
+                    box.style.left=target+'px';//同时让ele到目标值的位置
+                    if(callback){//回调函数，使动画到最后一页时返回第一页
+                        callback();
+                    }
+                }
+            },10)
+        }
+
+
+    }
+    
+    </script>
+</body>
+</html>

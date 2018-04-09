@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#">这是一段即将被改变颜色的文字</a>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="111.js"></script>
+    <script>
+        $(function(){
+            $('a').changeFont({
+                fontWeight:'bold',
+                fontStyle:'italic',
+                fontSize:'20px',
+                color:'orange'
+            });
+        })
+    </script>
+    
+</body>
+</html>

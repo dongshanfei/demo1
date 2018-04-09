@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html,body,ul,li{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+           position: relative;
+           width:400px;
+           height: 400px;
+           margin: 0 auto;
+           overflow: hidden;
+           margin: 100px auto;
+        } 
+        li{
+        	width:400px;
+            height:400px;
+            list-style: none;
+            float: left;
+        }
+        ul{       
+            position: absolute;
+        }
+        img{
+            display: block;
+            width:400px;
+            height:400px;
+        }
+        #dot{
+            position: absolute;
+            bottom: 10px;
+        }
+        #dot em{
+            float: left;
+            width: 10px;
+            height: 10px;
+            border: 1px solid;
+            border-radius:50%;
+        }
+        #dot .active{
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li><img src="1.png" alt=""></li>
+            <li><img src="2.png" alt=""></li>
+            <li><img src="3.png" alt=""></li>
+            <li><img src="4.png" alt=""></li>
+        </ul>
+        <div id="dot"></div>
+       <!--  准备创建新的节点 -->
+    </div>
+    <button id="pre">上一页</button>
+    <button id="next">下一页</button>  
+</body>
+<script type="text/javascript">
+var box = document.getElementById('box');
+var ul = document.getElementsByTagName('ul')[0];
+var lis = document.getElementsByTagName('ul')[0]
+          .getElementsByTagName('li');
+var pre = document.getElementById('pre');
+var next = document.getElementById('next');
+var speed = 1;
+var count = 0;
+var fLi = lis[0].cloneNode(true);
+ ul.appendChild(fLi);
+// 下面是添加新的节点
+var fr = document.createDocumentFragment('fr');
+var dot = document.getElementById('dot');
+var dots = document.getElementsByTagName('em');
+ul.style.width=lis.length*lis[0].offsetWidth+"px";
+var liwidth =lis[0].offsetWidth; 
+function cc (){
+    for(var i = 0;i<lis.length-1;i++){
+        var em = document.createElement('em');
+        em.index = i;
+            if (i == 0) {
+                em.className = "active";
+            }
+        em.onclick=function(){
+            for(var j = 0;j<dots.length;j++){
+                dots[j].className = "";
+            }
+                this.className = "active";
+                count = this.index;
+                move(ul,-liwidth*this.index,5);
+        }
+        fr.appendChild(em);
+    }
+} 
+cc();
+dot.appendChild(fr);
+    //添加新的节点到此结束
+function aa(bb){
+	for(var j = 0;j<dots.length;j++){
+	        dots[j].className = "";
+	    }
+        var dd=bb;
+	    if(dd ==4){
+	    	dd =0;
+	    }
+	  dots[dd].className = "active";
+}
+function nextpage(){
+    if(count < lis.length-1){  
+        move(ul,-liwidth*count,10);
+    }
+    else{  
+        move(ul,-liwidth*count,10,function(){
+            ul.style.left=0;
+            count=0;
+        });
+    }
+}
+function prepage(){
+    if(count > 0){
+        count--;
+        move(ul,-liwidth*count,10);
+    }
+    else{          
+        ul.style.left=-liwidth*4+"px";
+        count=lis.length-2;
+        move(ul,-liwidth*count,10);
+    }  
+}
+next.onclick = function(){ 
+    count++; 
+    aa(count);
+    nextpage();	
+}  
+pre.onclick = function(){ 
+    aa(count);
+    prepage();
+}
+function move(ele,target,speed,callback){
+    //封装动画函数
+    clearInterval(ele.t);  
+    var speed = ele.offsetLeft<target?speed:-speed;
+    //判断speed是正值还是负值
+    ele.t = setInterval(function(){
+    //添加计时器
+        var val = ele.offsetLeft-target;
+        //计算当前值减去目标值得差
+        ele.style.left = ele.offsetLeft + speed +"px";
+        //将当前的offsetLeft+speed设置给ele的left
+        if(Math.abs(val)<Math.abs(speed)){
+        //动画结束  判断val的绝对值和speed的绝对值的关系 如果|val|<=|speed|
+            clearInterval(ele.t); //清除计时器，结束动画
+            ele.style.left = target + "px"; //同时让ele到目标值的位置
+            if(callback){callback();}
+        }
+    },10)
+}
+    
+
+</script>
+</html>

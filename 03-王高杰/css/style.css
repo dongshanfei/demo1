@@ -1,0 +1,481 @@
+body,h1,h2,h3,h4,h5,h6,ul,li,p,span{
+    margin: 0;
+    padding:0;
+    font-weight: normal;
+}
+img,input{
+    border:0;
+    outline: none;
+}
+li{
+    list-style: none;
+    float:left;
+}
+a{
+    text-decoration: none;
+}
+h6{
+    color:#dfdfdf;
+}
+.hearder a:hover,.logo a:hover,.nav a:hover,.menu a:hover,.main a:hover,.footer a:hover{
+    color:#3cf;
+}
+.clearfix:after{
+    visibility:hidden;
+    display:block;
+    font-size: 0;
+    content:"";
+    clear:both;
+    height:0;
+}
+.clearfix{
+    zoom:1;
+}
+.box{
+   width:1200px;
+   height:2500px;
+   margin: 0 auto;
+}
+.hearder{
+    width:1600px;
+    height:39px;
+    margin: 0 auto;
+    font-size:12px;
+    color:#858484; 
+    border-bottom: 1px solid #e5e5e5;
+}
+.hearder ul,.hearder ul li{
+    line-height: 39px;
+    font-size: 12px;
+    color:#858484;
+}
+.hearder a{
+    color:#858484;
+}
+.log{
+    padding-left: 23px;
+}
+.hearder-left{
+    float:left;
+}
+.hearder-left h6{
+    padding:0 10px;
+}
+.hearder-right{
+    width:400px;
+    float:left;
+    margin-left: 576px;
+}
+.hearder-right h6{
+    padding:0 13px;
+}
+.logo{
+    height:110px;
+}
+#img{
+    float:left;
+    margin-top: 27px;
+}
+.search,.my-shop{
+    width:442px;
+    height:36px;
+    float:left;
+    font-size: 13px;
+    color:#7a7979;
+    line-height:36px;
+    margin: 45px 0 0 385px;
+    border:1px solid #dfdfdf;
+}
+.search-shop{
+    width:62px;
+    height:36px;
+    text-align: center;
+    border-right:1px solid #dfdfdf;
+}
+.logo .triangle{
+    vertical-align:middle;
+    margin-left: 9px;
+}
+.logo input{
+    width:152px;
+    margin-left:13px;
+}
+.logo a{
+    font-size: 12px;
+    color:#8e8e8e;
+}
+.search-mirror{
+    width:65px;
+    text-align: center;
+    border-left:1px solid #dfdfdf;
+}
+#mirror{
+    vertical-align:middle;
+}
+.my-shop{
+    width:193px;
+    height:36px;
+    margin: 45px 0 0 20px;
+    position:relative;
+}
+.my-shop h6{
+    margin: 0 20px;
+}
+.shopping{
+    margin-left:15px;
+}
+.num{
+    position:absolute;
+    right:10px;
+    top:-4px;
+}
+.nav{
+    height:40px;
+    background-color: #645858;
+}
+.nav li{
+    width:118px;
+    line-height:40px;
+    text-align: center;
+    letter-spacing:22px;
+    border-right:1px solid #6d6261;
+}
+.nav a{
+    font-size: 15px;
+    font-family: "微软雅黑";
+    color:#fff;
+}
+.nav .nav-first{
+    width:116px;
+    letter-spacing:0;
+}
+.title{
+    height:22px;
+    margin-top: 22px;
+    text-align: center;
+    position: relative;
+}
+.title #arrow,.title #mirro,.title #red-img,.gray-box #gray-box-img{
+    vertical-align:middle;
+    margin-left: 8px;
+}
+.title .text-gray,.title .text-black{
+    font-size: 12px;
+    line-height:22px;
+    color:#959595;
+}
+.title .text-black{
+    color:#645858;
+}
+.title .red-border{
+    width:90px;
+    height:20px;
+    margin-left: 8px;
+    border:1px dashed #e01135;
+}
+.title input{
+    margin-left: 8px;
+    width:150px;
+    height:20px;
+    border:1px solid #e5e5e5;
+}
+.title #mirror{
+    position:absolute;
+    top:5px;
+    left:352px;
+}
+.title .text-red{
+    margin-left: 706px;
+    font-size: 12px;
+    color:#5f5e5e;
+    line-height: 22px;
+}
+.title .text-red strong{
+    font-weight: bold;
+    color:#e01135;
+    padding:0 7px 0 7px;
+}
+.menu{
+    margin-top: 13px;
+    height:196px;
+    border:1px solid #d1d1d1;
+    border-bottom:none;
+}
+.menu ul{
+    height:38px;
+    border-bottom:1px solid #d1d1d1;
+}
+.menu ul li a{
+    line-height: 38px;
+    margin-left: 19px;
+    font-size: 12px;
+    color:#5f5e5e;
+}
+.menu .menu-first{
+    width:105px;
+    height:38px;
+    text-align: center;
+    letter-spacing:22px;
+    background-color: #f1f1f1;
+}
+.menu .menu-second{
+    margin-left: 26px;
+}
+#menu-red{
+    vertical-align:middle;
+}/*菜单栏结束*/
+.gray-border{
+    height:25px;
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+.box-border{
+    margin-left:1117px;
+    background-color: #dcdcdc;
+}
+.box-border h4{
+    font-size: 12px;
+    color:#5b5b5b;
+    padding-left: 5px;
+    float:left;
+    margin-right:10px;
+}
+.red-border{
+    height:30px;
+    border-bottom:2px solid #e01135;
+}
+.red-border ul{
+    height:30px;
+    line-height: 30px;
+}
+.red-border h4{
+    width:105px;
+    height:30px;
+    background-color: #e01135;
+    font-size: 14px;
+    color:#fff;
+    text-align: center;
+    float:left;
+}
+.red-border .number{
+    font-size: 12px;
+    color:#333;
+    margin-left:972px;
+}
+.red-border .arrow-lf,.red-border .arrow-rg{
+    height:16px;
+    line-height: 16px;
+    margin-top:6px;
+    text-align: center;
+    border:1px solid #c9c9c9;
+}
+.red-border .arrow-lf{
+    width:16px;
+    margin-left:13px;
+}
+.red-border .arrow-rg{
+    width:55px;
+    margin-left:5px;
+}
+.red-border .arrow-rg a{
+    font-size: 12px;
+    float:left;
+    color:#333;
+    margin-left: 5px;
+}
+#arrow-rg-img{
+    float:left;
+    margin-top: 2px;
+    margin-left: 5px;
+ }
+.column{
+    height:35px;
+    border:1px solid #d4d4d4;
+    border-top: none;
+    background-color: #f6f6f6;
+}
+.column ul{
+    height:35px;
+
+}
+.column ul li{
+    text-align: center;
+    width:83px;
+    height:34px;
+    line-height: 34px;
+    border-right:1px solid #d4d4d4;
+}
+.column a{
+
+    font-size:12px;
+    color:#656565; 
+}
+.column-red a{
+    width:90px;
+    color:#e01135;
+}
+.column span{
+    margin-left: 9px;
+} 
+.main{
+    height:1760px;
+    margin-top: 26px;
+}
+.main ul{
+    height:335px;
+    margin-bottom:20px;
+}
+.main ul li{
+    width:275px;
+    height:335px;
+    border: 1px solid #e2e2e2;
+    position: relative;
+}
+.main .bear{
+    margin:25px 0 0 41px;
+}
+.main h5{
+    font-size: 12px;
+    color:#262626;
+    margin-left:15px;
+}
+.main span{
+    font-size: 12px;
+    color:#d96176;
+    margin-left: 90px;
+}
+.main strong{
+    margin-left:5px;
+    font-size:24px;
+}
+.main h4{
+    font-size: 13px;
+    color:#383838;
+    margin:17px 0 0 15px;
+}
+.main .p{
+    margin-top: 10px;
+}
+.main .main-img{
+    position:absolute;
+    top:0;
+    right:0;
+}
+.main-second{
+    border-color:#cacaca;  
+}
+.main-second,.main-third,.main-fourth{
+    margin-left: 30px;
+}
+.main-second div{
+    padding-top: 10px;
+    margin-top:0;
+    height:65px;
+    background-color: #eeeeee;
+}
+.main-second h5,.main-second strong{
+    color: #e01135;
+}
+.main-second h2,.main-second h3{
+    position:absolute;
+    top:230px;
+    font-size: 14px;
+    color:#fff;
+    width:135px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    float:left;
+    background-color: #f23e64;
+}
+.main-second h3{
+    right:0;
+    margin-left: 2px;
+    background-color: #ff9c00;
+}
+.main-third span,.main-fourth span{
+    margin-left: 25px;
+}
+.main-third .bear{
+    margin-top: 45px;
+}
+.main del,.main i{
+    margin-left:7px;
+}
+/*页面主题结束 */
+.little-footer{
+    margin-top: 58px;
+    text-align: center;
+    height:15px;
+}
+.little-footer a{
+    font-size: 14px;
+    color:#b8b8b8;
+}
+.footer{
+    width:1600px;
+    height:60px;
+    margin:25px auto 0;
+    background-color: #e01135;
+}
+.footer-lf,.footer-rg{
+    width:380px;
+    height:36px;
+    margin:10px 0 0 445px;
+    background-color: #fff;
+    line-height: 38px;
+    border:1px solid #dfdfdf;
+}
+.footer-lf input{
+    width:120px;
+    margin-left: 15px;
+}
+.footer-lf span{
+    margin-left:85px;
+}
+.footer-lf span a{
+    font-size: 12px;
+    color:#8e8e8e;
+}
+.footer-lf-img{
+    width:66px;
+    height:38px;
+    text-align: center;
+    background-color: #fff;
+    margin:10px 0 0;
+}
+.footer-lf-img .mirror{
+    margin-top: 8px;
+}
+.footer-rg{
+    width:245px;
+    margin:10px 0 0 20px;
+    position:relative;
+}
+.footer-rg #car{
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.footer-rg span{
+    font-size: 16px;
+    color:#fb890e;
+    margin-left: 10px;
+    float: left;
+}
+.footer-rg span h6{
+    height:12px;
+    float: left;
+    margin:15px 10px 0 10px;
+    border:1px solid #8e8e8e;
+}
+.footer-rg span h3{
+    font-size: 16px;
+    color:#888;
+}
+.footer-rg span h2{
+    font-size: 18px;
+}
+.footer-rg .num{
+    left:100px;
+}

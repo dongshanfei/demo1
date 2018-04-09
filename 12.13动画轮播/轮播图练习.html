@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播练习</title>
+    <style>
+        body,ul,li{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:1000px;
+            height:400px;
+            position:relative;
+            margin:0 auto;
+            overflow:hidden;
+        }
+        #ul{
+            list-style: none;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        #ul li{
+            width:1000px;
+            height:400px;
+            float:left;
+        }
+        #box img{
+            width:1000px;
+            height:400px;
+        }
+        #pre,#next{
+            width:60px;
+            height:100px;
+            position:absolute;
+            top:150px;
+            font-size:48px;
+            cursor:pointer;
+        }
+        #pre:hover,#next:hover{
+                color:red;
+        }
+        #pre{
+            left:10px;
+        }
+        #next{
+            right:10px;
+        }
+        #dot{
+            position:absolute;
+            bottom:10px;
+            left:335px;
+        }
+        #dot span{
+            width:60px;
+            height:10px;
+            border:2px solid #888;
+            float:left;
+            margin-left: 5px;
+        }
+        #dot .active{
+            background: #888;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul id="ul">
+            <li><img src="img/6.jpg" alt=""></li>
+            <li><img src="img/7.jpg" alt=""></li>
+            <li><img src="img/8.jpg" alt=""></li>
+            <li><img src="img/9.jpg" alt=""></li>
+            <li><img src="img/10.jpg" alt=""></li>
+        </ul>
+        <div id="pre">☜</div>
+        <div id="next">☞</div>
+        <div id="dot">
+
+        </div>
+    </div>
+    <script>
+    window.onload=function(){
+        var box=document.getElementById('box');
+        var ul=document.getElementById('ul');
+        var lis=ul.getElementsByTagName('li');
+        var liWidth=lis[0].offsetWidth;
+        var pre=document.getElementById('pre');
+        var next=document.getElementById('next');
+        var count=0;
+        pre.onclick=function(){
+            count--;
+            if(count<0){
+                count=lis.length-2;
+                ul.style.left=-liWidth*(lis.length-1)+'px';
+            }
+            move(ul,-liWidth*count,5);
+            changeDot(count);
+         }
+
+        next.onclick=function(){
+            count++;
+            if(count==lis.length){
+                ul.style.left=0;
+                count=1;
+            }
+            move(ul,-liWidth*count,5);
+            changeDot(count);
+            // ul.style.left=-liWidth*count+'px';
+        }
+
+                // setInterval(move,5000);
+        function move(ele,target,speed,callback){
+            clearInterval(ele.t);
+            var speed=ele.offsetLeft<target?speed:-speed;
+            ele.t=setInterval(function(){
+                var val=ele.offsetLeft-target;
+                ele.style.left=ele.offsetLeft+speed+'px';
+                if(Math.abs(val)<=Math.abs(speed)){
+                    clearInterval(ele.t);
+                    ele.style.left=target+'px';
+                    if(callback){
+                        callback();
+                    }
+                }
+
+            },5)
+        }
+
+
+
+        var fr=document.createDocumentFragment('fr');
+        var dot=document.getElementById('dot');
+        for(var i=0;i<lis.length;i++){
+            var span=document.createElement('span');
+            span.index=i;
+            span.onclick=function(){
+                changeDot(this.index);
+                move(ul,-this.index*liWidth,5);
+                count=this.index;
+            }
+            fr.appendChild(span);
+        }
+        dot.appendChild(fr);
+
+        var fLi=lis[0].cloneNode(true);
+        ul.appendChild(fLi);
+        ul.style.width=liWidth*lis.length+'px';
+
+        var spans=dot.getElementsByTagName('span');
+        function changeDot(index){
+            for(var i=0;i<spans.length;i++){
+                spans[i].className="";
+            }
+            if(count==spans.length){
+                spans[0].className='active';
+            }
+            else{
+                spans[index].className="active";
+            }
+            
+        }
+        changeDot(count);
+
+
+    }
+    
+    </script>
+</body>
+</html>
