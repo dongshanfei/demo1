@@ -1,0 +1,359 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:none;
+}
+a:link,a:visited{
+    color:#5f5e5e;
+    text-decoration: none;
+}
+a:hover,a:active{
+    color:red;
+}
+ul li{
+    list-style:none;
+}
+.inb{
+    display:inline-block;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+.clearfix:after{
+    content:"";
+    display: block;
+    clear:both;
+}
+.clearfix{
+    zoom:1;
+}
+.por{
+    position:relative;
+}
+.pos{
+    position:absolute;
+}
+              /*以上已通用*/
+  .header,.header-top,.logo,.nav,.search,.gengduo,.quanbu{
+    width:1200px;
+  }
+.header{
+   height:190px;
+   margin:0 auto;
+}
+.header-top{
+    height:39px;
+    border-bottom:1px solid #e5e5e5;
+}
+.header-top p{
+    margin:0;
+    font-size:12px;
+    color:#858484;
+}
+.header-top p a{
+    color:#858484;
+}
+.header-top .welcome{
+    line-height: 39px;
+}
+.header-top .mydingdan{
+    line-height: 39px;
+}
+.logo{
+    height:110px;
+    background:url(../images/beloved.png) no-repeat 10px center;
+}
+.search-parent #select2{
+    width:63px;
+    height:38px;
+    margin:38px 0 0 549px;
+    color:#8e8e8e;
+    font-size:12px;
+}
+.logo input[type="text"],.logo-tupian input[type="submit"],.search-parent #select2,.myshopping #select1,.myshopping #select3{
+    border: 1px solid #dfdfdf;
+}
+.logo input[type="text"]{
+    width:314px;
+    height:37px;
+    margin:-38px 0 0 612px;
+    color:#8e8e8e;
+}
+.logo-tupian input[type="submit"]{
+    width:63px;
+    height:39px;
+   border:1px solid #dfdfdf;
+    margin:-39px 0 0 928px;
+    background:url(../images/search.png) no-repeat 20px 10px;
+}
+.myshopping{
+    width:195px;
+    height:40px;
+    margin:-40px 0 0 1003px;
+}
+.myshopping img{
+    top:-5px;
+    left:142px;
+}
+.myshopping #select1{
+    width: 91px;
+    height: 40px;
+    color:#8e8e8e;
+    font-size:12px;
+}
+.myshopping #select3{
+    width: 91px;
+    height: 40px;
+    margin-left:-8px;
+    color:#8e8e8e;
+    font-size:12px;
+}
+.myshopping #select1,.myshopping #select3{
+    text-indent:10px;
+}
+.nav{
+    height:40px;
+    background-color:#645858;
+    margin:-34px 0 0 346px;
+}
+.nav ul .shopping{
+     width:116px;
+     height:40px;   
+}
+.nav ul li {
+     width:120px;
+     height:40px;
+     font-size:15px;
+     color:white;
+     line-height:40px;
+     border-right:1px solid #685d5c;
+     text-align:center;
+}
+.nav ul li a{
+     color:white;
+}
+.dangqianweizhi{
+    width:1198px;
+    height:57px;
+    border:1px solid #d1d1d1;
+    margin:0px 0 0 346px;
+    color:#959595;
+    font-size:12px;
+}
+.dangqian{
+    margin:29px 0 0 0;
+}
+.dangqian .span1,.dangqian .span2{
+    color:#645858;
+}
+.dangqian .span2{
+    border:1px dashed #e01135;
+}
+.dangqian .input1{
+    border:1px solid #e5e5e5;
+    color:#afafaf;
+}
+.dangqianweizhi img{
+    margin: 32px 0 0 -23px;
+}
+.search,.gengduo,.quanbu{
+    margin:0px 0 0 346px;
+}
+.search ul li{
+    font-size:12px;
+    width: 1200px;
+    height:38px;
+    line-height: 38px;
+    border: 1px solid #d1d1d1;
+    border-bottom: none;
+}
+.search ul li p{
+    width: 105px;
+    height:38px;
+    text-align: center;
+    letter-spacing:18px;
+    background-color: #f1f1f1;
+}
+.search ul li span a{
+    margin-left: 20px;
+}
+.search ul li:last-child{
+    border-bottom:1px solid #d1d1d1;
+}
+.gengduo{
+    height:25px;
+}
+.moban{
+    width:81px;
+    height:25px;
+    background:#dcdcdc;
+    font-size:12px;
+    color:#5b5b5b;
+    line-height:25px;
+}
+.quanbu{
+    height:50px;
+    border-bottom:2px solid #e01135;
+}
+.quanbu img{
+    margin: 32px 0 0 0;
+}
+.quanbushangpin{
+    width:105px;
+    height:32px;
+    margin:18px 0 0 0;
+    background:#e01135;
+    line-height:32px;
+    font-size:14px;
+    color:#ffffff;
+}
+.moban,.quanbushangpin{
+     text-align:center;
+}
+.order{
+    margin:0 355px 0 346px;
+    font:12px "宋体";
+    height:36px;
+    background-color: #f5f5f5;
+    border:1px solid #ccc;
+    border-top: 2px solid #e01135;
+    margin-bottom: 25px;
+}
+.order span{
+    width: 85px;
+    height:36px;
+    line-height:36px;
+    border-right:1px solid #ccc;
+}
+.order span a img{
+    margin-left: 8px;
+}
+.item ul{
+    margin:0 355px 0 346px;
+}
+.item ul li{
+    width:274px;
+    height:332px;
+    border:1px solid #ccc;
+    margin:0 32px 20px 0; 
+}
+.item ul li:last-child{
+    margin:0 0 0 0;
+}
+.price{
+    margin:0 0 12px 0;
+}
+.price,.description{
+    margin-left: 18px;
+    font-size:12px;
+}
+.price strong a:link{
+    color: #000;
+    font-size: 24px;
+    font-family: normal;
+}
+.price .fr a{
+    font-size:12px;
+    color: #d96176;
+    margin-right: 10px;
+}
+.redp,.redp strong a:link{
+    color: #e01135;
+}
+.description{
+    color: #383838;   
+}
+.item ul li .xinpin{
+    top:0;
+    left:242px;
+}
+.nowbuy,.incart{
+    width:135px;
+    height:30px;
+   line-height: 30px;
+}
+.nowbuy a,.incart a{
+    color: #fff;
+    font-size: 14px;
+}
+.nowbuy{
+    top:230px;
+    left:0;
+    background-color: #e01135; 
+}
+.incart{
+    top:230px;
+    left:140px;
+    background-color: #ff9c00;
+}
+.more-item p{
+    margin:100px 0 0 500px;
+}
+.footer{
+    width: 1600px;
+    margin:0 auto;
+    height:60px;
+    background-color: #e01135;
+}
+.footer-search{
+    width:443px;
+    height:36px;
+    margin:10px 20px auto 445px;
+}
+.footer-search input[type="text"]{
+    width: 376px;
+    height:34px;
+    border:none;
+    outline:none;
+    text-indent: 8px;
+    line-height:34px;
+    border-right:1px solid #dfdfdf;
+}
+.footer-search p{
+    top:10px;
+    left:230px;
+    font-size:12px;
+    color:#8e8e8e;
+}
+.footer-cart{
+    width:244px;
+    height:36px;
+    color:#a5a5a5;
+    font-size: 16px;
+    margin-top:10px;
+}
+.footer-search,.footer-cart{
+    background-color: #fff;
+}
+.shoppingcar2{
+    width:90px;
+    line-height: 36px;
+}
+.shoppingcar2 .car-2{
+    top:-6px;
+    left:80px;
+}
+.jiage{
+    height:36px;
+    line-height: 36px;
+}
+.or-text,.or-text2{
+    color: #fca242;
+}
+.or-text{
+    padding-left:35px;
+    background:url(../images/购物车_23.png) no-repeat left;
+}
+.search1{
+    width:65px;
+    height:36px;
+    line-height:36px;
+}
+.shoppingcar2,.search1,.nowbuy,.incart,.order span{
+    text-align: center;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style>
+    ul li a {
+        color:#084ac6;
+        font-size:14px;
+    }
+    ul li span{
+        color:#999999;
+         font-size:13px;
+    }
+
+
+    </style>
+</head>
+<body>
+	<script>
+		var news = [{
+			title:"卡车坠入结冰水库 20吨快递“打水漂”(图)",
+			time:"11/16 07:34",
+			start:"★★★"
+		},{
+			title:"最高法：死缓犯减刑后刑期执行不得少于15年",
+			time:"11/16 04:57",
+			start:"★★★"
+		},{
+			title:"澳门连续10年向民众发钱 永久居民可获得9000元",
+			time:"11/16 04:39",
+			start:"★★★"
+		},{
+			title:"湖南慈利县未成年人卖淫案一审宣判",
+			time:"11/16 04:14",
+			start:"★★★"
+		},{
+			title:"幸运！电梯维修员随电梯从32层楼坠下大难不死",
+			time:"11/16 03:43",
+			start:"★★★"
+		}]
+        var tt ="<ul>";
+        for(var i =0; i<news.length;i++){
+            tt+="<li>";
+            for(var key in news[i]){
+               if(key =="title"){
+                tt+="<a href=''>"+news[i][key]+"</a>";
+               }
+               else{
+                tt+="<span>"+news[i][key]+"</span>";
+            }
+            }
+            tt+="</li>" 
+        }
+        tt+="</ul>"
+         document.write(tt);
+	</script>
+</body>
+</html>

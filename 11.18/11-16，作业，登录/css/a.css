@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0; 
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+a{
+    text-decoration: none;
+}
+.all{
+    width:1600px;
+    height:780px;
+}
+.all .one{
+    margin:36px 0 0 310px;
+}
+.all .two{
+    margin:36px 0 0 294px;
+}
+.rightparty{
+    width:400px;
+    height:470px;
+    margin: -415px 0 0 1089px;
+}
+.top-left,.top-right{
+    width:200px;
+    height:47px;
+    text-align: center;
+    line-height:50px;
+}
+.top-left{
+    background:red;
+    border-bottom:3px solid #d10327;
+}
+.top-left a{
+    color:white;
+}
+.top-right{
+    background:#f1f1f1;
+    border-bottom:3px solid #dfdfdf;
+}
+.top-right a{
+    color:#898989;
+}
+.bottom{
+    width:398px;
+    height:411px;
+    background:#ffffff;
+    border:1px solid #dfdfdf;
+}
+.fuxuankuang{
+    width:325px;
+    height:70px;
+    margin: 0px 0 0 35px;
+}
+.fuxuankuang .p3{
+    margin: 26px 8px 0 43px;
+    width: 111px;
+}
+.fuxuankuang .p4{
+    margin: -15px 8px 0 251px;
+}
+.fuxuankuang .p3,.fuxuankuang .p4{
+    font-size: 14px;
+    color:#898989;
+}
+.fuxuankuang .checkbox{
+    margin: 26px 0 0 18px;
+    width:13px;
+    height:13px;
+}
+.bottom button{
+    width:325px;
+    height:52px;
+    border:none;
+    outline:none;
+    background:#e01135;
+    border-radius:9px;
+    margin:0px 0 0 35px;
+    color:#ffffff;
+    font-size:24px;
+}
+.bottom .eight{
+    margin:20px 0 0 35px;
+}
+.bottom .five,.bottom .six,.bottom .seven{
+    margin:20px 0 0 52px;
+}
+.bottom .p5{
+    margin: 8px 0 0 55px;
+}
+.bottom .p6{
+    margin: 8px 0 0 46px;
+}
+.bottom .p7{
+    margin: 77px 0 0 -39px
+}
+.p5 a,.p6 a,.p7 a{
+    color:#898989;
+    font-size:14px;
+}
+.people,.suo{
+    width:325px;
+    height:42px;
+    border:1px solid #dbdbdb;   
+}
+.people{
+    margin:40px 0 0 35px;
+}
+.suo{
+    margin:18px 0 0 35px;
+}
+.people input,.suo input[type="text"]{
+    width: 267px;
+    height: 37px;
+    border:none;
+    outline:none;
+    color:#a9a9a9;
+    font-size:14px;
+    text-align:center;
+}
+.people-photo,.suo-photo{
+    width:51px;
+    height:42px;
+    border-right:1px solid #dbdbdb;
+}
+.people .people-photo img,.suo .suo-photo img{
+    margin:11px 0 0 18px;
+}
+.xiawen .p1{
+    margin: 132px 0 0 564px;
+}
+.xiawen .p2{
+    margin: -14px 0 0 522px;}

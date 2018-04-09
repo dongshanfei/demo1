@@ -1,0 +1,80 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var arr = ["张三","李四","王五","赵六"];
+    var date ="<ul>";
+    for(var i =0;i<arr.length;i++){
+        date =date+"<li>"+arr[i]+"</li>"
+        console.log(date); 
+    }
+    date=date+"</ul>"
+    document.write(date);
+</script>
+</body>
+</html> -->
+
+
+
+
+
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var arr1 =["张三","李四","王五","赵六"];
+    var arr2 =["张三","李四","王五","赵六"];
+    var arr3 =["张三","李四","王五","赵六"];
+   
+    var a1 ="<ul>";
+    for(var i =0;i<arr1.length;i++){
+       a1 =a1+"<li>"+arr1[i]+"</li>"     
+    }
+     a1=a1+"</ul>"  
+     
+     var a2 ="<ul>";
+    for(var i =0;i<arr2.length;i++){
+       a2 =a2+"<li>"+arr2[i]+"</li>"     
+    } 
+    a2=a2+"</ul>"  
+   
+    var a3 ="<ul>";
+    for(var i =0;i<arr3.length;i++){
+       a3 =a3+"<li>"+arr3[i]+"</li>"     
+    } 
+    a3=a3+"</ul>"
+   
+    document.write(a1+a2+a3);
+    </script>
+</body>
+</html> -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var arr = [["张三1","李四1","王五1","赵六1"],["张三2","李四2","王五2","赵六2"],["张三3","李四3","王五3","赵六3"]];
+for(var i = 0;i<arr.length;i++){
+    var data = '<ul>';
+    // for(var j = 0;j<arr[i].length;j++){
+    //    }  
+     data += "<li>"+arr[i]+"</li>";
+    data+="</ul>"
+    document.write(data);
+}
+</script>
+</body>
+</html>

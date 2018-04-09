@@ -1,0 +1,54 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+    function indexOf(arr, item){
+      for(var i=0;i<arr.length;i++){
+        if(item == arr[i]){
+           return i;break;             
+        }
+      }
+       if(i == arr.length) return -1;      
+    }
+    var arr =[0,1,2,3,4,5,6,7,8,9];
+    var item =9;
+    document.write(item+"在数组"+arr+"中的位置是第"+ indexOf(arr,item)+"位");
+    </script>
+</body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+       function indexOf(arr,item){
+        var num =[];
+          for(var i = 0;i<arr.length;i++){
+            if(item == arr[i]) 
+             num.push(i);   
+          }
+           if(num.length ==0) return -1;
+            return num; 
+       }
+        var arr = [0,1,2,3,4,5,6,7,3,9,10]
+       document.write(indexOf(arr,3))
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
