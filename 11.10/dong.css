@@ -1,0 +1,32 @@
+*{
+    margin:0;
+}
+body{
+    color:#c8e4e2;
+    background:url(背景.jpg) no-repeat;
+
+}
+.all{
+    width:500px;
+    height:350px;
+    background:#7385b5;
+    margin:0 auto;
+    margin-top: 136px;
+}
+.p h1{
+    padding: 20px 0 0 100px;
+}
+.p h2{
+    margin: 0px 0 0 91px;
+    padding: 54px 0 0 32px;
+}
+.p #message{
+    font-weight:800;
+}
+.p button{
+    margin: 26px 0 0 237px;
+}
+.p #c{
+     color:#00a0e9;
+    font-weight:800;
+}

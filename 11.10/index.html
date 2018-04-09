@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="dong.css">
+</head>
+<body>
+ <div class="all"> 
+    <div class="p">
+         <h1>身体健康调查表格</h1>
+         <h2>身高:<input id="a" type="text" value=""></h2>      
+         <h2>体重:<input id="b" type="text" value=""></h2>
+         <button id="c">看到数值，你会倍受打击</button>
+         <p id="message"></p>
+</div>
+</div>
+<script>
+        var a = document.getElementById("a");
+        var b = document.getElementById("b");
+        var c = document.getElementById("c");
+        var message = document.getElementById("message")
+        c.onclick =function(){
+            var hei =Number(a.value);
+            var wei =Number(b.value);
+            var BMI =wei/(hei*hei);
+            var BMI1=BMI.toFixed(2);
+           if(BMI<18.5)
+           message.innerHTML="警告：你的体质指数值是"+BMI1+",<br>你太轻了，应该多吃肉少吃菜";
+           else if(BMI>=18.5 &&  BMI<=24.99)
+            message.innerHTML="你的体质指数值是"+BMI1+",<br>你的体质正常，你可以不用保持身材尽情吃";
+           else if(BMI>=25 && BMI<28)
+               message.innerHTML="你的体质指数值是"+BMI1+",<br>警告：你太重了，还好意思吃饭？";
+           else if(BMI>=28 && BMI<32)
+               message.innerHTML="你的体质指数值是"+BMI1+",<br>警告：你已经超过胖的定义了，别照镜子了，你会自杀！";
+           else if(BMI>=32)
+               message.innerHTML="你的体质指数值是"+BMI1+",<br>严重警告：你把“胖”这个字发挥的淋漓尽致！"; }
+ 
+
+
+
+
+ </script>
+
+
+
+</body>
+</html>

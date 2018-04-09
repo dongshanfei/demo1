@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //能被4整除同时不能被100整除，或者能被400整除
+       var arr = [];
+       var year =Number(prompt("请输入现在的年份"));
+         year = year +1;
+       for(var i =year;arr.length<20;i++){
+        if(i%4==0&&i%100==0||i%400==0){
+            arr.push(i);
+        }
+       } 
+       console.log(arr);
+       document.write(arr);
+       for(var i =0;i<arr.length;i++){
+        document.write(arr[1]);
+       }
+    </script>
+</body>
+</html>

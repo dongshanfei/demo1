@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   //写一个竞猜游戏，用户必须猜一个秘密的数字(秘密数字自动生成，1-100 Math.floor ( Math.random ( ) * 100 + 1 ))，在每次猜完后程序会告诉用户他猜的数是太大了还是太小了，直到猜测正确，最后打印出猜测的次数。如果用户连续猜测同一个数字则只算一次.
+    var a = Math.floor(Math.random()*100+1);
+      // console.log(Math.random()*100+1);
+     //alert(a);
+     var b =Number(prompt("请您输入一个数字"));
+     for(var c =1;c>0;c++){
+        if(b>a){
+            b = prompt("你输入的数太大了，不会换个小的吗？");
+        }
+        else if(b<a){
+            b =prompt("你输入的数太小了，不会换个大的吗？");
+        }
+        else{
+            alert("正确的数字为"+a+",您猜对了"+c+"次");
+            break;}
+               
+     }
+
+    
+
+
+
+
+
+</script>
+    
+</body>
+</html>
