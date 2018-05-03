@@ -1,0 +1,41 @@
+<!--pages/playerList/playerList.wxml-->
+<view class='container' wx:if="{{ifshow}}">
+    <view class='content'>
+        <view class='item'>
+            <view class='item_left'>
+                <image src='{{init.image}}' mode='widthFix'></image>
+            </view>
+            <view class='item_right'>
+                <view>
+                    <text class='title'>{{init.name}}</text>
+                </view>
+                <view class='middle'>
+                    <text class='author'>{{init.author}}</text>著
+                    <block wx:for="{{init.words}}" wx:key="{{index}}">
+                        <text class="{{index %2 ==0?'type':'type1'}}">{{item}}</text>
+                    </block>
+                </view>
+                <view class='intro'>
+                    {{init.description}}
+                </view>
+            </view>
+        </view>
+        <view class='btn'>
+            <button class='read' bindtap='goDetail'>立即收听</button>
+            <button class='share' open-type='share'>分享唱段</button>
+        </view>
+        <view class='list'>
+            <view class='list_top'>
+                <text class='left'>共{{max}}章节</text>
+                <block wx:for="{{audioArr}}" wx:key="{{index}}">
+                    <navigator url='/pages/player/player?src={{item.audio}}&name={{item.title}}&id={{id}}&itmeId={{item.id}}&header={{init.header}}'>
+                        <view class='borderTop'>
+                            <text>{{item.title}}</text>
+                        </view>
+                    </navigator>
+                </block>
+                <text class='listType' bindtap='sorting'>{{type}}</text>
+            </view>
+        </view>
+    </view>
+</view>

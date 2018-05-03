@@ -1,0 +1,22 @@
+<view class="page">
+    <image src='../../images/bg.png' mode='scaleToFill' class='bg'></image>
+    <image src='{{current.header}}' mode='widthFix' class='center {{ifPlay?"transform":""}}'></image>
+    <view class="page__bd">
+        <view class="section section_gap">
+            <audio src="{{current.src}}" poster="{{current.poster}}" name="{{current.name}}" author="{{current.author}}" action="{{audioAction}}" bindplay="audioPlayed" bindtimeupdate="audioTimeUpdated" bindended="audioEnd" bindload="load"></audio>
+        </view>
+    </view>
+    <view class="section section_gap">
+        <view class="sliderWrap">
+            <text>{{newTime}}</text>
+            <slider bindchange="timeSliderChanged" bindtouchstart='start' bindtouchend='end' block-size='12' value='{{value}}' left-icon="cancel" right-icon="success_no_circle" />
+            <text>{{allTime}}</text>
+        </view>
+    </view>
+    <view class='title'>
+        {{current.name}}
+    </view>
+    <view class='btn' bindtap='playAudio'>
+        <image src='{{ifPlay?"../../images/stop.png":"../../images/play.png"}}' mode='widthFix'></image>
+    </view>
+</view>

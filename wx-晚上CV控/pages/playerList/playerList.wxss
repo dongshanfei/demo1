@@ -1,0 +1,195 @@
+/* pages/player/player.wxss */
+page{
+  background-color: #e7e7e7;
+}
+.content {
+  padding: 20rpx;
+  box-sizing: border-box;
+  }
+
+.top {
+  overflow: hidden;
+}
+
+.top image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.top_left {
+  float: left;
+  display: flex;
+  align-items: center;
+}
+
+.hot {
+  font-size: 30rpx;
+  color: #46587c;
+  font-weight: bold;
+  letter-spacing: 3rpx;
+}
+
+.top_right {
+  width: 100rpx;
+  text-align: center;
+  float: right;
+}
+
+.refresh_text {
+  display: block;
+  color: #9a9da0;
+  font-size: 25rpx;
+  line-height: 40rpx;
+  margin-top: -15rpx;
+}
+
+.item {
+  /* display: flex; */
+  overflow: hidden;
+  align-items: center;
+  padding: 30rpx 0;
+}
+
+.item_left {
+  float: left;
+  width: 25%;
+  margin-right: 5%;
+}
+
+.item_left image {
+  width: 100%;
+}
+
+.item_right {
+  float: left;
+  width: 70%;
+}
+
+.title {
+  font-size: 30rpx;
+  color: #46587c;
+  letter-spacing: 3rpx;
+}
+
+.middle {
+  color: #949698;
+  font-size: 25rpx;
+  line-height: 50rpx;
+}
+
+.author {
+  margin-right: 10rpx;
+}
+
+.middle .type {
+  color: #fff;
+  background-color: #f7b94b;
+  padding: 5rpx 20rpx;
+  border-radius: 15rpx;
+  margin-left: 15rpx;
+}
+
+.middle .type1 {
+  color: #fff;
+  background-color: #46587c;
+  padding: 5rpx 20rpx;
+  border-radius: 15rpx;
+  margin-left: 15rpx;
+}
+
+.intro {
+  width: 100%;
+  color: #949698;
+  font-size: 25rpx;
+  line-height: 40rpx;
+}
+
+.list_top {
+  overflow: hidden;
+}
+.section .section__title{
+    font-size: 30rpx;
+    line-height: 30rpx;
+}
+.list_top text {
+  font-size: 30rpx;
+  color: #46587c;
+  line-height: 80rpx;
+}
+
+.left {
+  /* float: left; */
+}
+.section{
+    text-align: left;
+    margin-bottom: 20rpx;
+}
+.listType {
+  float: right;
+}
+audio{
+  width: 100%;
+}
+
+.node {
+  border-top: 1rpx solid #caced3;
+}
+
+.node text {
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #46587c;
+}
+
+.list_name {
+  margin-left: 80rpx;
+}
+
+.row {
+  float: right;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  width: 45%;
+  padding: 0;
+  margin: 0;
+}
+
+.read {
+  background-color: #3c4272;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  letter-spacing: 3rpx;
+  font-size: 30rpx;
+  
+}
+
+.read::after {
+  border: 0rpx;
+  border-radius: 0;
+}
+
+.share {
+  background-color: #fff;
+  color: #3c4272;
+  border: none;
+  border-radius: 0;
+  letter-spacing: 3rpx;
+  font-size: 30rpx;
+  
+}
+
+.share::after {
+  border: 0rpx;
+  border-radius: 0;
+}
+
+.borderTop{
+    border-top: 2rpx solid #fff;
+}

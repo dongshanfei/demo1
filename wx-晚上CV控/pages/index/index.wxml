@@ -1,0 +1,36 @@
+<!--pages/audio/audio.wxml-->
+<!--index.wxml-->
+<view class="container" bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd'>
+    <view class='content'>
+        <view class='top'>
+            <view class='top_left'>
+                <text class='hot'>全网热门</text>
+            </view>
+        </view>
+        <view class='items'>
+            <block wx:for="{{data}}" wx:key="{{index}}">
+                <navigator url='/pages/playerList/playerList?id={{item.id}}'>
+                    <view class='item'>
+                        <view class='item_left'>
+                            <image src='{{item.image}}' mode='widthFix'></image>
+                        </view>
+                        <view class='item_right'>
+                            <view>
+                                <text class='title'>{{item.name}}</text>
+                            </view>
+                            <view class='middle'>
+                                <text class='author'>{{item.author}}</text>著
+                                <block wx:for="{{item.words}}" wx:key="{{index}}">
+                                    <text class="{{index %2 ==0?'type':'type1'}}">{{item}}</text>
+                                </block>
+                            </view>
+                            <view class='intro'>
+                                {{item.description}}
+                            </view>
+                        </view>
+                    </view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+</view>

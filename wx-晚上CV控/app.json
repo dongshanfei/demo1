@@ -1,0 +1,35 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/wx/wx",
+        "pages/playerList/playerList",
+        "pages/player/player"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#ffb11b",
+        "navigationBarTitleText": "晚上CV控",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "position": "top",
+        "color": "#000",
+        "selectedColor": "#323232",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "广场热歌"
+            },
+            {
+                "pagePath": "pages/wx/wx",
+                "text": "我们"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 6000
+    }
+}

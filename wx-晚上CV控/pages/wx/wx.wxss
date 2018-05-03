@@ -1,0 +1,208 @@
+/* pages/wx/wx.wxss */
+
+page {
+    background-color: #fff;
+}
+
+@font-face {
+    font-family: "iconfont";
+    src: url('iconfont.eot?t=1523870903202'); /* IE9*/
+    src: url('iconfont.eot?t=1523870903202#iefix') format('embedded-opentype'),
+         /* IE6-IE8 */ url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAikAAsAAAAADIgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZW7kjIY21hcAAAAYAAAACMAAAB9GkwOTpnbHlmAAACDAAABHAAAAWwZ2WGu2hlYWQAAAZ8AAAALwAAADYRFF+JaGhlYQAABqwAAAAcAAAAJAfeA4lobXR4AAAGyAAAABQAAAAgH+kAAGxvY2EAAAbcAAAAEgAAABIHggWObWF4cAAABvAAAAAfAAAAIAEXAI5uYW1lAAAHEAAAAUUAAAJtPlT+fXBvc3QAAAhYAAAASwAAAGqdUSc4eJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2Bk/ss4gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDgwVDy7ydzwv4EhhrmBoQEozAiSAwA1Fg1KeJzFkcEJwzAMRb9i14HSQzfIJcdMkiECgWaHzNBT18sCf430ywq0hd7zxTPoI1nGAnABkMQgMmAvGFxPuVb9hGv1Mybld4XXr+zYc+TMhdu+/3W+ZbXzE+5kTW91W4OitOA02Xmjf3Wr5+PIWrEe6InsAt8T+8D3xzHwes6B74hLoP8FtwDlDW30J+x4nFVUTWzcRBSeN+OxY3vXu2t7be8m3l3vj73ZZL3N/njVzTbblm5L26gJJEGqElRxRfyovUSJECogJJCQqFQkDoCEEKhSey8pKuXvwpULJ0iFErghLnAjLmMnQq1lzfh97/Ob9+Z9M4gi9Og3cp9YSEN1NIfOoGWEgJ+BsoJtcLyuj2cg69CsqSvEq3iOUCn75ASYZV432kHXNXmBT4ECBeg47cDzsQe97gKeh7ZhA+Qm8ytqbUolN0CyvMLb4QX8GWSLlanUQjM8PzvS2yVtYjOhqjlVfW+Cp3QCYy6lwMumIVJR4sPPaSqfvV+cxkVI5Lz84uVkaVJ94Z3uK3bNFAGuXwdtsqTcGmXyGfa+ljc0NSekkxNWPlmp6rC5L1tawnb3EHsIq/UB+Z6cRjZqoVOsTkEBU3BZ/rxhFmAEC+D1jWAEgev5EHndIAL7fAH3lRgQAh8LCzHV4PG3OxXZcmavVO81cNPfbD5phne27ZNu0t7O1FRCVUMGFW5sp6sZSrVcEmvprcLITRLzXvXKrGPJlZ3mpt/EjSfNg9e37aR7kgVRQTZUStQavL+V1nAir1Gaqaa3p5LuCHGstt/JV+RV5KPn0YvoDYTMcgv8KFNsFFl7TIOV47kRpkBUcRGMuLoCRP3rx2zPZXWZR67gf7LyeKBDdgzEFn9oHLIXgFFwtKOPhj3hjN16YJxeWnSEqbpEZEPjlIZg9QetzANHbwuda9WBkNU4flB47t9hwEgikRgpNS10r1ZjSkw+IplxpPFU6+vC2hY3gTmBkyQgE1yOyYYbGorDUSxIlOqToqyc4PIV2v7k7IHTUDIG1fulhMZL8pxN0wmpaIbta1Vazs6tilzSEFcbM/9UqdZ3ZE2Q5WM2Levtg87VKs0wrrUikWRWWnEaqYxJ2x+fO5ie+ZuXqchWk6lEp9may86SSYgsYY4o03PH9Gd4Ji/Wk1vkZ7KJZhGqMe3Ugl7Xq7GTwiTF9pohukndaGbtCfqUjYce0mldyIYfKmnYMk7Xx+sYr4/PsjG8Wu9E8/rZoAHvkvUz4w2MN8Z/Qsv9slCtlT6yy8wcbwBsjJOJLybh8D8o/vjUZRx7MDsHkVa+Id+RU+y8n0Dn0dpRdl7Q73r9o/y6boVhvED9WPa6EYE0OiaHXsKS1XkvkkwQCycwI43xj38Tv30+Gd7leBAIXFQWu/NLeHVhcIlyXHhHH9WYuTKqDnRY4zj67DDy9us9Mmx6PQLDgx/qPQxHBu7GUzOGHuKB/wvWjZyBf23Nk6XBaBVfPA543y4BXpofrUJpcg/DYJFcYgbu4V69OQTS85rDUIgniKHwp8c8CLG9ebRDdsnTKIWyCFGnV8k6mU6m0+tk2cjuG08EshbuXwv3j9/ev318PVwOl33Yhd1ze3u4Hmb29uCvT+FueKEOu2E5unMiDTzEfxCH3a8IXHZrsjBsKEA76EPQ9WBdsjQJXgo/kCQuISUovCmKxBI1SwxvhjdFS+Io5eAt0RJZuP8AmPj1V3icY2BkYGAA4mLOLJ94fpuvDNwsDCBw7VfvdgT9fzkLA3M5kMvBwAQSBQAvzws5AHicY2BkYGBu+N/AEMPCAAJAkpEBFXAAAEcOAnF4nGNhYGBgfsnAwMKAHQMAGtcBCQAAAAAAdgDkAa4B+gKGArAC2AAAeJxjYGRgYOBgaGJgZQABJiDmAkIGhv9gPgMAFkcBpgB4nGWPTU7DMBCFX/oHpBKqqGCH5AViASj9EatuWFRq911036ZOmyqJI8et1ANwHo7ACTgC3IA78EgnmzaWx9+8eWNPANzgBx6O3y33kT1cMjtyDRe4F65TfxBukF+Em2jjVbhF/U3YxzOmwm10YXmD17hi9oR3YQ8dfAjXcI1P4Tr1L+EG+Vu4iTv8CrfQ8erCPuZeV7iNRy/2x1YvnF6p5UHFockikzm/gple75KFrdLqnGtbxCZTg6BfSVOdaVvdU+zXQ+ciFVmTqgmrOkmMyq3Z6tAFG+fyUa8XiR6EJuVYY/62xgKOcQWFJQ6MMUIYZIjK6Og7VWb0r7FDwl57Vj3N53RbFNT/c4UBAvTPXFO6stJ5Ok+BPV8bUnV0K27LnpQ0kV7NSRKyQl7WtlRC6gE2ZVeOEXpc0Yk/KGdI/wAJWm7IAAAAeJxjYGKAAC4G7ICDkYmRmZGFkZWRjZGdkYORk4Gxgj0nMzEvKzOVA0obcqal5lUA2emGHDAWW3FGfmllKnsWkFOSX8rAAAAlbhNAAA==') format('woff'),
+         url('iconfont.ttf?t=1523870903202') format('truetype'),
+         /* chrome,
+         firefox,
+         opera,
+         Safari,
+         Android,
+         iOS 4.2+*/ url('iconfont.svg?t=1523870903202#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-lianjie:before {
+    content: "\e665";
+}
+
+.icon-lianjie1:before {
+    content: "\e661";
+}
+
+.icon-fenxiang1:before {
+    content: "\e61f";
+}
+
+.icon-fenxiang:before {
+    content: "\e624";
+}
+
+.icon-shouye:before {
+    content: "\e6d9";
+}
+
+.icon-jiantou:before {
+    content: "\e64a";
+    font-size: 70rpx;
+    color: #5e5e5e;
+}
+
+.content1 {
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 100rpx;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.mask image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.logoWrap {
+    display: inline-block;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.logoWrap image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.name text {
+    font-size: 30rpx;
+    line-height: 60rpx;
+}
+
+.fix {
+    display: inline-block;
+    padding: 15rpx 40rpx;
+    color: #fff;
+    font-size: 35rpx;
+    background-color: #169bd5;
+    border-radius: 10rpx;
+    margin-top: 10rpx;
+}
+
+.name {
+    color: #5f5f5f;
+}
+
+.intro {
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 56rpx;
+    font-size: 28rpx;
+    letter-spacing: 3rpx;
+    /* text-indent: 2em; */
+    text-align: center;
+    color: #5f5f5f;
+}
+
+.hidden {
+    width: 100%;
+    text-align: center;
+}
+
+.hidden image {
+    width: 100%;
+}
+
+.marginTop {
+    margin-top: 30rpx;
+}
+
+.gowxApp {
+    padding-bottom: 50rpx;
+}
+
+.appItem image {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+
+.appItem {
+    width: 90%;
+    margin: auto;
+    margin-top: 30rpx;
+    box-sizing: border-box;
+    display: flex;
+    padding: 40rpx;
+    background-color: #f1f1f1;
+    border-radius: 20rpx;
+    position: relative;
+    border-top: 3rpx solid #eee;
+    align-items: center;
+    box-shadow: 5px 5px 3px #e3e3e3;
+}
+
+.row {
+    position: absolute;
+    height: 60rpx;
+    width: 30rpx;
+    line-height: 60rpx;
+    font-size: 35rpx;
+    top: 0;
+    bottom: 0;
+    right: 45rpx;
+    margin: auto;
+    color: #9e9e9e;
+}
+
+.appTitle {
+    font-size: 40rpx;
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 3rpx;
+    color: #5e5e5e;
+    text-align: justify;
+}
+
+.appIntro {
+    margin-left: 50rpx;
+    box-sizing: border-box;
+    padding-right: 20rpx;
+    width: 60%;
+    color: #5f5f5f;
+}
+
+.appDes {
+    display: inline-block;
+    font-size: 30rpx;
+    text-align: left;
+    color: #5f5f5f;
+    margin-top: 20rpx;
+}
+
+.jitang {
+    width: 100%;
+    height: auto;
+    margin-top: -80rpx;
+}

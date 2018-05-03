@@ -1,0 +1,37 @@
+<!--pages/wx/wx.wxml-->
+<view>
+    <view class='content1'>
+        <view style='padding:0 50rpx;'>
+            <image src='https://wx1.sinaimg.cn/mw690/48abd75fly1fqmkwb725jj20xc1n9433.jpg' wx:if="{{!restShow}}" mode='widthFix' class='jitang'></image>
+        </view>
+        <view wx:if="{{restShow}}">
+            <view class='logoWrap'>
+                <image src='{{tipImg}}' mode='widthFix'></image>
+            </view>
+            <view class='name'>
+                <text>{{publicName}}</text>
+            </view>
+            <view class='fix' bindtap='focus'>{{focus}}</view>
+            <view class='marginTop'>
+                <view class='intro' wx:for='{{publicIntro}}'>
+                    {{item}}
+                </view>
+            </view>
+        </view>
+        <view class='gowxApp'>
+            <block wx:for='{{appArr}}' wx:key="{{item.id}}">
+                <view class='appItem' data-appid='{{item.appid}}' bindtap='goApp'>
+                    <image src='{{item.image}}'></image>
+                    <view class='appIntro'>
+                        <text class='appTitle'>{{item.xcx_name}}</text>
+                        <text class='appDes'>{{item.content}}</text>
+                    </view>
+                    <text class='row iconfont icon-jiantou'></text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class='mask' wx:if='{{ifCopy}}' bindtap='tapMask'>
+        <image src='../../images/tip.png' mode='widthFix'></image>
+    </view>
+</view>
