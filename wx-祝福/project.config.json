@@ -1,0 +1,74 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.91",
+	"appid": "wx93bc78ced100db0c",
+	"projectname": "%E7%A5%9D%E7%A6%8F%E8%AF%AD%E5%8A%A9%E6%89%8B333",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "send",
+					"pathName": "pages/send/send",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "changeInfo",
+					"pathName": "pages/changeInfo/changeInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "blessingList",
+					"pathName": "pages/blessingList/blessingList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "checkUp",
+					"pathName": "pages/checkUp/checkUp",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "a",
+					"pathName": "pages/a/a",
+					"query": ""
+				}
+			]
+		}
+	}
+}

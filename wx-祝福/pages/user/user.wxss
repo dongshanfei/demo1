@@ -1,0 +1,98 @@
+.contentWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.contentWrap .userbg {
+  width: 100%;
+  height: 157rpx;
+}
+
+.userWrap {
+  position: absolute;
+  left: 0;
+  top: 68rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userWrap image {
+  display: block;
+  width: 155rpx;
+  height: 155rpx;
+  border-radius: 50%;
+}
+
+.userWrap text {
+  margin-top: 10rpx;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.listWrap {
+  margin-top: 30rpx;
+}
+
+.list {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+}
+
+.list image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.list .listText {
+  padding: 30rpx 30rpx 30rpx 30rpx;
+  margin-left: 40rpx;
+  font-size: 30rpx;
+  display: inline-block;
+  width: 570rpx;
+  white-space: nowrap;
+}
+
+.row {
+  display: inline-block;
+  /* margin-left: 385rpx; */
+  font-size: 30rpx;
+}
+
+.zanWrap {
+  width: 100%;
+  text-align: center;
+  margin-top: 115rpx;
+}
+
+.zanText {
+  color: red;
+  font-size: 25rpx;
+  padding: 10rpx 20rpx;
+  display: inline-block;
+  border-radius: 10rpx;
+  border: 1rpx solid red;
+}
+
+.list button {
+  margin: 0;
+  background-color: #fff;
+  text-align: left;
+  padding-left: 0px;
+  padding-right: 0px;
+  line-height: 30rpx;
+  border: none;
+  border-radius: 0px;
+  box-sizing:  content-box;
+}
+
+.list button::after {
+  content: none;
+}

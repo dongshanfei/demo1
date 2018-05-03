@@ -1,0 +1,65 @@
+<view class='container' wx:if="{{bgImgStaute}}">
+  <view class='goIndex' bindtap='goIndex'>
+    <image src='../images/showleft.png' class='pbg'></image>
+    <view class='pshowcont' bindtap='goindex'>
+      <image src='../images/home.png'></image>
+      <text>首页</text>
+    </view>
+  </view>
+  <view class='share' bindtap='showShareBox'>
+    <image src='../images/showright.png' class='pbg'></image>
+    <view class='pshowcont'>
+      <image src='../images/share.png'></image>
+      <text>分享</text>
+    </view>
+  </view>
+  <image src='https://wxapi.sanshengshi.co/api/zhufu/zhufu{{item.itemid}}/bg.png' mode='widthFix' class='bgImg'></image>
+  <view class='content'>
+    <view class='userImgwrap'>
+      <image class='userimg' src='{{userinfo.avatarUrl}}'></image>
+    </view>
+    <text class='userName'>{{userinfo.nickName}}  祝{{otherName}}</text>
+    <text class='blessText'>{{item.txt}}</text>
+  </view>
+  <view class='record' bindtap='playRecord' wx:if="{{recordPath}}">
+    <image src='../images/recorded.png' class="{{playStatue?'flash':''}}"></image>
+  </view>
+  <view class='reply' wx:if="{{!isShare}}">
+    <text>{{zhufu_receive}}人已收到祝福 / {{getZanNum}}人给我点赞 / </text>
+    <text class='checkZan' bindtap='gocheckUp'>查看点赞数</text>
+  </view>
+  <view class='receiveImg' wx:if='{{receiveList}}'>
+    <image src='{{item}}' wx:for="{{receiveList}}"></image>
+  </view>
+  <view class='tapzanWrap' wx:if="{{isShare}}">
+    <text bindtap='goRanking'>排行榜</text>
+    <image src='../images/allranking.png' class='allranking'></image>
+    <image src='../images/heart2.png' class='heart2' bindtap='plusZan'></image>
+    <text>{{zanNum}} 给他点赞</text>
+  </view>
+</view>
+<view class='bottom' wx:if="{{statu <1}}">
+  <view class='btn' bindtap='gochangePage'>
+    <image src='../images/btn0.png'></image>
+  </view>
+  <button class='send' open-type='share'>点我送祝福</button>
+  <view class='btn' bindtap='screenshots'>
+    <image src='../images/btn.png'></image>
+  </view>
+</view>
+<view class='bottom' wx:elif='{{statu >1}}'>
+  <button class='send goIndexBtn' bindtap='goindex'>我也要送祝福</button>
+</view>
+<view class='canvasWrap' wx:if="{{canvasStatue}}" bindtap='bindwrapcanvas'>
+  <canvas class='myCanvas' canvas-id="myCanvas"></canvas>
+  <view class='cbottom'>
+    <text>点击按钮自动帮您生成一张祝福卡片，可保存后分享到朋友圈哦~</text>
+    <button bindtap='knoe'>点我生成卡片</button>
+  </view>
+</view>
+<view class="fixBox {{ShareBox?'slidup':'slidedown'}}" wx:if="{{ShareBox}}">
+  <button open-type='share'>转发到微信群</button>
+  <button class='radius' open-type='share'>转发给好友</button>
+  <button class='radius' bindtap='screenshots'>生成朋友圈分享截图</button>
+  <button class='radius' bindtap='creatCode'>生成二维码</button>
+</view>

@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+<text class='itoolintro'>{{itoolintro}}</text>
+  <view class='items' >
+    <view class='item' bindtap='navigator' id="{{item.itemid}}" wx:for='{{items}}'>
+      <image src='https://wxapi.sanshengshi.co/api/zhufu/zhufu{{item.itemid}}/1.png'></image>
+      <!-- <text class='text'>{{item.title}}</text> -->
+    </view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<form class='warp' bindsubmit="formSubmit" bindreset="formReset">
+
+  <view class='changBox'>
+    <text class='text'>修改头像</text>
+    <view class='imgWrap'>
+      <image src='{{userImgsrc}}' wx:if="{{userImgsrc}}"></image>
+      <text class='change' bindtap='changeuserImg'>修改</text>
+    </view>
+  </view>
+  <view class='changBox'>
+    <text class='text'>你的名字</text>
+    <input value='{{userName}}' type='text' maxlength="8" class='username' bindfocus='nameFoucus' bindblur='nameBlur' name="username"></input>
+    <!-- <image class='x' src='../images/x.png' wx:if='{{nameXstatue}}' bindtap='clearusername'></image> -->
+  </view>
+  <view class='changBox'>
+    <text class='text'>对方称呼</text>
+    <input placeholder='请输入对方称呼' type='text'  maxlength="8" class='othername' bindfocus='otherFoucus' name="othername"></input>
+    <!-- <image class='x' src='../images/x.png' wx:if="{{otherX}}"></image> -->
+  </view>
+  <view>
+    <text class='areatitle'>你要送出的祝福语(60字以内)</text>
+    <view class='textareaWrap'>
+      <textarea value="{{bless}}" class='textarea' maxlength="60" bindfocus='areaFoucus' bindblur='areaBlur' name="textarea"></textarea>
+      <!-- <image class='x tx' src='../images/x.png' wx:if='{{textArea}}'></image> -->
+    </view>
+
+  </view>
+  <view>
+    <view class='listWrap'>在上面编辑祝福语或
+      <text class='goList' bindtap='golist'>从列表中选择祝福语</text>
+      <view>
+        添加语音祝福:</view>
+    </view>
+
+    <view class='recordingWrap' >
+      <view bindtouchstart='tartRecord' bindtouchend='stopRecord' wx:if="{{!recordEnd}}">
+        <image src="../images/{{!recordStatue?'unrecord':'recording'}}.png" ></image>
+      </view>
+      <view class='recordingWrap' wx:if="{{recordEnd}}">
+        <image src='../images/recorded.png' bindtap='playRecord'></image>
+      </view>
+
+      <text wx:if='{{!recordStatue&&!recordEnd}}' class='recordTip'>点击图标开始录音
+      录音最长60"</text>
+      <text wx:if='{{recordStatue&&!recordEnd}}' class='recordTip'>正在录音，请不要做其他操作
+      {{recordTime}}/60"</text>
+      <text wx:if='{{recordEnd}}' class='recordTip'>点击图标可播放
+      {{recordTime}}"</text>
+       <text class='delete' wx:if='{{recordEnd}}' bindtap='deleteRecord'>删除</text> 
+
+    </view>
+  </view>
+  <view class='submitWrap'>
+    <button form-type='submit' class='submit'>提交</button>
+  </view>
+</form>

@@ -1,0 +1,198 @@
+.rankingWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.rule {
+  position: absolute;
+  top: 66rpx;
+  left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.rule image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.share {
+  position: absolute;
+  top: 66rpx;
+  right: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.share image {
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;margin-right: 10rpx;
+}
+
+ .pText {
+  padding:0;
+  margin: 0;
+  display: inline-block;
+  font-size: 25rpx;
+  margin-left: 10rpx;
+  color: #fff;
+  line-height: 40rpx;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+button::after{
+  content: none;
+}
+
+.rankingbg {
+  width: 100%;
+  height: 320rpx;
+}
+
+.selectBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.select {
+  width: 33.33%;
+  text-align: center;
+  position: relative;
+}
+
+.selectText {
+  font-size: 30rpx;
+  display: block;
+  color: #9c9c9c;
+}
+
+.line {
+  display: inline-block;
+  width: 45rpx;
+  height: 5rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50rpx;
+  background-color: #e94f4f;
+}
+
+.cur {
+  color: #e94f4f;
+}
+
+.rankingBox {
+  margin-top: 30rpx;
+  border-top: 1rpx solid #eee;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.medal {
+  width: 45rpx;
+  height: 57rpx;
+}
+
+.userImg {
+  width: 65rpx;
+  height: 65rpx;
+  margin: 0 20rpx;
+  border-radius: 50%;
+}
+
+.username {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 480rpx;
+  overflow: hidden;
+}
+
+.zan {
+  display: inline-block;
+  color: #e95151;
+  text-align: center;
+}
+
+.itemText {
+  display: inline-block;
+  margin: 0 10rpx;
+}
+
+.ruleWrap {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.ruleContent {
+  position: absolute;
+  width: 80%;
+  top: 20%;
+  height: 60%;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 50rpx;
+  text-align: center;
+}
+
+.ruleContent text {
+  font-size: 30rpx;
+  color: #989898;
+}
+
+.ruleContent .tip {
+  display: block;
+  color: black;
+  font-weight: bold;
+  padding: 20rpx 0;
+}
+
+.ruleBtn {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  margin-top: 30rpx;
+  border-top: 1rpx solid #eee;
+}
+
+.ruleBtn button {
+  padding: 15rpx 0;
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 0;
+  line-height: none;
+  font-size: 30rpx;
+  overflow: inherit;
+  line-height: 60rpx;
+}
+
+.ruleBtn button::after {
+  content: none;
+}
+
+.close {
+  border-right: 1rpx solid #eee;
+}
+
+.index {
+  color: #e94f4f;
+}

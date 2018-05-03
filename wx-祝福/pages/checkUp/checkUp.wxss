@@ -1,0 +1,54 @@
+/* pages/checkUp/checkUp.wxss */
+
+.top {
+  padding: 20rpx 10rpx;
+  border-bottom: 1rpx solid #eee; 
+}
+
+.top text {
+  display: inline-block;
+  font-size: 30rpx;
+}
+
+.goRanking {
+  width: 30%;
+  text-align: left;
+  color: #e94f4f;
+}
+
+.up {
+  width: 40%;
+  text-align: center;
+}
+
+.checkAll {
+  width: 30%;
+  text-align: right;
+}
+
+.item{
+  display: flex;
+  padding: 20rpx;
+  align-items: center;
+}
+.userImg{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.userName{
+  font-size: 30rpx;
+  display: inline-block;
+  width: 80%;
+}
+.upNum{
+  font-size: 30rpx;
+  color: #e94f4f;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.heart{
+  width: 26rpx;
+  height: 22rpx;
+}

@@ -1,0 +1,353 @@
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.bgImg {
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 410rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.userImgwrap {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.userimg {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.blessText {
+  padding: 20rpx 40rpx;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  letter-spacing: 6rpx;
+  word-spacing: 6rpx;
+  text-align: center;
+}
+
+.userName {
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 400;
+}
+
+.bottom {
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  padding: 10rpx;
+  border-top: 1rpx solid #ccc;
+  background-color: #fff;
+}
+
+.send {
+  float: left;
+  margin: 10rpx;
+  width: 68%;
+  background-color: #e94f4f;
+  color: #fff;
+}
+
+.goIndexBtn {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.btn {
+  float: left;
+  width: 90rpx;
+  height: 90rpx;
+  margin: 10rpx;
+}
+
+.btn image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.canvasWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.myCanvas {
+  width: 76%;
+  height: 67.54%;
+  margin-left: 12%;
+  margin-top: 6%;
+}
+
+.cbottom {
+  width: 76%;
+  margin: 30rpx auto;
+  text-align: center;
+}
+
+.cbottom text {
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  letter-spacing: 5rpx;
+}
+
+.cbottom button {
+  width: 60%;
+  margin-top: 30rpx;
+}
+
+.goIndex {
+  position: absolute;
+  top: 66rpx;
+  left: 0%;
+  width: 150rpx;
+  height: 70rpx;
+}
+
+.share {
+  position: absolute;
+  top: 66rpx;
+  right: 0%;
+  width: 155rpx;
+  height: 70rpx;
+}
+
+.pbg {
+  width: 155rpx;
+  height: 70rpx;
+}
+
+.pshowcont image {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.pshowcont {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  width: 150rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.pshowcont text {
+  display: inline-block;
+  margin-left: 10rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.fixBox {
+  position: fixed;
+  bottom: 20rpx;
+  width: 95%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  box-shadow: -1rpx -1rpx 3rpx #eee;
+}
+
+.fixBox button {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+
+.fixBox button:first-child {
+  border-top: 1px solid #eee;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.fixBox button:last-child {
+  border-radius: 5rpx;
+}
+
+.fixBox button::after {
+  border: 0px solid #ccc;
+}
+
+.radius {
+  border-radius: 0rpx;
+}
+
+@keyframes slidown {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.slidown {
+  display: block;
+  animation: slidown 0.3s ease-in both;
+}
+
+@keyframes slidup {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.slidup {
+  display: block;
+  animation: slidup 0.3s ease-in both;
+}
+
+.reply {
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  width: 85%;
+  margin: 40rpx auto;
+  text-align: center;
+}
+
+.reply text {
+  font-size: 30rpx;
+  color: #9e9e9e;
+}
+
+.reply .checkZan {
+  color: #e94f4f;
+  text-decoration: underline;
+}
+
+.record {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 27%;
+  margin: auto;
+  z-index: 300;
+}
+
+.record image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+@-webkit-keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  animation: flash 2s infinite;
+}
+
+.tapzanWrap {
+  position: absolute;
+  bottom: 17%;
+  width: 85%;
+  display: inline-block;
+  border-radius: 20rpx;
+  display: flex;
+  border: 1rpx solid red;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+}
+
+.tapzanWrap text {
+  font-size: 30rpx;
+  color: #e94f4f;
+  line-height: 60rpx;
+}
+
+.allranking {
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+  margin-left: 5rpx;
+  margin-right: 240rpx;
+}
+
+.heart2 {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.receiveImg {
+  display: block;
+  text-align: center;
+  position: absolute;
+  bottom: 15%;
+}
+
+.receiveImg image {
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  padding: 5rpx;
+}

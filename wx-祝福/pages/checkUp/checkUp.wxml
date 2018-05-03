@@ -1,0 +1,16 @@
+<view class='contentWrap'>
+  <view class='top'>
+    <text class='goRanking' bindtap='goRanking'>＜总排行 </text>
+    <text class='up'>本次祝福收到的点赞</text>
+    <text class='checkAll' bindtap='checkAll' wx:if="{{notAll}}">查看全部＞</text>
+  </view>
+  <view class='items'>
+    <view class='item' wx:for="{{list}}">
+      <image src='{{item.head_img}}' class='userImg'></image>
+      <text class='userName'>{{item.user_name}}</text>
+      <text class='upNum'>{{item.count}}</text>
+      <image src='../images/heart.png' class='heart'></image>
+    </view>
+  </view>
+
+</view>

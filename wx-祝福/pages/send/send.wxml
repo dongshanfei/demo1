@@ -1,0 +1,9 @@
+<view class='sendWrap'>
+  <view class='item' wx:for="{{list}}">
+    <image bindtap='navigator' data-itemid="{{item.itemid}}" id="{{item.zhufu_id}}"  src='https://wxapi.sanshengshi.co/api/zhufu/zhufu{{item.itemid}}/1.png'></image>
+    <view class='see'>
+      <image src='../images/eye.png' class='eye'></image>
+      <text>{{item.count}}</text>
+    </view>
+  </view>
+</view>

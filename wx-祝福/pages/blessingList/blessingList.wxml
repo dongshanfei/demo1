@@ -1,0 +1,18 @@
+<!--pages/blessingList/blessingList.wxml-->
+<view class='container'>
+  <view class='wrapBox'>
+    <view class='selectBox'>
+      <view class='select' wx:for="{{infoList}}">
+        <text data-num="{{index}}" class="selectText  {{_num==index?'cur':''}}" bindtap='changeClass'>{{item.festival}}</text>
+        <text class='line' wx:if="{{_num==index?'cur':''}}"></text>
+      </view>
+
+    </view>
+  </view>
+  <view class='itemWrap'>
+    <view class='item' bindtap='selectItem' wx:for="{{itemList}}" data-text="{{item.text}}">
+      <text class='itemText'>{{item.text}}</text>
+      <text class='row'>></text>
+    </view>
+  </view>
+</view>

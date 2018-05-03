@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/show/show",
+    "pages/logs/logs",
+    "pages/user/user",
+    "pages/ranking/ranking",
+    "pages/send/send",
+    "pages/receive/receive",
+    "pages/changeInfo/changeInfo",
+    "pages/blessingList/blessingList",
+    "pages/checkUp/checkUp"
+  ],
+  "window":{
+   "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "祝福语助手",
+    "navigationBarBackgroundColor": "#e94f4f",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "backgroundColor":"#fff",
+    "selectedColor": "#e94f4f",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath":"pages/images/card.png",
+        "text": "祝福卡片",
+        "selectedIconPath":"pages/images/card_a.png"
+      },
+      {
+        "pagePath": "pages/ranking/ranking",
+        "iconPath": "pages/images/ranking.png",
+        "selectedIconPath": "pages/images/ranking_a.png",
+        "text": "排行榜"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "pages/images/user.png",
+        "selectedIconPath": "pages/images/user_a.png",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+<view class='rankingWrap'>
+  <image src='../images/rankingbg.png' class='rankingbg'></image>
+  <view class='rule' bindtap='showrule'>
+    <image src='../images/ranking1.png'></image>
+    <text class='pText'>规则</text>
+  </view>
+  <view class='share'>
+    
+    <button class='pText' open-type='share'><image src='../images/ranking2.png'></image>分享</button>
+  </view>
+  <view class='selectBox'>
+    <view class='select'>
+      <text data-num="1" class="selectText  {{_num==1?'cur':''}}" bindtap='changeClass'>今日榜</text>
+      <text class='line' wx:if="{{_num==1?'cur':''}}"></text>
+    </view>
+    <view class='select'>
+      <text data-num="2" class="selectText  {{_num==2?'cur':''}}" bindtap='changeClass'>昨日榜</text>
+      <text class='line' wx:if="{{_num==2?'cur':''}}"></text>
+    </view>
+    <view class='select'>
+      <text data-num="3" class="selectText  {{_num==3?'cur':''}}" bindtap='changeClass'>总榜</text>
+      <text class='line' wx:if="{{_num==3?'cur':''}}"></text>
+    </view>
+  </view>
+  <view class='rankingBox'>
+    <view class='item' wx:for="{{ranklingList1}}">
+      <image src='../images/medal_{{index+1}}.png' class='medal'></image>
+      <image src='{{item.userImg}}' class='userImg'></image>
+      <text class='username'>{{item.username}}</text>
+      <text class='zan'>{{item.zan}}</text>
+    </view>
+    <view class='item' wx:for="{{ranklingList2}}">
+      <text class='itemText'>{{index+4}}</text>
+       <image src='{{item.userImg}}' class='userImg'></image> 
+      <text class='username'>{{item.username}}</text>
+      <text class='zan'>{{item.zan}}</text>
+    </view>
+  </view>
+  <view class='ruleWrap' wx:if="{{ruleStatue}}" bindtap='closeRule'>
+    <view class='ruleContent'>
+      <text class='tip'>提示</text>
+      <text>1、所有榜单排序是根据我发出的祝福一共收到多少点赞数排序的。
+      2、每编辑生成一个祝福可以发送给N个人。每次送出的祝福最多可以手动N*88次点赞
+      3、每个人每天可送出的祝福没有限制。即送出的祝福越多，获得的点赞数会更多。
+      </text>
+      <view class='ruleBtn'>
+      <button class='close' bindtap='closeRule'>我知道了</button> 
+      <button class='index' bindtap='goIndex' >去送祝福</button> 
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+.container {
+
+} 
+.items{
+padding:30rpx;
+overflow: hidden;
+}
+.item{
+  text-align: center;
+  width: 330rpx;
+  height: 290rpx;
+  float: left;
+}
+.item image{
+width: 330rpx;
+height: 260rpx;
+}
+.items view:nth-child(2n){
+  margin-left: 30rpx;
+}
+.text{
+  display: block;
+}
+.itoolintro{
+  font-size: 30rpx;
+  padding:  0 10rpx;
+  display: block;
+  text-align: center;
+  background-color: #ffdfdf;
+  line-height: 60rpx;
+  color: #9b1818;
+}

@@ -1,0 +1,31 @@
+.sendWrap{
+  width: 100%;
+  padding:30rpx;
+}
+.sendWrap view:nth-child(2n){
+  margin-left: 30rpx;
+}
+.item{
+  text-align: center;
+  width: 330rpx;
+  height: 325rpx;
+  float: left;
+}
+.item image:first-child{
+width: 330rpx;
+height: 260rpx;
+}
+.see{
+  display: flex;
+  align-items: center;
+}
+ .item .see .eye{
+  width: 32rpx;
+  height: 20rpx;
+}
+.see text{
+  display: inline-block;
+  margin-left: 10rpx;
+  color: #999;
+  font-size: 30rpx;
+}

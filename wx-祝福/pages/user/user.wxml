@@ -1,0 +1,44 @@
+<view class='contentWrap'>
+  <image src='../images/userbg.png' class='userbg'></image>
+  <view class='userWrap'>
+    <image src='{{useInfo.avatarUrl}}'></image>
+    <text>{{useInfo.nickName}}</text>
+  </view>
+  <view class='zanWrap'>
+  <navigator url='../checkUp/checkUp?total=1'>
+      <text class='zanText'>看看谁赞我最多次</text>
+  </navigator>
+  </view>
+  <view class='listWrap'>
+    <view class='list' bindtap='goSend'>
+      <image src='../images/user1.png'></image>
+      <text class='listText'>我送出的祝福</text>
+      <text class='row'>></text>
+    </view>
+    <view class='list' bindtap='goReceive'>
+      <image src='../images/user2.png'></image>
+      <text class='listText'>我收到的祝福</text>
+      <text class='row'>></text>
+    </view>
+    <view class='list'>
+      <image src='../images/user3.png'></image>
+      <button class='listText' open-type='share'>推荐许愿送祝福</button>
+      <text class='row'>></text>
+    </view>
+    <!-- <view class='list'>
+      <image src='../images/user4.png'></image>
+      <text class='listText'>申请公众号关联小程序</text>
+      <text class='row'>></text>
+    </view>
+     <view class='list'>
+      <image src='../images/user5.png'></image>
+      <text class='listText'>更多小程序</text>
+      <text class='row'>></text>
+    </view> -->
+    <view class='list'>
+      <image src='../images/user6.png'></image>
+      <button open-type='contact'  class='listText'>联系客服</button>
+      <text class='row'>></text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<view class='receive'>
+  <view class='item' wx:for="{{list}}">
+  <navigator url="../show/show?zhufu_id={{item.zhufu_id}}&status=share&itemid={{item.itemid}}">
+     <image src='https://wxapi.sanshengshi.co/api/zhufu/zhufu{{item.itemid}}/1.png'></image>
+  </navigator>
+  </view>
+</view>
