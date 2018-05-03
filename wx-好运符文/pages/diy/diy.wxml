@@ -1,0 +1,111 @@
+<!--pages/diy/diy.wxml wx:if="{{ifShow}}"-->
+<view class='container' wx:if="{{ifShow}}">
+    <view class='contentWarp' style="height:{{cHeight}}px;">
+        <!-- *************操作区域*************  -->
+        <block wx:for="{{itemList}}" wx:key="{{item.id}}">
+            <!-- 圆心坐标 <text style='position:absolute;top:{{item.y}}px;left:{{item.x}}px;width:2px;height:2px;background-color:yellow;z-index:500'></text> -->
+            <view class='touchWrap' style='transform: scale({{item.scale}});top:{{item.top}}px;left:{{item.left}}px; '>
+                <view class='imgWrap {{item.active? "touchActive":""}}' style="transform: rotate({{item.angle}}deg);">
+                    <image src='{{item.image}}' data-id='{{item.id}}' style='width:{{item.width}}px;height:{{item.height}}px;' bindtouchstart='WraptouchStart' bindload='loadImg' bindtouchmove='WraptouchMove' bindtouchend='WraptouchEnd'></image>
+                    <image class='x' src='../../images/x.png' style='transform: scale({{item.oScale}});transform-origin:center;' data-id='{{item.id}}' bindtap='deleteItem'></image>
+                    <image class='o' src='../../images/o.png' style='transform: scale({{item.oScale}});transform-origin:center;' data-id='{{item.id}}' bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd'></image>
+                </view>
+            </view>
+        </block>
+        <!-- **************操作区域************  -->
+        <!--**********背景和用户信息区域*************-->
+        <image src='{{item.bgImg}}' mode='widthFix' bindload='loadbg' class='bgImg'></image>
+        <button class='getUserInfoBtn' open-type='getUserInfo' bindgetuserinfo="getuserinfo">
+            <image src='{{item.avatarUrl}}' wx:if="{{!item.upLoadBg}}" class='userImg' mode='widthFix' style=" top:{{item.userTop}}%"></image>
+        </button>
+        <image src='../../images/hand.gif' class='hand' style='width:31%;top:{{item.userTop+10}}%' wx:if="{{showHand}}" mode='widthFix'></image>
+        <text class='name' wx:if="{{!item.upLoadBg}}" style=' top: {{item.titleTop}}%;font-size:{{item.fontsize}}rpx;line-height:{{item.fontsize}}rpx;color:{{item.color}}'>{{item.nickName}}</text>
+        <!--**********背景和用户信息区域*************-->
+    </view>
+    <!-- <button class='btn' catchtap='creatImg'>生成图片</button> -->
+    <!--********************底部固定条*********************-->
+    <view class='bottomFix'>
+        <view class='bottomSelect'>
+            <block wx:for="{{bottomSelect}}" wx:key="{{item.id}}">
+                <view class='select {{item.isSelect?"active":""}}' data-id="{{item.id}}" bindtap='bottomSelect'>
+                    <view class='selectWrap {{item.haveBorder?"borderRight":""}}'>
+                        <image src='{{item.isSelect?item.selectImage:item.image}}'></image>
+                        <view class='fontWrap' wx:if='{{item.isSelect}}'>
+                            <text>{{item.text}}</text>
+                            <icon class='underLine'></icon>
+                        </view>
+                    </view>
+                    <icon class='u' wx:if="{{item.isSelect}}"></icon>
+                </view>
+            </block>
+        </view>
+    </view>
+    <!--********************底部固定条*********************
+    <!--*******************组件scroll-view******************-->
+    <view class='compWrap {{isShowCom?"slidup":""}}'>
+        <scroll-view class='scrollView' scroll-x wx:if="{{showPj==1}}">
+            <view class='swiper_warp' style='width:{{tplg*19.5}}%'>
+                <block wx:for="{{tplist}}" wx:key="{{index}}">
+                    <view class='swiper_item' hover-class="touched" hover-start-time="10" hover-stay-time="1000" data-src='{{item.image}}' catchtap='getBg' data-id="{{item.id}}">
+                        <view class='warpImg'>
+                            <image src='{{item.image}}' class='item_img' mode='aspectFit'></image>
+                            <text class='underline_2'> </text>
+                        </view>
+
+                    </view>
+
+                </block>
+            </view>
+        </scroll-view>
+        <scroll-view class='scrollView' scroll-x wx:if="{{showPj==2}}" bindscrolltolower="scrollRight">
+            <view class='swiper_warp' style='width:{{tplg1*19.5}}%'>
+                <block wx:for="{{tplist_1}}" wx:key="{{index}}">
+                    <view class='swiper_item' hover-class="touched" hover-start-time="10" hover-stay-time="1000" data-src='{{item.image}}' data-from="2" data-id="{{item.id}}" catchtap='getSrc'>
+                        <view class='warpImg'>
+                            <image src='{{item.image}}' class='item_img' mode='aspectFit'></image>
+                            <text class='underline_2'> </text>
+                        </view>
+
+                    </view>
+
+                </block>
+            </view>
+        </scroll-view>
+        <scroll-view class='scrollView' scroll-x wx:if="{{showPj==3}}">
+            <view class='swiper_warp' style='width:{{tplg2*19.5}}%'>
+                <block wx:for="{{tplist_2}}" wx:key="{{index}}">
+                    <view class='swiper_item' hover-class="touched" hover-start-time="10" hover-stay-time="1000" data-src='{{item.image}}' data-from="3" data-id="{{item.id}}" catchtap='getSrc'>
+                        <view class='warpImg'>
+                            <image src='{{item.image}}' class='item_img' mode='aspectFit'></image>
+                            <text class='underline_2'> </text>
+                        </view>
+
+                    </view>
+
+                </block>
+            </view>
+        </scroll-view>
+
+
+        <view class='psRow' bindtap='selectSwitch'>
+            <icon class='iconfont {{isShowCom?"icon-xiajiantou":"icon-shangjiantou"}}'></icon>
+        </view>
+    </view>
+    <!--*******************组件scroll-view******************-->
+    <!--****************button************  -->
+    <view class='btnView'>
+        <view>
+            <button open-type='share'>分享</button>
+        </view>
+        <view>
+            <button bindtap='save'>保存</button>
+        </view>
+    </view>
+    <!--****************button************  -->
+    <!--*************canvas**************-->
+    <view class='canvasWrap' wx:if="{{showCanvas}}" bindtap='disappearCanvas'>
+        <canvas class='maskCanvas' canvas-id="maskCanvas" bindlongtap='saveImg' style='width:{{canvasWidth}}%; height:{{canvasHeight}}px;'></canvas>
+        <button class='btn' bindtap='saveImg'>点我生成图片</button>
+    </view>
+    <!--*************canvas**************-->
+</view>

@@ -1,0 +1,39 @@
+/* pages/lists/lists.wxss */
+.content{
+    padding-bottom: 50rpx;
+    overflow: hidden;
+}
+.item{
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    margin-top: 50rpx;
+}
+.item-img{
+    width: 100%;
+    float: left;
+}
+.title{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    color: #000;
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6)
+}
+
+.items{
+    width: 35%;
+    float: left;
+
+}
+
+
+.left{
+    margin: 0 10%;
+}

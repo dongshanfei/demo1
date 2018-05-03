@@ -1,0 +1,20 @@
+{
+    "pages": [
+        "pages/diy/diy",
+        "pages/lists/lists",
+        "pages/user/user"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#81b7c4",
+        "navigationBarTitleText": "好运符文",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": false
+    },
+    "networkTimeout": {
+        "request": 8000,
+        "connectSocket": 8000,
+        "uploadFile": 8000,
+        "downloadFile": 8000
+    }
+}

@@ -1,0 +1,71 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.98",
+	"appid": "wx93bc78ced100db0c",
+	"projectname": "%E5%A5%BD%E8%BF%90%E7%AC%A6%E6%96%87",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "fuwen",
+					"pathName": "pages/fuwen/fuwen",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "show",
+					"pathName": "pages/show/show",
+					"query": "nickName=宋朋&avatarUrl"
+				},
+				{
+					"id": 2,
+					"name": "show",
+					"pathName": "pages/show/show",
+					"query": "nickName=宋朋&avatarUrl=https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLOAUPwB…1fGeibBEIPQ2siapiasM4fXp2yPETEnlByYa4DCAY24MkcA/0&bgImg=http://upload-images.jianshu.io/upload_images/8771028-1b05356cd003db7d.png"
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "diy",
+					"pathName": "pages/diy/diy",
+					"query": "nickName=宋朋&avatarUrl=https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLOAUPwB…1fGeibBEIPQ2siapiasM4fXp2yPETEnlByYa4DCAY24MkcA/0&bgImg=http://upload-images.jianshu.io/upload_images/8771028-1b05356cd003db7d.png"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,19 @@
+<!--pages/lists/lists.wxml-->
+<view class='content'>
+    <view class='items left'>
+        <block wx:for="{{list_one}}" wx:key="{{index}}">
+            <view class='item' id="{{item.id}}" bindtap='getData'>
+                <image src='{{item.image}}' class='item-img' mode='widthFix'></image>
+                <text class='title'>{{item.title}}</text>
+            </view>
+        </block>
+    </view>
+    <view class='items right'>
+        <block wx:for="{{list_two}}" wx:key="{{index}}">
+            <view class='item' id="{{item.id}}"  bindtap='getData'>
+                <image src='{{item.image}}' class='item-img' mode='widthFix'></image>
+                <text class='title'>{{item.title}}</text>
+            </view>
+        </block>
+    </view>
+</view>
