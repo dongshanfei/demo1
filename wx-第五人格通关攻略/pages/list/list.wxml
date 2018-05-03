@@ -1,0 +1,16 @@
+<!--pages/list/list.wxml-->
+<block wx:for='{{data}}' wx:key='index'>
+  <view class='itemTwo' wx:if='{{item.type == 2}}' data-id='{{item.id}}' bindtap='navigateTo'>
+
+      <view class='itemTwo_bottom'>
+        <text class='itemTwo_title'>{{item.title}}</text>
+        <view class='desWrap'>
+          <text class='itemTwo_intro'>{{item.description}}</text>
+          <image src='{{item.thum_img}}' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+</block>
+<view class='loading' wx:if='{{ifLoading}}'>
+  <image src='../../images/timg.gif' mode='widthFix'></image>
+</view>

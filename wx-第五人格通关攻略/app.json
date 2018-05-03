@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "pages/wx/wx",
+    "pages/article/article"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#030005",
+    "navigationBarTextStyle": "#fcdf23",
+    "navigationBarTitleText": "第五人格通关攻略",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "list": [
+      {
+        "iconPath": "/images/tabbar/raiders.png",
+        "selectedIconPath": "/images/tabbar/raiders_click.png",
+        "pagePath": "pages/index/index",
+        "text": "NEWS"
+      },
+      {
+        "iconPath": "/images/tabbar/gift.png",
+        "selectedIconPath": "/images/tabbar/gift_click.png",
+        "pagePath": "pages/list/list",
+        "text": "TOPIC"
+      },
+      {
+        "iconPath": "/images/tabbar/heart.png",
+        "selectedIconPath": "/images/tabbar/heart_click.png",
+        "pagePath": "pages/wx/wx",
+        "text": "ORDER"
+      }
+    ]
+  }
+}

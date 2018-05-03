@@ -1,0 +1,36 @@
+<!--pages/article/article.wxml-->
+<view class='container'>
+  <view>
+     <image src='{{data.thum_img}}' mode='widthFix' class='topImg'> 
+    </image>
+  </view>
+  <view>
+    <text class='title'>{{data.title}}</text>
+  </view>
+  <view class='desWrap'>
+    <text class='description'>{{data.description}}</text>
+  </view>
+  <view class='content'>
+    <block wx:for="{{data.content}}" wx:for-index="idy" wx:for-item="cellData">
+      <block wx:if="{{cellData.type == 'view'}}">
+        <view class="p">
+          <block wx:for="{{cellData.child}}" wx:key="text">
+            <block wx:if="{{item.type == 'a'}}">
+              <text class="a" data-seccode="{{item.attr['data-seccode']}}" data-secname="{{item.attr['data-secname']}}" bindtap="stockClick">{{item.text}}</text>
+            </block>
+            <block wx:else>
+              <text>{{item.text}}</text>
+            </block>
+          </block>
+        </view>
+      </block>
+      <block wx:if="{{cellData.type == 'img'}}">
+        <image class="img" data-index="{{idy}}" style="height: {{cellData.attr.height?cellData.attr.height:0}}px" mode="widthFix" src="{{cellData.attr.src}}" bindload="imageLoad" bindtap='showImg' data-src='{{cellData.attr.src}}'></image>
+      </block>
+    </block>
+  </view>
+</view>
+<button class='shareBtn' open-type='share'>
+  <text class='btnTxt'>不能我一个人花痴</text>
+  <image src='../../images/share.png' mode='widthFix' class='shareImg'></image>
+</button>

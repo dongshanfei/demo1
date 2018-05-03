@@ -1,0 +1,70 @@
+/* pages/article/article.wxss */
+
+.container {
+  padding: 20rpx 40rpx 100rpx 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.p {
+  font-size: 30rpx;
+  margin: 40rpx 0;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.topImg {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  font-size: 35rpx;
+  line-height: 60rpx;
+  font-weight: bold;
+}
+.desWrap{
+  text-align: center;
+}
+.description{
+  padding: 30rpx;
+  font-size: 30rpx;
+  color: #898989;
+  display: block;
+  line-height: 50rpx;
+}
+.content{
+  margin-top: -30rpx;
+}
+
+.shareBtn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 0rpx;
+}
+
+.shareBtn::after {
+  border-radius: 0rpx;
+}
+
+.shareImg {
+  width: 40rpx;
+  margin-left: 20rpx;
+}
+
+.btnTxt {
+  font-size: 25rpx;
+  line-height: 80rpx;
+  color: black;
+  color:  #000;
+}

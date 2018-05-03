@@ -1,0 +1,48 @@
+/**app.wxss**/
+page{
+  background-color:#eee;
+}
+.itemTwo{
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+.itemTwo image{
+  width: 100%;
+}
+.itemTwo_bottom{
+  padding: 15rpx 30rpx;
+}
+.itemTwo_bottom text{
+  display: block;
+}
+.itemTwo_title{
+  font-weight: bold;
+  font-size: 35rpx;
+  margin-bottom: 10rpx;
+  float: left;
+}
+.desWrap{
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+.desWrap image{
+  width: 40%;
+  float: right;
+}
+.itemTwo_intro{
+  width: 60%;
+  font-size: 30rpx;
+  color: #777777;
+  line-height: 50rpx;
+  padding-right: 30rpx;
+}
+.loading{
+  text-align: center;
+  background-color: #fff;
+  margin-top: -10rpx;
+}
+.loading image{
+  width: 80rpx;
+}
