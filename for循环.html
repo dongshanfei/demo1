@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		
+	</style>
+</head>
+<body>
+	<ul>
+		<li>fdsf</li>
+		<li>fsdfsd</li>
+		<li>fdsfds</li>
+		<li>fsdfsd</li>
+	</ul>
+
+</body>
+</html>
+<script>
+		window.onload=function(){
+		 	var li = document.getElementsByTagName("li");
+		 	for(var i=0;i<li.length;i++){
+		 		li[i].onclick = function(e){
+		 			for(var j=0;j<li.length;j++){
+		 				li[j].style.backgroundColor = 'white';
+		 			}
+	 				e.target.style.backgroundColor='red';
+		 		};
+			}
+		}
+
+
+// ```````````````````````````````````````````
+		 window.onload = function () {
+            var li = document.getElementsByTagName('li');
+            for(var i = 0 ;i < li.length ; i++){
+                li[i].onclick = function(e){
+                    for (var j = 0; j < li.length; j++) {
+                        li[j].style.backgroundColor = '#fff';
+                    }
+                    e.target.style.backgroundColor='red';
+                    console.log(e.target)
+                }
+            }
+        }
+// ```````````````````````````````````````````
+	</script>
